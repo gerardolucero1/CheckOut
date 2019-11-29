@@ -1,5 +1,5 @@
 @section('title') 
-General Inventory
+Sub Inventories
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -13,12 +13,12 @@ General Inventory
 <div class="xp-breadcrumbbar">
     <div class="row">
         <div class="col-md-6 col-lg-6">
-            <h4 class="xp-page-title">General inventory</h4>
+            <h4 class="xp-page-title">Sub inventories</h4>
         </div>
         <div class="col-md-6 col-lg-6">
             <div class="xp-breadcrumb">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct">
-                    Add product
+                    Add sub inventory
                 </button>
             </div>
         </div>
@@ -65,22 +65,21 @@ General Inventory
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Category</th>
-                                    <th>Quantity per Room</th>
-                                    <th>Created By</th>
+                                    <th>Hotel</th>
+                                    <th>Amount of products</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach (Auth::user()->hotel->subInventories as $inventory)
                                     <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td>{{ $product->name }}</td>
-                                        <td>{{ $product->category->name }}</td>
-                                        <td>{{ $product->quantityRoom }}</td>
-                                        <td>{{ $product->hotel->name }}</td>
+                                        <td>{{ $inventory->id }}</td>
+                                        <td>{{ $inventory->name }}</td>
+                                        <td>{{ $inventory->hotel->name }}</td>
+                                        <td>{{ count($inventory->products) }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('inventories.edit', $product->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
+                                            <a href="{{ route('sub-inventories.edit', $inventory->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
+                                            <a href="{{ route('sub-inventories.show', $inventory->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
                                             <button onclick="event.preventDefault();
                                                         Swal.fire({
                                                             title: '¿Are you sure?',
@@ -92,17 +91,17 @@ General Inventory
                                                             confirmButtonText: 'Delete'
                                                             }).then((result) => {
                                                             if (result.value) {
-                                                                document.getElementById('delete-product-{{ $product->id }}').submit();
+                                                                document.getElementById('delete-inventory-{{ $inventory->id }}').submit();
                                                                 Swal.fire(
                                                                 'Deleted!',
-                                                                'The product has been deleted',
+                                                                'The inventory has been deleted',
                                                                 'success'
                                                                 )
                                                             }
                                                         });
                                                     "
                                                     type="submit" class="btn btn-round btn-danger"><i class="mdi mdi-delete-sweep"></i></button>
-                                            <form id="delete-product-{{ $product->id }}" action="{{ route('inventories.destroy', $product->id) }}" method="POST">
+                                            <form id="delete-inventory-{{ $inventory->id }}" action="{{ route('sub-inventories.destroy', $inventory->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
@@ -114,9 +113,8 @@ General Inventory
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>location</th>
-                                    <th>CP</th>
-                                    <th>State</th>
+                                    <th>Hotel</th>
+                                    <th>Amount of products</th>
                                     <th>Options</th>
                                 </tr>
                             </tfoot>
@@ -134,60 +132,24 @@ General Inventory
 
 <!-- Modal add product-->
 <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add new product</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add new sub inventory</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('inventories.store') }}" method="POST">
+                <form action="{{ route('sub-inventories.store') }}" method="POST">
                     @csrf
                     @method('POST')
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             {{ Form::label('name', 'Name') }}
                             {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
                         </div>
-                        <div class="form-group col-md-6">
-                            {{ Form::label('brand', 'Brand') }}
-                            {{ Form::text('brand', null, ['class' => 'form-control', 'id' => 'brand']) }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            {{ Form::label('provider', 'Provider') }}
-                            {{ Form::text('provider', null, ['class' => 'form-control', 'id' => 'provider']) }}
-                        </div>
-                        <div class="form-group col-md-6">
-                            {{ Form::label('cost', 'Cost') }}
-                            {{ Form::text('cost', null, ['class' => 'form-control', 'id' => 'cost']) }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            {{ Form::label('quantityRoom', 'Quantity per room') }}
-                            {{ Form::text('quantityRoom', null, ['class' => 'form-control', 'id' => 'quantityRoom']) }}
-                        </div>
-                        <div class="form-group col-md-6">
-                            {{ Form::label('quantityInventory', 'Quantity per inventory') }}
-                            {{ Form::text('quantityInventory', null, ['class' => 'form-control', 'id' => 'quantityInventory']) }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            {{ Form::label('quantityAlert', 'Quantity alert') }}
-                            {{ Form::text('quantityAlert', null, ['class' => 'form-control', 'id' => 'quantityAlert']) }}
-                        </div>
-                        <div class="form-group col-md-6">
-                            {{ Form::label('category_id', 'Category') }}
-                            {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'id' => 'category_id']) }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             {{ Form::hidden('hotel_id', Auth::user()->hotel->id) }}
                         </div>
                     </div>

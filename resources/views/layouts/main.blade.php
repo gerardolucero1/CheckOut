@@ -20,17 +20,20 @@
     </head>
     <body class="xp-vertical">
         <!-- Start XP Container -->
-        <div id="xp-container">     
-            <!-- Start XP Leftbar -->
-            @include('layouts.leftbar')
-            <!-- End XP Leftbar -->
-            <!-- Start XP Rightbar -->
-            @include('layouts.rightbar')          
-            @yield('content')
-            <!-- End XP Rightbar -->  
-        </div>
+        <main id="app">
+            <div id="xp-container">     
+                <!-- Start XP Leftbar -->
+                @include('layouts.leftbar')
+                <!-- End XP Leftbar -->
+                <!-- Start XP Rightbar -->
+                @include('layouts.rightbar')          
+                @yield('content')
+                <!-- End XP Rightbar -->  
+            </div>
+        </main>
         <!-- End XP Container -->
-        <!-- Start JS -->        
+        <!-- Start JS -->
+        <script src="{{ asset('js/app.js') }}"></script> 
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -41,6 +44,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         @yield('script')
         <!-- Main JS -->
+        
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <!-- End JS -->
         

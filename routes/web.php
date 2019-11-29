@@ -47,6 +47,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('inventories/{id}', 'InventoryController@update')->name('inventories.update');
     Route::delete('inventories/{id}', 'InventoryController@destroy')->name('inventories.destroy');
 
+    //Rutas Inventarios
+    Route::get('sub-inventories', 'SubInventoryController@index')->name('sub-inventories.index');
+    Route::get('sub-inventories/create/{id}', 'SubInventoryController@create')->name('sub-inventories.create');
+    Route::get('sub-inventories/{id}', 'SubInventoryController@show')->name('sub-inventories.show');
+    Route::get('sub-inventories/{id}/edit', 'SubInventoryController@edit')->name('sub-inventories.edit');
+    Route::post('sub-inventories', 'SubInventoryController@store')->name('sub-inventories.store');
+    Route::put('sub-inventories/{id}', 'SubInventoryController@update')->name('sub-inventories.update');
+    Route::delete('sub-inventories/{id}', 'SubInventoryController@destroy')->name('sub-inventories.destroy');
+        Route::post('sub-inventories/save', 'SubInventoryController@save');
+
 });
 
 // Route::get('/chart-c3', function () {

@@ -28,7 +28,7 @@
                         <li><a href="{{ route('inventories.index') }}">Inventory</a></li>
                     </ul>
                     <ul class="xp-vertical-submenu">
-                        <li><a href="{{url('/ui-kits-alerts')}}">Sub Inventory</a></li>
+                        <li><a href="{{ route('sub-inventories.index') }}">Sub Inventory</a></li>
                     </ul>
                 </li>
                 <li class="xp-vertical-header">Others</li>

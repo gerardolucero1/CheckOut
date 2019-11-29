@@ -149,7 +149,7 @@
     <!-- Start XP Footerbar -->
     <div class="xp-footerbar">
         <footer class="footer">
-            <p class="mb-0">© 2019 Neon - All Rights Reserved.</p>
+            <p class="mb-0">© 2019 CheckOut - Crafted with <i class="fa fa-heart"></i> By PartnerGrammer.</p>
         </footer>
     </div>
     <!-- End XP Footerbar -->
