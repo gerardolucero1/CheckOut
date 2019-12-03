@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventory;
-use App\SubInventory;
-use App\SubInventoryProduct;
+use App\Room;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class SubInventoryController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,7 @@ class SubInventoryController extends Controller
      */
     public function index()
     {
-        return view('subinventories.index');
+        //
     }
 
     /**
@@ -38,10 +35,29 @@ class SubInventoryController extends Controller
      */
     public function store(Request $request)
     {
-        $subInventory = SubInventory::create($request->all());
+        if ($request->type == 'all') {
+            $a = 1; 
 
-        return redirect()->route('sub-inventories.index')
-            ->with('info', 'Sub inventory created succesfully');
+            while ($a <= $request->number) {
+                $room = new Room();
+                $room->floor_id = $request->floor_id;
+                $room->name = 'gidle' . $a;
+                $room->type = 'sencilla';
+                $room->save();
+
+                $a++;
+            }
+
+            return redirect()->route('floors.show', $request->floor_id)
+                ->with('info', 'Room created succesfully');
+        }else{
+            $room = Room::create($request->all());
+
+            return redirect()->route('floors.show', $request->floor_id)
+                ->with('info', 'Room created succesfully');
+        }
+
+        
     }
 
     /**
@@ -52,9 +68,7 @@ class SubInventoryController extends Controller
      */
     public function show($id)
     {
-        $products = Inventory::orderBy('id', 'DESC')->where('hotel_id', Auth::user()->hotel->id)->get();
-        $subInventory = SubInventory::with('products')->findOrFail($id);
-        return view('subinventories.show', compact('subInventory', 'products'));
+        //
     }
 
     /**
@@ -88,25 +102,12 @@ class SubInventoryController extends Controller
      */
     public function destroy($id)
     {
-        $subInventory = SubInventory::findOrFail($id);
-        $subInventory->delete();
+        $room = Room::findOrFail($id);
+        $floor = $room->floor;
 
-        return redirect()->route('inventories.index')
-            ->with('info', 'Sub inventory deleted succesfully');
-    }
+        $room->delete();
 
-    public function save(Request $request){
-        $product = SubInventoryProduct::create($request->all());
-        return $product;
-    }
-
-    public function editAmount(Request $request, $id){
-        $product = SubInventoryProduct::findOrFail($id);
-        $product->amount = $request->amount;
-        $product->save();
-
-        $inventory = Inventory::findOrFail($product->inventory->id);
-        $inventory->quantityInventory = $inventory->quantityInventory - $product->amount;
-        $inventory->save();
+        return redirect()->route('floors.show', $floor->id)
+                ->with('info', 'Room deleted succesfully');
     }
 }

@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('users.index');
     }
 
     /**
@@ -45,8 +45,8 @@ class UserController extends Controller
         $user->hotel_id = $request->hotel_id;
         $user->password = bcrypt($request->password);
         $user->save();
-
-        return redirect()->route('hotels.show', $request->hotel_id)
+        
+        return redirect()->route('users.edit', $user->id)
             ->with('info', 'Usuario created succesfully');
     }
 
@@ -109,4 +109,5 @@ class UserController extends Controller
     {
         //
     }
+
 }

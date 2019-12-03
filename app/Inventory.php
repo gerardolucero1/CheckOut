@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\SubInventoryProduct;
 use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
@@ -16,5 +17,10 @@ class Inventory extends Model
     public function category()
     {
         return $this->belongsTo(CategoryInventory::class, 'category_id');
+    }
+
+    public function subProducts()
+    {
+        return $this->hasMany(SubInventoryProduct::class, 'inventory_id');
     }
 }

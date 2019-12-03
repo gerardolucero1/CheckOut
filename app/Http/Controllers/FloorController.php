@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventory;
-use App\SubInventory;
-use App\SubInventoryProduct;
+use App\Floor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class SubInventoryController extends Controller
+class FloorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,7 @@ class SubInventoryController extends Controller
      */
     public function index()
     {
-        return view('subinventories.index');
+        return view('floors.index');
     }
 
     /**
@@ -38,10 +35,10 @@ class SubInventoryController extends Controller
      */
     public function store(Request $request)
     {
-        $subInventory = SubInventory::create($request->all());
+        $floor = Floor::create($request->all());
 
-        return redirect()->route('sub-inventories.index')
-            ->with('info', 'Sub inventory created succesfully');
+        return redirect()->route('floors.index')
+            ->with('info', 'Floor created succesfully');
     }
 
     /**
@@ -52,9 +49,8 @@ class SubInventoryController extends Controller
      */
     public function show($id)
     {
-        $products = Inventory::orderBy('id', 'DESC')->where('hotel_id', Auth::user()->hotel->id)->get();
-        $subInventory = SubInventory::with('products')->findOrFail($id);
-        return view('subinventories.show', compact('subInventory', 'products'));
+        $floor = Floor::findOrFail($id);
+        return view('floors.show', compact('floor'));
     }
 
     /**
@@ -88,25 +84,6 @@ class SubInventoryController extends Controller
      */
     public function destroy($id)
     {
-        $subInventory = SubInventory::findOrFail($id);
-        $subInventory->delete();
-
-        return redirect()->route('inventories.index')
-            ->with('info', 'Sub inventory deleted succesfully');
-    }
-
-    public function save(Request $request){
-        $product = SubInventoryProduct::create($request->all());
-        return $product;
-    }
-
-    public function editAmount(Request $request, $id){
-        $product = SubInventoryProduct::findOrFail($id);
-        $product->amount = $request->amount;
-        $product->save();
-
-        $inventory = Inventory::findOrFail($product->inventory->id);
-        $inventory->quantityInventory = $inventory->quantityInventory - $product->amount;
-        $inventory->save();
+        //
     }
 }

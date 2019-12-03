@@ -47,7 +47,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('inventories/{id}', 'InventoryController@update')->name('inventories.update');
     Route::delete('inventories/{id}', 'InventoryController@destroy')->name('inventories.destroy');
 
-    //Rutas Inventarios
+    //Rutas Sub-Inventarios
     Route::get('sub-inventories', 'SubInventoryController@index')->name('sub-inventories.index');
     Route::get('sub-inventories/create/{id}', 'SubInventoryController@create')->name('sub-inventories.create');
     Route::get('sub-inventories/{id}', 'SubInventoryController@show')->name('sub-inventories.show');
@@ -56,237 +56,39 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('sub-inventories/{id}', 'SubInventoryController@update')->name('sub-inventories.update');
     Route::delete('sub-inventories/{id}', 'SubInventoryController@destroy')->name('sub-inventories.destroy');
         Route::post('sub-inventories/save', 'SubInventoryController@save');
+        Route::put('sub-inventories/edit/amount/{id}', 'SubInventoryController@editAmount');
 
+    //Rutas Pisos
+    Route::get('floors', 'FloorController@index')->name('floors.index');
+    Route::get('floors/create/{id}', 'FloorController@create')->name('floors.create');
+    Route::get('floors/{id}', 'FloorController@show')->name('floors.show');
+    Route::get('floors/{id}/edit', 'FloorController@edit')->name('floors.edit');
+    Route::post('floors', 'FloorController@store')->name('floors.store');
+    Route::put('floors/{id}', 'FloorController@update')->name('floors.update');
+    Route::delete('floors/{id}', 'FloorController@destroy')->name('floors.destroy');
+
+    //Rutas Habitaciones
+    Route::get('rooms', 'RoomController@index')->name('rooms.index');
+    Route::get('rooms/create/{id}', 'RoomController@create')->name('rooms.create');
+    Route::get('rooms/{id}', 'RoomController@show')->name('rooms.show');
+    Route::get('rooms/{id}/edit', 'RoomController@edit')->name('rooms.edit');
+    Route::post('rooms', 'RoomController@store')->name('rooms.store');
+    Route::put('rooms/{id}', 'RoomController@update')->name('rooms.update');
+    Route::delete('rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');
+
+    //Rutas Control
+    Route::get('control/rooms', 'ControlController@rooms_control')->name('control.rooms_control');
+    Route::get('control/assign-rooms', 'ControlController@assign_rooms_control')->name('control.assign_rooms_control');
+        //Obtener pisos
+        Route::get('control/get-floors', 'ControlController@get_floors');
+        //Actualizar status de las habitaciones
+        Route::put('control/rooms/update-status/{id}', 'ControlController@rooms_update_status');
+        //Obtener empleados
+        Route::get('control/get-employees', 'ControlController@get_employees');
+        //Asignar habitaciones a empleados
+        Route::post('control/assign-rooms/assign', 'ControlController@assign_rooms_employees_control');
+        //Ver habitaciones asignadas
+        Route::get('control/employees/rooms/{id}', 'ControlController@show_rooms')->name('users.show_rooms');
 });
 
-// Route::get('/chart-c3', function () {
-//     return view('chart-c3');
-// });
-// Route::get('/chart-chartistjs', function () {
-//     return view('chart-chartistjs');
-// });
-// Route::get('/chart-chartjs', function () {
-//     return view('chart-chartjs');
-// });
-// Route::get('/chart-flot', function () {
-//     return view('chart-flot');
-// });
-// Route::get('/chart-knob', function () {
-//     return view('chart-knob');
-// });
-// Route::get('/chart-morris', function () {
-//     return view('chart-morris');
-// });
-// Route::get('/chart-piety', function () {
-//     return view('chart-piety');
-// });
-// Route::get('/chart-sparkline', function () {
-//     return view('chart-sparkline');
-// });
-// Route::get('/components-nestable', function () {
-//     return view('components-nestable');
-// });
-// Route::get('/components-range-slider', function () {
-//     return view('components-range-slider');
-// });
-// Route::get('/components-ratings', function () {
-//     return view('components-ratings');
-// });
-// Route::get('/components-switchery', function () {
-//     return view('components-switchery');
-// });
-// Route::get('/components-treeview', function () {
-//     return view('components-treeview');
-// });
-// Route::get('/components-widgets', function () {
-//     return view('components-widgets');
-// });
-// Route::get('/email-compose', function () {
-//     return view('email-compose');
-// });
-// Route::get('/email-inbox', function () {
-//     return view('email-inbox');
-// });
-// Route::get('/email-open', function () {
-//     return view('email-open');
-// });
-// Route::get('/events', function () {
-//     return view('events');
-// });
-// Route::get('/form-colorpickers', function () {
-//     return view('form-colorpickers');
-// });
-// Route::get('/form-datepickers', function () {
-//     return view('form-datepickers');
-// });
-// Route::get('/form-editors', function () {
-//     return view('form-editors');
-// });
-// Route::get('/form-file-uploads', function () {
-//     return view('form-file-uploads');
-// });
-// Route::get('/form-groups', function () {
-//     return view('form-groups');
-// });
-// Route::get('/form-input-mask', function () {
-//     return view('form-input-mask');
-// });
-// Route::get('/form-inputs', function () {
-//     return view('form-inputs');
-// });
-// Route::get('/form-layouts', function () {
-//     return view('form-layouts');
-// });
-// Route::get('/form-maxlength', function () {
-//     return view('form-maxlength');
-// });
-// Route::get('/form-selects', function () {
-//     return view('form-selects');
-// });
-// Route::get('/form-touchspin', function () {
-//     return view('form-touchspin');
-// });
-// Route::get('/form-validations', function () {
-//     return view('form-validations');
-// });
-// Route::get('/form-wizards', function () {
-//     return view('form-wizards');
-// });
-// Route::get('/form-xeditable', function () {
-//     return view('form-xeditable');
-// });
-Route::get('/icon-dripicons', function () {
-    return view('icon-dripicons');
-});
-Route::get('/icon-font-awesome', function () {
-    return view('icon-font-awesome');
-});
-Route::get('/icon-ionicons', function () {
-    return view('icon-ionicons');
-});
-Route::get('/icon-material-design', function () {
-    return view('icon-material-design');
-});
-Route::get('/icon-simple-line', function () {
-    return view('icon-simple-line');
-});
-Route::get('/icon-themify', function () {
-    return view('icon-themify');
-});
-Route::get('/icon-typicons', function () {
-    return view('icon-typicons');
-});
-// Route::get('/map-google', function () {
-//     return view('map-google');
-// });
-// Route::get('/map-vector', function () {
-//     return view('map-vector');
-// });
-// Route::get('/page-403', function () {
-//     return view('page-403');
-// });
-// Route::get('/page-404', function () {
-//     return view('page-404');
-// });
-// Route::get('/page-500', function () {
-//     return view('page-500');
-// });
-// Route::get('/page-503', function () {
-//     return view('page-503');
-// });
-// Route::get('/page-comingsoon', function () {
-//     return view('page-comingsoon');
-// });
-// Route::get('/page-faq', function () {
-//     return view('page-faq');
-// });
-// Route::get('/page-forgotpsw', function () {
-//     return view('page-forgotpsw');
-// });
-// Route::get('/page-invoice', function () {
-//     return view('page-invoice');
-// });
-// Route::get('/page-lock-screen', function () {
-//     return view('page-lock-screen');
-// });
-// Route::get('/page-login', function () {
-//     return view('page-login');
-// });
-// Route::get('/page-maintenance', function () {
-//     return view('page-maintenance');
-// });
-// Route::get('/page-pricing', function () {
-//     return view('page-pricing');
-// });
-// Route::get('/page-register', function () {
-//     return view('page-register');
-// });
-// Route::get('/page-starter', function () {
-//     return view('page-starter');
-// });
-// Route::get('/page-timeline', function () {
-//     return view('page-timeline');
-// });
-// Route::get('/table-bootstrap', function () {
-//     return view('table-bootstrap');
-// });
-// Route::get('/table-datatable', function () {
-//     return view('table-datatable');
-// });
-// Route::get('/table-editable', function () {
-//     return view('table-editable');
-// });
-// Route::get('/table-rwdtable', function () {
-//     return view('table-rwdtable');
-// });
-// Route::get('/ui-kits-alerts', function () {
-//     return view('ui-kits-alerts');
-// });
-// Route::get('/ui-kits-badges', function () {
-//     return view('ui-kits-badges');
-// });
-// Route::get('/ui-kits-buttons', function () {
-//     return view('ui-kits-buttons');
-// });
-// Route::get('/ui-kits-cards', function () {
-//     return view('ui-kits-cards');
-// });
-// Route::get('/ui-kits-carousel', function () {
-//     return view('ui-kits-carousel');
-// });
-// Route::get('/ui-kits-collapse', function () {
-//     return view('ui-kits-collapse');
-// });
-// Route::get('/ui-kits-dropdowns', function () {
-//     return view('ui-kits-dropdowns');
-// });
-// Route::get('/ui-kits-grids', function () {
-//     return view('ui-kits-grids');
-// });
-// Route::get('/ui-kits-images', function () {
-//     return view('ui-kits-images');
-// });
-// Route::get('/ui-kits-media', function () {
-//     return view('ui-kits-media');
-// });
-// Route::get('/ui-kits-modals', function () {
-//     return view('ui-kits-modals');
-// });
-// Route::get('/ui-kits-paginations', function () {
-//     return view('ui-kits-paginations');
-// });
-// Route::get('/ui-kits-popovers', function () {
-//     return view('ui-kits-popovers');
-// });
-// Route::get('/ui-kits-progressbars', function () {
-//     return view('ui-kits-progressbars');
-// });
-// Route::get('/ui-kits-tabs', function () {
-//     return view('ui-kits-tabs');
-// });
-// Route::get('/ui-kits-tooltips', function () {
-//     return view('ui-kits-tooltips');
-// });
-// Route::get('/ui-kits-typography', function () {
-//     return view('ui-kits-typography');
-// });
+

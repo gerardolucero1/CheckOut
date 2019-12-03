@@ -1,5 +1,5 @@
 @section('title') 
-Hotel - {{ $hotel->name }}
+Floor - {{ $floor->name }}
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -11,12 +11,6 @@ Hotel - {{ $hotel->name }}
 @section('rightbar-content')
 <!-- Start XP Breadcrumbbar -->                    
 <div class="xp-breadcrumbbar">
-    <div class="row">
-        <div class="col-md-6 col-lg-6">
-            <h4 class="xp-page-title">{{ $hotel->name }}</h4>
-        </div>
-    </div>
-    
     @if (session('info'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('info') }}
@@ -38,6 +32,11 @@ Hotel - {{ $hotel->name }}
             </button>
         </div>
     @endif
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <h4 class="xp-page-title">{{ $floor->name }}</h4>
+        </div>
+    </div>
 </div>
 <!-- End XP Breadcrumbbar -->
 <!-- Start XP Contentbar -->    
@@ -53,17 +52,44 @@ Hotel - {{ $hotel->name }}
                             <img src="https://kprofiles.com/wp-content/uploads/2017/07/april.jpg" alt="Rounded Image" class="img-fluid rounded">
                         </div>
                         <div class="col-md-6">
-                            <h5>{{ $hotel->name }}</h5>
-                            <h6>{{ $hotel->adress }}</h5>
-                            <h6>{{ $hotel->fiscalName }}</h5>
-                            <h6>{{ $hotel->telephone }}</h5>
-                            <h6>{{ $hotel->email }}</h5>
+                            <h5>{{ $floor->name }}</h5>
+                            <h6>Floor room's: {{ $floor->rooms }}</h6>
                         </div>
                     </div>
                     
                     <div class="row mt-4">
                         <div class="col-md-6 left">
-                            <a href="{{ route('users.create', $hotel->id) }}" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add user</a>
+                            @if (count($floor->rooms_floor) < $floor->rooms)
+                                <button type="button" data-toggle="modal" data-target="#addRoom" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add room</button>
+                                <button onclick="event.preventDefault();
+                                                            Swal.fire({
+                                                                title: '¿Are you sure?',
+                                                                text: 'This will make all the rooms',
+                                                                type: 'warning',
+                                                                showCancelButton: true,
+                                                                confirmButtonColor: '#3085d6',
+                                                                cancelButtonColor: '#d33',
+                                                                confirmButtonText: 'OK'
+                                                                }).then((result) => {
+                                                                if (result.value) {
+                                                                    document.getElementById('all-rooms').submit();
+                                                                    Swal.fire(
+                                                                    'Success!',
+                                                                    'The rooms has been created',
+                                                                    'success'
+                                                                    )
+                                                                }
+                                                            });
+                                                        "
+                                                        type="submit" class="btn btn-rounded btn-info"><i class="mdi mdi-plus mr-2"></i> Add all rooms</button>
+                                <form id="all-rooms" action="{{ route('rooms.store') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="hidden" name="floor_id" value="{{ $floor->id }}">
+                                    <input type="hidden" name="type" value="all">
+                                    <input type="hidden" name="number" value="{{ $floor->rooms - count($floor->rooms_floor) }}">
+                                </form>
+                            @endif
                         </div>
                     </div>
 
@@ -74,23 +100,21 @@ Hotel - {{ $hotel->name }}
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Floor</th>
                                         <th>Type</th>
-                                        <th>User Name</th>
-                                        <th>State</th>
                                         <th>Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($hotel->users as $user)
+                                    @foreach ($floor->rooms_floor as $room)
                                         <tr>
-                                            <td>{{ $user->id }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>Housekeeper</td>
-                                            <td>DaffyDuckWizard</td>
-                                            <td>active</td>
+                                            <td>{{ $room->id }}</td>
+                                            <td>{{ $room->name }}</td>
+                                            <td>{{ $room->floor->name }}</td>
+                                            <td>{{ $room->type }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
-                                                <a href="{{ route('users.show', $user->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
+                                                <a href="{{ route('rooms.edit', $room->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
+                                                <a href="{{ route('rooms.show', $room->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
                                                 <button onclick="event.preventDefault();
                                                             Swal.fire({
                                                                 title: '¿Are you sure?',
@@ -102,17 +126,17 @@ Hotel - {{ $hotel->name }}
                                                                 confirmButtonText: 'Delete'
                                                                 }).then((result) => {
                                                                 if (result.value) {
-                                                                    document.getElementById('delete-hotel-{{ $user->id }}').submit();
+                                                                    document.getElementById('delete-room-{{ $room->id }}').submit();
                                                                     Swal.fire(
                                                                     'Deleted!',
-                                                                    'The hotel has been deleted',
+                                                                    'The floor has been deleted',
                                                                     'success'
                                                                     )
                                                                 }
                                                             });
                                                         "
                                                         type="submit" class="btn btn-round btn-danger"><i class="mdi mdi-delete-sweep"></i></button>
-                                                <form id="delete-hotel-{{ $user->id }}" action="{{ route('hotels.destroy', $user->id) }}" method="POST">
+                                                <form id="delete-room-{{ $room->id }}" action="{{ route('rooms.destroy', $room->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
@@ -124,9 +148,8 @@ Hotel - {{ $hotel->name }}
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Floor</th>
                                         <th>Type</th>
-                                        <th>User Name</th>
-                                        <th>State</th>
                                         <th>Options</th>
                                     </tr>
                                 </tfoot>
@@ -139,6 +162,49 @@ Hotel - {{ $hotel->name }}
         <!-- End XP Col -->
     </div>
     <!-- End XP Row -->
+
+    <!-- Modal add floor-->
+    <div class="modal fade" id="addRoom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add new room</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('rooms.store') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{ Form::label('name', 'Name') }}
+                                {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ Form::label('rooms', 'Type of room') }}
+                                {{ Form::select('type', [
+                                    'sencilla' => 'Sencilla', 
+                                    'doble' => 'Doble',
+                                    'matrimonial' => 'Matrimonial',
+                                    ],null, ['class' => 'form-control', 'id' => 'rooms']) }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{ Form::hidden('floor_id', $floor->id) }}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End XP Contentbar -->
 @endsection

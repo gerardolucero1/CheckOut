@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Hotel;
+use App\AssignedRoom;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -42,4 +43,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Hotel::class, 'hotel_id');
     }
+
+    public function rooms()
+    {
+        return $this->hasMany(AssignedRoom::class, 'user_id');
+    }
+
 }

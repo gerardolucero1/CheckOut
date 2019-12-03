@@ -1,5 +1,5 @@
 @section('title') 
-Sub Inventory
+Rooms assigned - {{ $user->name }}
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -10,39 +10,17 @@ Sub Inventory
 @endsection 
 @section('rightbar-content')
 <!-- Start XP Breadcrumbbar -->                    
-<div class="xp-breadcrumbbar">    
-    @if (session('info'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('info') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
 
-    @if (count($errors))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-</div>
 <!-- End XP Breadcrumbbar -->
 <!-- Start XP Contentbar -->    
-<div class="xp-contentbar">
+<div class="xp-contentbar mt-5">
     <!-- Start XP Row -->
-    <div class="row">
+    <div class="row mt-3">
         <!-- End XP Col -->
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-body">
-                    <add-products-component :products="{{ $products }}" :subinventory="{{ $subInventory }}"></add-products-component>
+                    
                 </div>
             </div>
         </div>

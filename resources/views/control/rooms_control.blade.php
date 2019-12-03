@@ -1,5 +1,5 @@
 @section('title') 
-Sub Inventory
+Rooms Control
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -42,7 +42,7 @@ Sub Inventory
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-body">
-                    <add-products-component :products="{{ $products }}" :subinventory="{{ $subInventory }}"></add-products-component>
+                    <rooms-control-component></rooms-control-component>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @section('title') 
-Employees
+Floors
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -11,7 +11,7 @@ Employees
 @section('rightbar-content')
 <!-- Start XP Breadcrumbbar -->                    
 <div class="xp-breadcrumbbar">
-    @if (session('info'))
+        @if (session('info'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('info') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -35,11 +35,13 @@ Employees
 
     <div class="row">
         <div class="col-md-6 col-lg-6">
-            <h4 class="xp-page-title">Employee</h4>
+            <h4 class="xp-page-title">Floors registered</h4>
         </div>
         <div class="col-md-6 col-lg-6">
             <div class="xp-breadcrumb">
-                    <a href="{{ route('users.create', Auth::user()->hotel->id) }}" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add user</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addfloor">
+                    Add floor
+                </button>
             </div>
         </div>
     </div>
@@ -53,8 +55,8 @@ Employees
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black">List of Employees</h5>
-                    <h6 class="card-subtitle">This are all the employees registered</h6>
+                    <h5 class="card-title text-black">List of Floors</h5>
+                    <h6 class="card-subtitle">This are all the floors registered</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -63,23 +65,24 @@ Employees
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Type</th>
-                                    <th>User Name</th>
-                                    <th>State</th>
+                                    <th>Inventory</th>
+                                    <th>Rooms</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Auth::user()->hotel->users as $user)
+                                @php
+                                    //dd(Auth::user()->hotel->floors);
+                                @endphp
+                                @foreach (Auth::user()->hotel->floors as $floor)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>Housekeeper</td>
-                                        <td>DaffyDuckWizard</td>
-                                        <td>active</td>
+                                        <td>{{ $floor->id }}</td>
+                                        <td>{{ $floor->name }}</td>
+                                        <td>{{ $floor->subInventory->name }}</td>
+                                        <td>{{ $floor->rooms }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
-                                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
+                                            <a href="{{ route('floors.edit', $floor->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
+                                            <a href="{{ route('floors.show', $floor->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
                                             <button onclick="event.preventDefault();
                                                         Swal.fire({
                                                             title: '¿Are you sure?',
@@ -91,17 +94,17 @@ Employees
                                                             confirmButtonText: 'Delete'
                                                             }).then((result) => {
                                                             if (result.value) {
-                                                                document.getElementById('delete-hotel-{{ $user->id }}').submit();
+                                                                document.getElementById('delete-floor-{{ $floor->id }}').submit();
                                                                 Swal.fire(
                                                                 'Deleted!',
-                                                                'The hotel has been deleted',
+                                                                'The floor has been deleted',
                                                                 'success'
                                                                 )
                                                             }
                                                         });
                                                     "
                                                     type="submit" class="btn btn-round btn-danger"><i class="mdi mdi-delete-sweep"></i></button>
-                                            <form id="delete-hotel-{{ $user->id }}" action="{{ route('hotels.destroy', $user->id) }}" method="POST">
+                                            <form id="delete-floor-{{ $floor->id }}" action="{{ route('floors.destroy', $floor->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
@@ -113,9 +116,8 @@ Employees
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Type</th>
-                                    <th>User Name</th>
-                                    <th>State</th>
+                                    <th>Inventory</th>
+                                    <th>Rooms</th>
                                     <th>Options</th>
                                 </tr>
                             </tfoot>
@@ -127,6 +129,54 @@ Employees
         <!-- End XP Col -->
     </div>
     <!-- End XP Row -->
+</div>
+
+
+
+<!-- Modal add floor-->
+<div class="modal fade" id="addfloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add new floor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @php
+                    $inventories = Auth::user()->hotel->subInventories->pluck('name', 'id');
+                @endphp
+                <form action="{{ route('floors.store') }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            {{ Form::label('name', 'Name') }}
+                            {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ Form::label('rooms', 'Number of rooms') }}
+                            {{ Form::text('rooms', null, ['class' => 'form-control', 'id' => 'rooms']) }}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            {{ Form::label('subInventory_id', 'Inventory') }}
+                            {{ Form::select('subInventory_id', $inventories, null, ['class' => 'form-control', 'id' => 'subInventory_id']) }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ Form::hidden('hotel_id', Auth::user()->hotel->id) }}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End XP Contentbar -->
 @endsection
