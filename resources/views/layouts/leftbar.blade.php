@@ -59,7 +59,7 @@
                 </li>
                 <li>
                     <a href="{{url('/app/login')}}">
-                      <i class="fa fa-comments-o"></i><span>Movil</span>
+                      <i class="fa fa-celphone"></i><span>App</span>
                   </a>
                 </li>
             </ul>
