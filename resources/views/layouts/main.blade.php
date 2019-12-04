@@ -18,16 +18,6 @@
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
         <!-- End CSS -->
         
-        <!-- PushAlert -->
-        <script type="text/javascript">
-            (function(d, t) {
-                    var g = d.createElement(t),
-                    s = d.getElementsByTagName(t)[0];
-                    g.src = "https://cdn.pushalert.co/integrate_73222bb9671bb2b78268dc3c566c2577.js";
-                    s.parentNode.insertBefore(g, s);
-            }(document, "script"));
-        </script>
-        <!-- End PushAlert -->
     </head>
     <body class="xp-vertical">
         <!-- Start XP Container -->
