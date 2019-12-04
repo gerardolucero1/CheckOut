@@ -50,7 +50,7 @@ Hotel - {{ $hotel->name }}
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="https://kprofiles.com/wp-content/uploads/2017/07/april.jpg" alt="Rounded Image" class="img-fluid rounded">
+                            <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/836/83691230.jpg" alt="Rounded Image" class="img-fluid rounded">
                         </div>
                         <div class="col-md-6">
                             <h5>{{ $hotel->name }}</h5>

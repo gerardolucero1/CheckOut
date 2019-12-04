@@ -12,6 +12,7 @@
                         v-for="(message, index) in messages" 
                         :key="index"
                         :written-by-me="message.written_by_me"
+                        @click.native="createTicket(message)"
                         >
                         {{ message.content }}
                     </message-conversation-component>
@@ -31,9 +32,24 @@
                 </div>
             </b-card>
         </div>
-        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-            <img src="https://pbs.twimg.com/profile_images/1116880149679443968/_fRD2-bj_400x400.jpg" width="50%" class="rounded-circle d-block mt-1" alt="...">
+        <div class="col-4 d-flex flex-column justify-content-start align-items-center">
+            <img src="https://ae01.alicdn.com/kf/HTB16BWRNXXXXXaCXVXXq6xXFXXXS/Suministros-de-Hotel-restaurante-camarera-uniformes-mujeres-uniforme-trabajo-camisa-hotel-uniforme-hospital-trabajadores-uniforme-AA1359.jpg" width="50%" class="rounded-circle d-block mt-1" alt="...">
             <p>{{ contactName }}</p>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ticketOptions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul class="list-group text-center">
+                            <li class="list-group-item">Action number 1</li>
+                            <li class="list-group-item">Action number 2</li>
+                            <li class="list-group-item">Action number 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -76,12 +92,17 @@ export default {
         scrollToBottom(){
             const scroll = document.querySelector('#messages-container')
             scroll.scrollTop = scroll.scrollHeight
+        },
+
+        createTicket(message){
+            $('#ticketOptions').modal('show')
+            console.log(message)
         }
     },
 }
 </script>
 
-<style>
+<style scoped>
     #messages-container{
         max-height: 68vh;
         overflow-y: auto;
@@ -90,5 +111,21 @@ export default {
     }
     #messages-container::-webkit-scrollbar {
         display: none;
+    }
+
+    .modal-body{
+        padding: 0;
+    }
+
+    .modal-content{
+        -webkit-border-radius: 70px !important;
+        -moz-border-radius: 70px !important;
+        border-radius: 70px !important; 
+    }
+
+    .list-group{
+        -webkit-border-radius: 70px !important;
+        -moz-border-radius: 70px !important;
+        border-radius: 70px !important; 
     }
 </style>

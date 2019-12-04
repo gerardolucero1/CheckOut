@@ -1,0 +1,11 @@
+var comm_url = "https://request.pushalert.co/";
+var default_title = "CheckOut";
+var default_message = "Hi!";
+var default_icon = "https://cdn.pushalert.co/img/pushalert-square-icon.png";
+var default_url = "https://localhost:8000";
+var last_updated = "1575485203";
+var client_id = 15420;
+var domain_id = 2;
+var pa_subdomain = "https://localhost27.pushalert.co";
+var appPublicKey = 'BA4G5LNhs/jMPPeNN160rNuLQlu5sA+1nvr+j3g4jRYFaFDJ8vAs/ItRrkNOZBJ+T83hW7V3BW0gHzRCTdJvds8=';
+importScripts("https://cdn.pushalert.co/sw-external.js?t=" + last_updated);
