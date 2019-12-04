@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Revision;
 use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
@@ -16,5 +17,10 @@ class Room extends Model
     public function assigned()
     {
         return $this->hasOne(AssignedRoom::class, 'room_id');
+    }
+
+    public function revisions()
+    {
+        return $this->hasMany(Revision::class, 'room_id');
     }
 }

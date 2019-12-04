@@ -88,7 +88,18 @@ Route::group(['middleware' => ['auth']], function () {
         //Asignar habitaciones a empleados
         Route::post('control/assign-rooms/assign', 'ControlController@assign_rooms_employees_control');
         //Ver habitaciones asignadas
-        Route::get('control/employees/rooms/{id}', 'ControlController@show_rooms')->name('users.show_rooms');
+        Route::get('control/rooms/employee/{id}', 'ControlController@show_rooms')->name('control.index.show_rooms');
+        Route::get('control/rooms/room/verification/{id}', 'ControlController@verification_room')->name('control.show.verification_room');
+        Route::put('control/rooms/room/verification/update/{id}', 'ControlController@update_verification_room')->name('control.update.verification_room');
+
+    //Rutas mensajes
+    Route::get('messages', 'MessageController@index')->name('messages.index');
+
+
+    //Rutas conversaciones
+    Route::get('api/conversations', 'ConversationController@conversations');
+    Route::get('api/messages', 'MessageController@messages');
+    Route::post('api/messages', 'MessageController@store');
 });
 
 

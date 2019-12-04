@@ -40,7 +40,7 @@ Rooms assigned - {{ $user->name }}
                                         <td>{{ $room->room->type }}</td>
                                         <td class="text-center">
                                             @if ($room->room->status == 'Pending Review')
-                                                <button type="button" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> Watch</button>
+                                                <a href="{{ route('control.show.verification_room', $room->room->id) }}" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> Watch</a>
                                             @else
                                                 <button type="button" class="btn btn-rounded btn-secondary"><i class="mdi mdi-send mr-2"></i> Watch</button>
                                             @endif

@@ -52,6 +52,11 @@
                         <li><a href="{{ route('control.assign_rooms_control') }}">Assign rooms</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{url('/messages')}}">
+                      <i class="fa fa-comments-o"></i><span>Messages</span>
+                  </a>
+                </li>
             </ul>
         </div>
         <!-- End XP Navigationbar -->

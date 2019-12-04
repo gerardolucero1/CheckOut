@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Room;
 use App\User;
 use App\Floor;
+use App\Revision;
 use App\AssignedRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -112,5 +113,20 @@ class ControlController extends Controller
     public function show_rooms($id){
         $user = User::findOrFail($id);
         return view('control.rooms.index', compact('user'));
+    }
+
+    public function verification_room($id){
+        $revision = Revision::where('room_id', $id)->first();
+        return view('control.rooms.show', compact('revision'));
+    }
+
+    public function update_verification_room(Request $request, $id){
+        $revision = Revision::findOrFail($id);
+        $revision->score = $request->rate;
+        $revision->reviewed = true;
+        $revision->save();
+
+        return redirect()->route('control.show.verification_room', $revision->room->id)
+            ->with('info', 'Usuario created succesfully');
     }
 }

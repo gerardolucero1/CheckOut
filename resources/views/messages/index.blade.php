@@ -1,5 +1,5 @@
 @section('title') 
-Rooms assigned - {{ $user->name }}
+Hotels
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -10,19 +10,20 @@ Rooms assigned - {{ $user->name }}
 @endsection 
 @section('rightbar-content')
 <!-- Start XP Breadcrumbbar -->                    
+<div class="xp-breadcrumbbar">
 
+</div>
 <!-- End XP Breadcrumbbar -->
 <!-- Start XP Contentbar -->    
-<div class="xp-contentbar mt-5">
+<div class="container-fluid h-100">
     <!-- Start XP Row -->
-    <div class="row mt-3">
+    <div class="row">
         <!-- End XP Col -->
-        <div class="col-lg-12">
-            <div class="card m-b-30">
-                <div class="card-body">
-                    
-                </div>
-            </div>
+        <div class="col-4">
+            <contact-list-component></contact-list-component>
+        </div>
+        <div class="col-8">
+            <active-conversation-component></active-conversation-component>
         </div>
         <!-- End XP Col -->
     </div>

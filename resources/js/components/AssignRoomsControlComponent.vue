@@ -41,7 +41,7 @@
                             <td>{{ employee.email }}</td>
                             <td>{{ employee.rooms.length }}</td>
                             <td>
-                                <a :href="'/users/rooms/' + employee.id" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> OPT</a>
+                                <a :href="'/control/rooms/employee/' + employee.id" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> OPT</a>
                             </td>
                         </tr>
                     </tbody>

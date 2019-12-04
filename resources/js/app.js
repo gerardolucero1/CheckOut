@@ -8,6 +8,10 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,6 +26,10 @@ window.Vue = require('vue');
 Vue.component('add-products-component', require('./components/AddProductsComponent.vue').default);
 Vue.component('rooms-control-component', require('./components/RoomsControlComponent.vue').default);
 Vue.component('assign-rooms-control-component', require('./components/AssignRoomsControlComponent.vue').default);
+Vue.component('contact-component', require('./components/chat/ContactComponent.vue').default);
+Vue.component('contact-list-component', require('./components/chat/ContactListComponent.vue').default);
+Vue.component('active-conversation-component', require('./components/chat/ActiveConversationComponent.vue').default);
+Vue.component('message-conversation-component', require('./components/chat/MessageConversationComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
