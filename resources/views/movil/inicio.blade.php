@@ -29,6 +29,7 @@ padding:0px 25px 0px 25px;
 border-top:solid; 
 border-top-width: 1px; 
 padding-top: 8px;
+background: white;
 }
 </style>
 @endsection 
