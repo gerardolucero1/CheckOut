@@ -33,14 +33,11 @@ background: white;
 z-index: 10;
 }
 .num-cuarto{
-    padding:4px; 
     text-align: center; 
-    background: #576066; 
-    border-radius: 80px; 
     position: absolute; 
-    right: 3px; 
+    right: 51px; 
     font-weight: bold;
-    color: white;
+    color: gray;
 }
 </style>
 @endsection 
@@ -75,66 +72,66 @@ z-index: 10;
         <p style="text-align: center; width: 100%; font-size: 18px; padding-bottom: 15px;">CHECK OUTS</p>
         <div class="col-4"><a href="{{ route('habitacion.index') }}">
                 <div class="num-cuarto">100</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
             </a>
         </div>
         <div class="col-4">
             <div class="num-cuarto">102</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoDND.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">103</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoOD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <!--Stay overs-->
         <p style="text-align: center; width: 100%; font-size: 18px; padding-bottom: 15px; padding-top: 25px">STAY OVERS</p>
         <div class="col-4">
             <div class="num-cuarto">104</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">105</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">106</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoDND.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">107</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoDND.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">108</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoOD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">109</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoOD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">110</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">111</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">112</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">113</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">114</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 5%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 5%" alt="">
         </div>
         <div class="col-4">
             <div class="num-cuarto">115</div>
-            <img src="{{asset('assets/images/icono-puerta-verde.png')}}" width="90%" style="margin-left: 10%" alt="">
+            <img src="{{asset('assets/images/iconoVD.png')}}" width="90%" style="margin-left: 10%" alt="">
         </div>
     </div>
 
