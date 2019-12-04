@@ -35,7 +35,7 @@ z-index: 10;
 .num-cuarto{
     padding:8px; 
     text-align: center; 
-    background: #576066; 
+    background: #ED2024; 
     border-radius: 80px; 
     position: absolute; 
     right: 120px; 
