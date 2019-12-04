@@ -17,16 +17,7 @@ Hotels
 <!-- Start XP Contentbar -->    
 <div class="container-fluid h-100">
     <!-- Start XP Row -->
-    <div class="row">
-        <!-- End XP Col -->
-        <div class="col-4">
-            <contact-list-component></contact-list-component>
-        </div>
-        <div class="col-8">
-            <active-conversation-component></active-conversation-component>
-        </div>
-        <!-- End XP Col -->
-    </div>
+    <messenger-component :user-id="{{ Auth::user()->id }}"></messenger-component>
     <!-- End XP Row -->
 </div>
 <!-- End XP Contentbar -->

@@ -1,19 +1,21 @@
 <template>
-    <div class="row" style="height: 75vh;">
+    <div class="row" style="height: 79vh;">
         <div class="col-8">
-            <b-card
+            <b-card no-body
                 footer-bg-variant="light"
                 footer-border-variant="dark"
                 class="h-100"
                 style="border: none;"
             >
-                <message-conversation-component 
-                    v-for="(message, index) in messages" 
-                    :key="index"
-                    :written-by-me="message.written_by_me"
-                    >
-                    {{ message.content }}
-                </message-conversation-component>
+                <b-card-body id="messages-container">
+                    <message-conversation-component 
+                        v-for="(message, index) in messages" 
+                        :key="index"
+                        :written-by-me="message.written_by_me"
+                        >
+                        {{ message.content }}
+                    </message-conversation-component>
+                </b-card-body>
 
                 <div slot="footer">
                     <b-form class="my-3 mx-2" @submit.prevent="postMessage()" autocomplete="off">
@@ -31,49 +33,62 @@
         </div>
         <div class="col-4 d-flex flex-column justify-content-center align-items-center">
             <img src="https://pbs.twimg.com/profile_images/1116880149679443968/_fRD2-bj_400x400.jpg" width="50%" class="rounded-circle d-block mt-1" alt="...">
-            <p>Seelected user</p>
+            <p>{{ contactName }}</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    props: {
+        contactId: Number,
+        contactName: String,
+        messages: Array,
+    },
     data(){
         return{
-            messages: [],
             newMessage: '',
         }
     },
     mounted(){
-        this.getMessages()
+
+    },
+    updated(){
+       this.scrollToBottom() 
     },
     methods: {
-        getMessages(){
-            let URL = '/api/messages'
-            axios.get(URL).then((response) => {
-                this.messages = response.data
-                console.log(response.data)
-            })
-        },
-
         postMessage(){
             let URL = '/api/messages'
 
             const params = {
-                to_id: 2,
+                to_id: this.contactId,
                 content: this.newMessage,
             }
 
             axios.post(URL, params).then((response) => {
-                console.log(response.data)
                 this.newMessage = ''
-                this.getMessages()
+                const message = response.data.message
+                message.written_by_me = true
+                this.$emit('messageCreated', message)
             })
+        },
+
+        scrollToBottom(){
+            const scroll = document.querySelector('#messages-container')
+            scroll.scrollTop = scroll.scrollHeight
         }
     },
 }
 </script>
 
 <style>
-
+    #messages-container{
+        max-height: 68vh;
+        overflow-y: auto;
+        padding: 10px;
+        margin: 0;
+    }
+    #messages-container::-webkit-scrollbar {
+        display: none;
+    }
 </style>

@@ -85,6 +85,11 @@ class ConversationController extends Controller
     }
 
     public function conversations(){
-        return Conversation::where('user_id', Auth::user()->id)->get();
+        return Conversation::where('user_id', Auth::user()->id)->get([
+            'id',
+            'contact_id',
+            'last_message',
+            'last_time',
+        ]);
     }
 }

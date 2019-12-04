@@ -30,6 +30,7 @@ Vue.component('contact-component', require('./components/chat/ContactComponent.v
 Vue.component('contact-list-component', require('./components/chat/ContactListComponent.vue').default);
 Vue.component('active-conversation-component', require('./components/chat/ActiveConversationComponent.vue').default);
 Vue.component('message-conversation-component', require('./components/chat/MessageConversationComponent.vue').default);
+Vue.component('messenger-component', require('./components/chat/MessengerComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
