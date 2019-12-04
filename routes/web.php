@@ -95,6 +95,16 @@ Route::group(['middleware' => ['auth']], function () {
     //Rutas mensajes
     Route::get('messages', 'MessageController@index')->name('messages.index');
 
+    //Rutas aplicacion
+    Route::get('app/login', 'AppController@login')->name('login.index');
+    Route::get('app/inicio', 'AppController@inicio')->name('inicio.index');
+    Route::get('app/habitaciones', 'AppController@habitaciones')->name('habitaciones.index');
+    Route::get('app/habitacion', 'AppController@habitacion')->name('habitacion.index');
+    Route::get('app/evidencias1', 'AppController@evidencias1')->name('evidencias1.index');
+    Route::get('app/evidencias2', 'AppController@evidencias2')->name('evidencias2.index');
+    Route::get('app/evidencias3', 'AppController@evidencias3')->name('evidencias3.index');
+    Route::get('app/chat', 'AppController@chat')->name('chat.index');
+    Route::get('app/checklist', 'AppController@checklist')->name('checklist.index');
 
     //Rutas conversaciones
     Route::get('api/conversations', 'ConversationController@conversations');
