@@ -57,6 +57,11 @@
                       <i class="fa fa-comments-o"></i><span>Messages</span>
                   </a>
                 </li>
+                <li>
+                    <a href="{{url('/app/login')}}">
+                      <i class="fa fa-comments-o"></i><span>Movil</span>
+                  </a>
+                </li>
             </ul>
         </div>
         <!-- End XP Navigationbar -->
