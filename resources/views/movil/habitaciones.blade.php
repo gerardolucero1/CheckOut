@@ -21,7 +21,7 @@ Hotels
     -webkit-box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
 -moz-box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
 box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
-position: absolute; 
+position: fixed; 
 bottom: 0; 
 width: 100vw; 
 padding: 0; 
