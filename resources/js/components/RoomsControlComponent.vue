@@ -17,10 +17,19 @@
                         <h6>{{ floor.name }}</h6>
                     </div>
                     <div class="col-md-3" v-for="(room, index) in floor.rooms_floor" :key="index" @click="changeStatus(room)">
-                        <div class="room" :class="{ 'vacancy': room.status == isVacancy, 'check-out': room.status == isCheckOut, 'stay-over': room.status == isStayOver, 'pending-review': room.status == isPendingReview }">
+                        <div class="card m-b-30 room" :class="{ 'bg-success-gradient': room.status == isVacancy, 'bg-danger-gradient': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview }">
+                            <div class="card-body">
+                                <div class="xp-widget-box text-white text-center pt-3">
+                                    <p class="xp-icon-timer mb-4">{{ room.id }}</p>
+                                    <h4 class="mb-2 font-20">{{ room.name }}</h4>
+                                    <p class="mb-3">{{ room.type }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="room" :class="{ 'bg-success-gradient': room.status == isVacancy, 'bg-danger-gradient': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview }">
                             <p>{{ room.name }}</p>
                             <p>{{ room.type }}</p>
-                        </div>
+                        </div> -->
                         <!-- <div class="status d-flex justify-content-center align-items-center">
                             <label for="">
                                 <input type="radio" name="status">Check Out
@@ -131,20 +140,28 @@ export default {
 
 <style>
     .room{
-        width: 100%;
-        height: 50px;
-        background-color: red;
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        color: white;
+        position: relative;
         cursor: pointer;
+    }
+
+    .room:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 15px;
     }
 
     .room p{
         line-height: 5px;
+        position: relative;
+    }
+
+    .room h4{
+        position: relative;
     }
 
     ul li{

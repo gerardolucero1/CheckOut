@@ -103,7 +103,7 @@ Rooms assigned - {{ $revision->room->name }}
                                 <p>Type: {{ $revision->room->type }}</p>
                             </div>
                             <div class="col-md-4 text-center">
-                                <img class="img-profile" src="https://pbs.twimg.com/profile_images/1116880149679443968/_fRD2-bj_400x400.jpg" width="30%" alt="">
+                                <img class="img-profile" src="https://ae01.alicdn.com/kf/HTB1K.DYLFXXXXc.XpXXq6xXFXXXp/Hotel-uniforme-de-verano-femenino-del-Hotel-limpieza-ropa-trabajo-de-camarero-de-limpieza-personal-con.jpg" width="30%" alt="">
                             </div>
                             <div class="col-md-4 info-user">
                                 <p>Name: {{ $revision->user->name }}</p>

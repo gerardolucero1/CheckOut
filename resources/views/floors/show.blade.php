@@ -49,7 +49,7 @@ Floor - {{ $floor->name }}
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="https://kprofiles.com/wp-content/uploads/2017/07/april.jpg" alt="Rounded Image" class="img-fluid rounded">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/78/bd/29/palier-pisos.jpg" width="100%"lt="Rounded Image" class="img-fluid rounded">
                         </div>
                         <div class="col-md-6">
                             <h5>{{ $floor->name }}</h5>

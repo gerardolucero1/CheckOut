@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/sw.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +19,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<script>
+        $(document).ready(function(){
+            (pushalertbyiw = window.pushalertbyiw || []).push(['onReady', onPAReady]);
+    
+            function onPAReady() {
+                console.log(PushAlertCo.subs_id); //if empty then user is not subscribed
+    
+                //YOUR CODE
+            }
+        )};
+    
+    </script>
 </head>
 <body>
     <div id="app">

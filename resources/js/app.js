@@ -9,8 +9,10 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import BootstrapVue from 'bootstrap-vue'
+import Push from 'push.js'
 
 Vue.use(BootstrapVue)
+Vue.use(Push)
 
 /**
  * The following block of code may be used to automatically register your
