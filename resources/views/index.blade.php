@@ -466,7 +466,7 @@ Neon - Home
                         </div>
                         <div class="card-body">
                             <div data-language="en" class="datepicker-here" ></div>
-                            <calendar-component></calendar-component>
+                            {{-- <calendar-component></calendar-component> --}}
                         </div>
                     </div>
                 </div>
