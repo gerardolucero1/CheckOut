@@ -16,6 +16,15 @@
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <style>
+        .highlight{
+            display: none;
+            }
+        .highlight-back{
+            display: block;
+            }
+            </style>
         <!-- End CSS -->
         
     </head>
@@ -33,9 +42,11 @@
             </div>
         </main>
         <!-- End XP Container -->
+        
         <!-- Start JS -->
         <script src="{{ asset('js/app.js') }}"></script> 
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="https://kit.fontawesome.com/7b00c31d1c.js" crossorigin="anonymous"></script>
         <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
@@ -43,9 +54,13 @@
         <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
         <script src="{{ asset('assets/js/sidebar-menu.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="http://xpanthersolutions.com/html/neon/laravel/vertical/assets/plugins/chartist-js/chartist.min.js"></script>
+        <script src="http://xpanthersolutions.com/html/neon/laravel/vertical/assets/plugins/chartist-js/chartist-plugin-tooltip.min.js"></script>
+        <script src="http://xpanthersolutions.com/html/neon/laravel/vertical/assets/js/init/chartistjs-init.js"></script>
+        
         @yield('script')
         <!-- Main JS -->
-        
+      
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <!-- End JS -->
         

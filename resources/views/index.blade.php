@@ -31,14 +31,12 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row"> 
         <!-- Start XP Col -->   
-<<<<<<< Updated upstream
-=======
         <div class="col-md-12 row">
             <div class="col-md-3 col-lg-3 col-xl-3">
                 <div class="card bg-success-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <p class="xp-icon-timer mb-4"><i class="fas fa-door-closed"></i></p>
                             <h4 class="mb-2 font-20">22%</h4>
                             <p class="mb-3">Available rooms</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
@@ -50,7 +48,7 @@ Neon - Home
                 <div class="card bg-danger-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <p class="xp-icon-timer mb-4"><i class="fas fa-calendar-check"></i></i></p>
                             <h4 class="mb-2 font-20">18%</h4>
                             <p class="mb-3">Check out</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
@@ -62,7 +60,7 @@ Neon - Home
                 <div class="card bg-warning-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <p class="xp-icon-timer mb-4"><i class="fas fa-bed"></i></p>
                             <h4 class="mb-2 font-20">30%</h4>
                             <p class="mb-3">Stay Over</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
@@ -71,10 +69,10 @@ Neon - Home
                 </div>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3">
-                <div class="card bg-success-gradient m-b-30">
+                <div class="card bg-primary-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <p class="xp-icon-timer mb-4"><i class="fas fa-exclamation-circle"></i></p>
                             <h4 class="mb-2 font-20">03%</h4>
                             <p class="mb-3">Out of order</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
@@ -83,7 +81,6 @@ Neon - Home
                 </div>
             </div>
         </div>
->>>>>>> Stashed changes
         <div class="col-md-12 col-lg-12 col-xl-7">
             <!-- Start XP Row -->
             <div class="row">                             
@@ -127,14 +124,16 @@ Neon - Home
                                 <div class="row">
                                     <div class="col-md-6 col-lg-5 align-self-center">
                                         <p class="xp-icon-timer mb-5"><i class="icon-hourglass"></i></p>
-                                        <h4 class="mb-0 font-26">5.3 hrs</h4>
+                                        <h4 class="mb-0 font-26">318 minutes</h4>
                                         <p class="mb-2">Avg Members Sessions</p>
                                         <p class="mb-0"><span class="f-w-7">+18.68%</span> <span class="font-12">vs in last 7 days</span></p>   
                                     </div>
-                                    <div class="col-md-6 col-lg-7">
-                                        <div id="xp-chartist-widget-bar" class="ct-chart ct-golden-section xp-chartist-label-placement xp-chartist-widget-color"></div>
-                                    </div>
-                                </div>                                            
+                                    
+                                    <div class="card-body" style="margin-left:-10%;">  
+                                            <div id="xp-chartist-svg-path-animations" class="ct-chart ct-golden-section xp-chartist-svg-path-animations"></div>
+                                    </div>                                       
+                                    
+                                    </div>                                            
                             </div>
                         </div>
                     </div>
@@ -215,22 +214,22 @@ Neon - Home
         <div class="col-md-12 col-lg-12 col-xl-4">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Project Resources</h5>
+                    <h5 class="card-title text-black mb-0">Rooms</h5>
                 </div>
                 <div class="card-body">                                    
                     <div id="xp-chartist-donut-fill-rather-chart" class="ct-chart ct-golden-section xp-chartist-donut-fill-rather-chart"></div>
                     <div class="xp-chart-label mt-3">                                        
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-primary"></i>Direct</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-primary"></i>Disponibles</p>
                                 <span class="badge badge-primary badge-pill">45%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-success"></i>Marketing</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-success"></i>Checkouts</p>
                                 <span class="badge badge-success badge-pill">35%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-danger"></i>Others</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-danger"></i>Stay Over</p>
                                 <span class="badge badge-danger badge-pill">20%</span>
                             </li>
                         </ul>
@@ -247,34 +246,33 @@ Neon - Home
                 </div>
                 <div class="card-body">
                     <div class="xp-actions-history">
-                        <div class="xp-actions-history-list">
+
+
+                        <div id="square" class="xp-actions-history-list animated bounceInLeft delay-1s">
                             <div class="xp-actions-history-item">                                            
-                                <h6 class="mb-1 text-black">Start Web Designing</h6>
+                                <h6 class="mb-1 text-black">Room #12</h6>
                                 <p class="text-muted font-12">5 mins ago</p>
-                                <p class="m-b-30">We are start working on USA Project</p>
+                                <p class="m-b-30">Start Cleaning</p>
                             </div>
                         </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Completed Theme Development</h6>
+
+                        <div id="square2" class="xp-actions-history-list animated bounceInLeft delay-2s">
+                            <div class="xp-actions-history-item">                                            
+                                <h6 class="mb-1 text-black">Room #22</h6>
                                 <p class="text-muted font-12">15 mins ago</p>
-                                <p class="m-b-30">We are completed a theme development into 5 days</p>
+                                <p class="m-b-30">Start Cleaning</p>
                             </div>
                         </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Project Submitted</h6>
-                                <p class="text-muted font-12">30 mins ago</p>
-                                <p class="m-b-30">We are done process of submitted project</p>
-                            </div>
-                        </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Received a Payment</h6>
+                        
+                        <div id="square3" class="xp-actions-history-list animated bounceInLeft delay-3s">
+                            <div class="xp-actions-history-item">                                            
+                                <h6 class="mb-1 text-black">Room #33</h6>
                                 <p class="text-muted font-12">45 mins ago</p>
-                                <p class="m-b-30">We got monthy payment from clients</p>
+                                <p class="m-b-30">Cleaning Finished</p>
                             </div>
                         </div>
+                    
+
                     </div>
                 </div>
             </div>
@@ -284,20 +282,20 @@ Neon - Home
         <div class="col-lg-6 col-xl-4">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Social Profile</h5>
+                    <h5 class="card-title text-black mb-0">Employee of the Month</h5>
                 </div>
                 <div class="card-body">
                     <div class="xp-social-profile">
                         <div class="xp-social-profile-img">
                             <div class="row">
                                 <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-circle.jpg" class="rounded img-fluid" alt="img">
+                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
                                 </div>
                                 <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-rounded.jpg" class="rounded img-fluid" alt="img">
+                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
                                 </div>
                                 <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-thumbnail.jpg" class="rounded img-fluid" alt="img">
+                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -310,7 +308,7 @@ Neon - Home
                                 </div>
                                 <div class="col-6">
                                     <div class="xp-social-profile-avatar text-center">
-                                        <img src="assets/images/ui-media/media-image-8.jpg" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
+                                        <img src="https://www.thispersondoesnotexist.com/image" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -340,19 +338,19 @@ Neon - Home
                                 <div class="col-4">
                                     <div class="xp-social-profile-media pt-3">
                                         <h5 class="text-black my-1">45</h5>
-                                        <p class="mb-0 text-muted">Posts</p>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Wipers today</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-followers pt-3">
-                                        <h5 class="text-black my-1">278k</h5>
-                                        <p class="mb-0 text-muted">Fans</p>
+                                        <h5 class="text-black my-1">27</h5>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Average</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-following pt-3">
                                         <h5 class="text-black my-1">552</h5>
-                                        <p class="mb-0 text-muted">Likes</p>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Total</p>
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +373,7 @@ Neon - Home
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control" id="todo-list-item" placeholder="What do you need to do today?" aria-label="What do you need to do today?" aria-describedby="button-addon-to-do-list">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary add" id="button-addon-to-do-list" type="submit">Add to List</button>
+                                    <button class="btn btn-primary add" onclick="displayDate()" id="button-addon-to-do-list" type="submit">Add to List</button>
                                 </div>
                             </div>
                         </form>
@@ -389,140 +387,66 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row">
         <!-- Start XP Col -->
-        <div class="col-md-12 col-lg-8 col-xl-8 align-self-center">
+        <div class="col-md-12 col-lg-12 col-xl-12 align-self-center">
             <div class="card bg-white m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Our Projects</h5>
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Our Projects</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
-                                <tr>
-                                    <th class="border-top-0">Index</th>
-                                    <th class="border-top-0">Project Name</th>
-                                    <th class="border-top-0">Earnings</th>
-                                    <th class="border-top-0">Start Date</th>
-                                    <th class="border-top-0">Due Date</th>
-                                    <th class="border-top-0">Reviews</th>
-                                    <th class="border-top-0">Status</th>
+                                <tr style="text-align:center;">
+                                    <th class="border-top-0">Room number</th>
+                                    <th class="border-top-0">Who deposit</th>
+                                    <th class="border-top-0">When</th>
+                                    <th class="border-top-0">Total(Days)</th>
+                                    <th class="border-top-0">Details</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr style="text-align:center;">
                                     <td>1</td>
                                     <td>
-                                        <a href="javascript:void(0);">Web Designing</a>
+                                        <a href="javascript:void(0);">Diego</a>
                                     </td>
-                                    <td>$100</td>                                 
+                                                                    
                                     <td>01/05/2018</td>
-                                    <td>30/07/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-success btn-shadow">Completed</span>
-                                    </td>
+                                    <td>30</td>
+                                    <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
+                                <tr style="text-align:center;">
+                                    <td>12</td>
                                     <td>
-                                        <a href="javascript:void(0);">Website Development</a>
+                                        <a href="javascript:void(0);">Samuel</a>
                                     </td>
-                                    <td>$300</td>                                 
-                                    <td>10/08/2018</td>
-                                    <td>15/09/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-primary btn-shadow">Running</span>
-                                    </td>
+                                                                   
+                                    <td>01/05/2018</td>
+                                    <td>8</td>
+                                    <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
+                                <tr style="text-align:center;">
+                                    <td>10</td>
                                     <td>
-                                        <a href="javascript:void(0);">UI App Kit</a>
+                                        <a href="javascript:void(0);">Gerardo</a>
                                     </td>
-                                    <td>$250</td>                                 
-                                    <td>05/05/2018</td>
-                                    <td>20/07/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-danger btn-shadow">Cancelled</span>
-                                    </td>
+                                                                   
+                                    <td>01/05/2018</td>
+                                    <td>12</td>
+                                    <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
-                                <tr>
-                                    <td>4</td>
+                                <tr style="text-align:center;">
+                                    <td>11</td>
                                     <td>
-                                        <a href="javascript:void(0);">Social Marketing</a>
+                                        <a href="javascript:void(0);">Talita</a>
                                     </td>
-                                    <td>$550</td>                                 
-                                    <td>01/06/2018</td>
-                                    <td>30/08/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-info btn-shadow">Pending</span>
-                                    </td>
+                                                                   
+                                    <td>01/05/2018</td>
+                                    <td>55</td>
+                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                 
                                 </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>
-                                        <a href="javascript:void(0);">App Development</a>
-                                    </td>
-                                    <td>$270</td>                                 
-                                    <td>11/04/2018</td>
-                                    <td>25/05/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-secondary btn-shadow">Processing</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Logo Designing</a>
-                                    </td>
-                                    <td>$150</td>                                 
-                                    <td>10/04/2018</td>
-                                    <td>21/05/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-success btn-shadow">Completed</span>
-                                    </td>
-                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -531,23 +455,132 @@ Neon - Home
         </div>
         <!-- End XP Col -->
         <!-- Start XP Col -->
-        <div class="col-md-12 col-lg-4 col-xl-4">
-            <div class="card m-b-30">
-                <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Calender</h5>
-                </div>
-                <div class="card-body">
-                    <div data-language="en" class="datepicker-here"></div>
-                </div>
-            </div>
-        </div>
+       
         <!-- End XP Col -->
-    </div>   
+    </div> 
+    <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                    <div class="card m-b-30">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title text-black mb-0">Calender</h5>
+                        </div>
+                        <div class="card-body">
+                            <div data-language="en" class="datepicker-here" ></div>
+                            <calendar-component></calendar-component>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <callendar-component></callendar-component>
     <!-- End XP Row -->
 </div>
 <!-- End XP Contentbar -->
 @endsection 
 @section('script')
+<script>
+$(document).ready(function(){
+
+setTimeout(function(){   
+     $('#square3').addClass('bounceOutRight')
+},2000);
+
+setTimeout(function(){
+     $('#square3').addClass('highlight');
+},6000);
+
+setTimeout(function(){
+     $('#square2').addClass('bounceOutRight')
+},6000);
+setTimeout(function(){
+     $('#square2').addClass('highlight');
+},10000);
+setTimeout(function(){
+     $('#square').addClass('bounceOutRight')
+},8000);
+setTimeout(function(){
+     $('#square').addClass('highlight');
+},12000);
+
+setTimeout(function(){
+    $('#square').removeClass('bounceOutRight highlight')
+     $('#square').addClass('highlight-back')         
+},13000);
+
+setTimeout(function(){
+    $('#square2').removeClass('bounceOutRight highlight')
+     $('#square2').addClass('highlight-back')
+},14000);
+setTimeout(function(){
+    $('#square3').removeClass('bounceOutRight highlight')
+     $('#square3').addClass('highlight-back')
+},15000);
+
+setTimeout(function(){
+  
+    displayDate()
+},15000);
+setTimeout(function(){
+   
+    displayDate()
+},25000);
+setTimeout(function(){
+    
+    displayDate()
+},50000);
+setTimeout(function(){
+    
+    displayDate()
+},100000);
+setTimeout(function(){
+    
+    displayDate()
+},200000);
+
+
+
+
+});
+</script>
+<script>
+function displayDate() {
+ 
+setTimeout(function(){   
+     $('#square3').addClass('bounceOutRight')
+},2000);
+
+setTimeout(function(){
+     $('#square3').addClass('highlight');
+},6000);
+
+setTimeout(function(){
+     $('#square2').addClass('bounceOutRight')
+},6000);
+setTimeout(function(){
+     $('#square2').addClass('highlight');
+},10000);
+setTimeout(function(){
+     $('#square').addClass('bounceOutRight')
+},8000);
+setTimeout(function(){
+     $('#square').addClass('highlight');
+},12000);
+
+setTimeout(function(){
+    $('#square').removeClass('bounceOutRight highlight')
+     $('#square').addClass('highlight-back')         
+},13000);
+
+setTimeout(function(){
+    $('#square2').removeClass('bounceOutRight highlight')
+     $('#square2').addClass('highlight-back')
+},14000);
+setTimeout(function(){
+    $('#square3').removeClass('bounceOutRight highlight')
+     $('#square3').addClass('highlight-back')
+},15000);
+
+}
+</script>
 <!-- Chartist Chart JS -->
 <script src="{{ asset('assets/plugins/chartist-js/chartist.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/chartist-js/chartist-plugin-tooltip.min.js') }}"></script>
