@@ -37,7 +37,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                            <h4 class="mb-2 font-20">22%</h4>
+                            <h4 class="mb-2 font-20">42%</h4>
                             <p class="mb-3">Available rooms</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -61,7 +61,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                            <h4 class="mb-2 font-20">30%</h4>
+                            <h4 class="mb-2 font-20">33%</h4>
                             <p class="mb-3">Stay Over</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -73,7 +73,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                            <h4 class="mb-2 font-20">03%</h4>
+                            <h4 class="mb-2 font-20">6%</h4>
                             <p class="mb-3">Out of order</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>

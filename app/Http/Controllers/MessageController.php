@@ -102,6 +102,9 @@ class MessageController extends Controller
             DB::raw("IF(`from_id` = $userId, TRUE, FALSE) as written_by_me"), 
             'created_at',
             'content',
+            'tipo',
+            'created_at',
+            'id',
             )->where(function($query) use ($userId, $contactId){
                 $query->where('from_id', $userId)->where('to_id', $contactId);
             })->orWhere(function($query) use ($userId, $contactId){
@@ -109,5 +112,37 @@ class MessageController extends Controller
             })->get();
             
            
+    }
+
+    public function ticket(Request $request){
+        $data = json_decode(file_get_contents('php://input'), true);
+        $data['message_id'];
+        $mensajeCopiar = Message::where('id', $data['message_id'])->first();
+       
+        
+        $message = new Message();
+        $message->from_id = $mensajeCopiar->from_id;
+        $message->to_id = $mensajeCopiar->to_id;
+        $message->content = $mensajeCopiar->content;
+        $message->tipo = 1;
+       $message->save();
+
+
+    }
+
+    public function requirement(Request $request){
+        $data = json_decode(file_get_contents('php://input'), true);
+        $data['message_id'];
+        $mensajeCopiar = Message::where('id', $data['message_id'])->first();
+       
+        
+        $message = new Message();
+        $message->from_id = $mensajeCopiar->from_id;
+        $message->to_id = $mensajeCopiar->to_id;
+        $message->content = $mensajeCopiar->content;
+        $message->tipo = 2;
+       $message->save();
+
+
     }
 }

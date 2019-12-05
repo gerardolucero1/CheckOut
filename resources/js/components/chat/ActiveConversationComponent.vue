@@ -11,6 +11,10 @@
                     <message-conversation-component 
                         v-for="(message, index) in messages" 
                         :key="index"
+                        :tipo="message.tipo"
+                        :id="message.id"
+                        :content="message.content"
+                        :created="message.created_at"
                         :written-by-me="message.written_by_me"
                         @click.native="createTicket(message)"
                         >
@@ -43,9 +47,9 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <ul class="list-group text-center">
-                            <li class="list-group-item">Action number 1</li>
-                            <li class="list-group-item">Action number 2</li>
-                            <li class="list-group-item">Action number 3</li>
+                            <li class="list-group-item"><p @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</p></li>
+                            <li class="list-group-item"><p @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</p></li>
+                            <li class="list-group-item">Marcar como tarea:</li>
                         </ul>
                     </div>
                 </div>
@@ -61,9 +65,15 @@ export default {
         contactName: String,
         messages: Array,
     },
+    
     data(){
         return{
             newMessage: '',
+            message:[],
+            content:'',
+            room:[],
+            numRoom:'',
+            message_id:'',
         }
     },
     mounted(){
@@ -94,10 +104,54 @@ export default {
             scroll.scrollTop = scroll.scrollHeight
         },
 
-        createTicket(message){
+        createTicket(message, key){
+            
             $('#ticketOptions').modal('show')
-            console.log(message)
-        }
+            var regex = /(\d+)/g;
+            this.message=message;
+            this.message_id=message.id;
+            this.content = message.content;
+            this.room=this.content.match(regex);
+            var ant=0;
+            var mayor=0;
+            this.numRoom='No se encontraron # de habitacion en el mensaje';
+
+            this.room.forEach( function(a){
+               
+                if(parseInt(a)>parseInt(ant)){
+                ant=a;
+                }
+            } );
+            this.numRoom=ant;
+           
+                        
+           
+            
+        },
+        crearTicket(message_id){
+            let URL = '/api/ticket'
+
+            const params = {
+                message_id: message_id,
+            }
+
+            axios.post(URL, params).then((response) => {
+               this.$emit('updateMessages')
+            })
+        },
+
+        crearRequeriment(message_id){
+            let URL = '/api/requeriment'
+
+            const params = {
+                message_id: message_id,
+            }
+
+            axios.post(URL, params).then((response) => {
+               this.$emit('updateMessages')
+            })
+        },
+        
     },
 }
 </script>

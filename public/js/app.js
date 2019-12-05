@@ -2547,6 +2547,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contactId: Number,
@@ -2555,7 +2559,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      newMessage: ''
+      newMessage: '',
+      message: [],
+      content: '',
+      room: [],
+      numRoom: '',
+      message_id: ''
     };
   },
   mounted: function mounted() {},
@@ -2583,9 +2592,44 @@ __webpack_require__.r(__webpack_exports__);
       var scroll = document.querySelector('#messages-container');
       scroll.scrollTop = scroll.scrollHeight;
     },
-    createTicket: function createTicket(message) {
+    createTicket: function createTicket(message, key) {
       $('#ticketOptions').modal('show');
-      console.log(message);
+      var regex = /(\d+)/g;
+      this.message = message;
+      this.message_id = message.id;
+      this.content = message.content;
+      this.room = this.content.match(regex);
+      var ant = 0;
+      var mayor = 0;
+      this.numRoom = 'No se encontraron # de habitacion en el mensaje';
+      this.room.forEach(function (a) {
+        if (parseInt(a) > parseInt(ant)) {
+          ant = a;
+        }
+      });
+      this.numRoom = ant;
+    },
+    crearTicket: function crearTicket(message_id) {
+      var _this2 = this;
+
+      var URL = '/api/ticket';
+      var params = {
+        message_id: message_id
+      };
+      axios.post(URL, params).then(function (response) {
+        _this2.$emit('updateMessages');
+      });
+    },
+    crearRequeriment: function crearRequeriment(message_id) {
+      var _this3 = this;
+
+      var URL = '/api/requeriment';
+      var params = {
+        message_id: message_id
+      };
+      axios.post(URL, params).then(function (response) {
+        _this3.$emit('updateMessages');
+      });
     }
   }
 });
@@ -2715,9 +2759,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    writtenByMe: Boolean
+    writtenByMe: Boolean,
+    tipo: Boolean
   },
   data: function data() {
     return {
@@ -2737,6 +2788,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2803,7 +2855,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addMessage: function addMessage(message) {
-      Push.create('Hello World!');
       var conversation = this.conversations.find(function (element) {
         return element.contact_id == message.from_id || element.contact_id == message.to_id;
       });
@@ -38023,7 +38074,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.action[data-v-37c13faf]{\n    font-size: 10px;\n    text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.action[data-v-37c13faf]{\n        font-size: 10px;\n        text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n        padding: 5px;\n}\n.ticket[data-v-37c13faf]{\n        background: #FFFDC8;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.requerimento[data-v-37c13faf]{\n        background: #C8E8FF;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n", ""]);
 
 // exports
 
@@ -79486,7 +79537,13 @@ var render = function() {
                   "message-conversation-component",
                   {
                     key: index,
-                    attrs: { "written-by-me": message.written_by_me },
+                    attrs: {
+                      tipo: message.tipo,
+                      id: message.id,
+                      content: message.content,
+                      created: message.created_at,
+                      "written-by-me": message.written_by_me
+                    },
                     nativeOn: {
                       click: function($event) {
                         return _vm.createTicket(message)
@@ -79584,15 +79641,7 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
+    _c(
       "div",
       {
         staticClass: "modal fade",
@@ -79616,15 +79665,35 @@ var staticRenderFns = [
               _c("div", { staticClass: "modal-body" }, [
                 _c("ul", { staticClass: "list-group text-center" }, [
                   _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v("Action number 1")
+                    _c(
+                      "p",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.crearTicket(_vm.message_id)
+                          }
+                        }
+                      },
+                      [_vm._v("New Ticket Room: #" + _vm._s(_vm.numRoom))]
+                    )
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v("Action number 2")
+                    _c(
+                      "p",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.crearRequeriment(_vm.message_id)
+                          }
+                        }
+                      },
+                      [_vm._v("New Requirement Room: #" + _vm._s(_vm.numRoom))]
+                    )
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v("Action number 3")
+                    _vm._v("Marcar como tarea:")
                   ])
                 ])
               ])
@@ -79633,8 +79702,9 @@ var staticRenderFns = [
         )
       ]
     )
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -79808,8 +79878,44 @@ var render = function() {
         [
           _c(
             "b-card",
-            { staticClass: "p-3 small", attrs: { "no-body": "" } },
-            [_vm._t("default")],
+            {
+              staticClass: "p-3 small",
+              class: { ticket: _vm.tipo == 1, requerimento: _vm.tipo == 2 },
+              attrs: { "no-body": "" }
+            },
+            [
+              _vm.tipo == 1
+                ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
+                    _vm._v("*Support ticket:")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipo == 2
+                ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
+                    _vm._v("*Requirement:")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipo == 1 || _vm.tipo == 2
+                ? _c("p", [_vm._v("Descripción:")])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm._t("default"),
+              _vm._v(" "),
+              _vm.tipo == 1
+                ? _c(
+                    "p",
+                    {
+                      staticStyle: {
+                        "font-size": "11px",
+                        "font-style": "italic",
+                        "padding-top": "5px"
+                      }
+                    },
+                    [_vm._v("Created on December 6, 2019")]
+                  )
+                : _vm._e()
+            ],
             2
           )
         ],
@@ -79871,6 +79977,9 @@ var render = function() {
               on: {
                 messageCreated: function($event) {
                   return _vm.addMessage($event)
+                },
+                updateMessages: function($event) {
+                  return _vm.getMessages()
                 }
               }
             })
@@ -92033,7 +92142,6 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'push.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -92043,9 +92151,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-
 Vue.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
-Vue.use(!(function webpackMissingModule() { var e = new Error("Cannot find module 'push.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
