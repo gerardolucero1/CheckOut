@@ -13091,18 +13091,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/main.esm.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
+/* harmony import */ var _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/vue */ "./node_modules/@fullcalendar/vue/main.esm.js");
+/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.esm.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    FullCalendar: _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_0__["default"] // make the <FullCalendar> tag available
+    FullCalendar: _fullcalendar_vue__WEBPACK_IMPORTED_MODULE_1__["default"] // make the <FullCalendar> tag available
 
   },
   data: function data() {
     return {
-      calendarPlugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"]]
+      calendarPlugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"]]
     };
   }
 });
@@ -90590,8 +90590,9 @@ var render = function() {
                 _c("ul", { staticClass: "list-group text-center" }, [
                   _c("li", { staticClass: "list-group-item" }, [
                     _c(
-                      "p",
+                      "button",
                       {
+                        staticClass: "btn btn-info",
                         on: {
                           click: function($event) {
                             return _vm.crearTicket(_vm.message_id)
@@ -90604,8 +90605,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("li", { staticClass: "list-group-item" }, [
                     _c(
-                      "p",
+                      "button",
                       {
+                        staticClass: "btn btn-info",
                         on: {
                           click: function($event) {
                             return _vm.crearRequeriment(_vm.message_id)
@@ -90616,9 +90618,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v("Marcar como tarea:")
-                  ])
+                  _vm._m(0)
                 ])
               ])
             ])
@@ -90628,7 +90628,18 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "list-group-item" }, [
+      _c("button", { staticClass: "btn btn-info" }, [
+        _vm._v("Marcar como tarea")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -103849,8 +103860,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gizflores\Desktop\CheckOut\CheckOut\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Gizflores\Desktop\CheckOut\CheckOut\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

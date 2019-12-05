@@ -75,7 +75,7 @@ Employees
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>Housekeeper</td>
-                                        <td>DaffyDuckWizard</td>
+                                        <td>{{ $user->email }}</td>
                                         <td>active</td>
                                         <td class="text-center">
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>

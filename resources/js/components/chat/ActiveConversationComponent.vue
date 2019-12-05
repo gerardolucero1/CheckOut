@@ -47,9 +47,9 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <ul class="list-group text-center">
-                            <li class="list-group-item"><p @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</p></li>
-                            <li class="list-group-item"><p @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</p></li>
-                            <li class="list-group-item">Marcar como tarea:</li>
+                            <li class="list-group-item"><button class="btn btn-info" @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</button></li>
+                            <li class="list-group-item"><button class="btn btn-info" @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</button></li>
+                            <li class="list-group-item"><button class="btn btn-info">Marcar como tarea</button></li>
                         </ul>
                     </div>
                 </div>
