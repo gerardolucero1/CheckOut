@@ -79,6 +79,10 @@ Route::group(['middleware' => ['auth']], function () {
     //Rutas Control
     Route::get('control/rooms', 'ControlController@rooms_control')->name('control.rooms_control');
     Route::get('control/assign-rooms', 'ControlController@assign_rooms_control')->name('control.assign_rooms_control');
+    Route::get('control/schedules', 'ControlController@schedules')->name('control.schedules');
+    Route::get('control/pending-review', 'ControlController@rooms_pending_review')->name('control.rooms_pending_review');
+        //Obtener usuarios
+        Route::get('control/get-users', 'ControlController@get_users');
         //Obtener pisos
         Route::get('control/get-floors', 'ControlController@get_floors');
         //Actualizar status de las habitaciones

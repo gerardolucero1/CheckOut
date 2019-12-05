@@ -3,6 +3,8 @@
 namespace App;
 
 use App\User;
+use App\Floor;
+use App\Room;
 use App\SubInventory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,5 +30,10 @@ class Hotel extends Model
     public function floors()
     {
         return $this->hasMany(Floor::class, 'hotel_id');
+    }
+
+    public function rooms()
+    {
+        return $this->hasManyThrough(Room::class, Floor::class);
     }
 }

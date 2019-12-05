@@ -18,7 +18,7 @@ class CreateRoomsTable extends Migration
             $table->integer('floor_id')->unsigned();
             $table->string('name');
             $table->string('type');
-            $table->enum('status', ['Check Out', 'Stay Over', 'Other', 'Vacancy', 'Pending Review'])->nullable();
+            $table->enum('status', ['Check Out', 'Stay Over', 'Other', 'Vacancy', 'Pending Review', 'Rush'])->nullable();
             $table->timestamps();
 
             //Relations
