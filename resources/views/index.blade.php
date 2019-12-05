@@ -31,6 +31,56 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row"> 
         <!-- Start XP Col -->   
+        <div class="col-md-12 row">
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">22%</h4>
+                            <p class="mb-3">Available rooms</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">18%</h4>
+                            <p class="mb-3">Check out</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">30%</h4>
+                            <p class="mb-3">Stay Over</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">03%</h4>
+                            <p class="mb-3">Out of order</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12 col-lg-12 col-xl-7">
             <!-- Start XP Row -->
             <div class="row">                             
@@ -44,11 +94,11 @@ Neon - Home
                             <div class="xp-chart-label">
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <p class="text-black">Current Week</p>
+                                        <p class="text-black">Current Month</p>
                                         <h4 class="text-primary-gradient mb-3"><i class="icon-wallet mr-2"></i>78,254</h4>
                                     </li>
                                     <li class="list-inline-item">
-                                        <p class="text-black">Previous Week</p>
+                                        <p class="text-black">Previous Month</p>
                                         <h4 class="text-success-gradient mb-3"><i class="icon-wallet mr-2"></i>58,605</h4>
                                     </li>
                                 </ul>
@@ -63,6 +113,7 @@ Neon - Home
         </div>          
         <!-- End XP Col -->
         <!-- Start XP Col -->
+       
         <div class="col-md-12 col-lg-12 col-xl-5">
             <!-- Start XP Row -->
             <div class="row">
@@ -74,9 +125,10 @@ Neon - Home
                                 <div class="row">
                                     <div class="col-md-6 col-lg-5 align-self-center">
                                         <p class="xp-icon-timer mb-5"><i class="icon-hourglass"></i></p>
-                                        <h4 class="mb-0 font-26">5.3 hrs</h4>
-                                        <p class="mb-2">Avg Members Sessions</p>
-                                        <p class="mb-0"><span class="f-w-7">+18.68%</span> <span class="font-12">vs in last 7 days</span></p>   
+                                        <h4 class="mb-0 font-26">23.3 min</h4>
+                                        <p class="mb-2">
+                                            Average Cleaning Time Per Room</p>
+                                        <p class="mb-0"><span class="f-w-7">+10.68%</span> <span class="font-12">vs in last 7 days</span></p>   
                                     </div>
                                     <div class="col-md-6 col-lg-7">
                                         <div id="xp-chartist-widget-bar" class="ct-chart ct-golden-section xp-chartist-label-placement xp-chartist-widget-color"></div>
