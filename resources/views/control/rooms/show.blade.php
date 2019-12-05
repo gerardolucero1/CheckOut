@@ -213,7 +213,7 @@ Rooms assigned - {{ $revision->room->name }}
                                         <th scope="row">1</th>
                                         <td>12/03/2019</td>
                                         <td>5</td>
-                                        <td>Ayeon Son</td>
+                                        <td>Alejandra Lozano</td>
                                         <td>05:00</td>
                                         <td>
                                             <button type="button" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> OPT</button>
@@ -223,7 +223,7 @@ Rooms assigned - {{ $revision->room->name }}
                                         <th scope="row">1</th>
                                         <td>05/08/2019</td>
                                         <td>6</td>
-                                        <td>Yuki Im</td>
+                                        <td>John Doe</td>
                                         <td>03:00</td>
                                         <td>
                                             <button type="button" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> OPT</button>
@@ -233,7 +233,7 @@ Rooms assigned - {{ $revision->room->name }}
                                         <th scope="row">1</th>
                                         <td>06/08/2019</td>
                                         <td>5</td>
-                                        <td>Yuki Im</td>
+                                        <td>Ada Lima</td>
                                         <td>08:00</td>
                                         <td>
                                             <button type="button" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> OPT</button>

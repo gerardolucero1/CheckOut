@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Floor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FloorController extends Controller
 {
@@ -61,7 +62,9 @@ class FloorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $floor = Floor::findOrFail($id);
+        $inventories = Auth::user()->hotel->subInventories->pluck('name', 'id');
+        return view('floors.edit', compact('floor', 'inventories'));
     }
 
     /**
@@ -73,7 +76,11 @@ class FloorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $floor = Floor::findOrFail($id);
+        $floor->fill($request->all())->save();
+
+        return redirect()->route('floors.index')
+            ->with('info', 'Floor updated succesfully');
     }
 
     /**

@@ -99,7 +99,7 @@ class MessageController extends Controller
         $contactId = $request->contact_id;
         return Message::select(
             'id', 
-            DB::raw("IF(`from_id` = $userId, TRUE, FALSE) as written_by_me"), 
+            DB::raw("IF(`from_id` = $userId, 1, 0) as written_by_me"), 
             'created_at',
             'content',
             'tipo',

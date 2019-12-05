@@ -33,49 +33,49 @@ Neon - Home
         <!-- Start XP Col -->   
         <div class="col-md-12 row">
             <div class="col-md-3 col-lg-3 col-xl-3">
-                <div class="card bg-success-gradient m-b-30">
+                <div class="card bg-info-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                           
                             <h4 class="mb-2 font-20">42%</h4>
                             <p class="mb-3">Available rooms</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <button class="btn btn-white btn-rounded text-info">See Rooms</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3">
-                <div class="card bg-success-gradient m-b-30">
+                <div class="card bg-info-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            
                             <h4 class="mb-2 font-20">18%</h4>
                             <p class="mb-3">Check out</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <button class="btn btn-white btn-rounded text-info">See Rooms</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3">
-                <div class="card bg-success-gradient m-b-30">
+                <div class="card bg-info-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            
                             <h4 class="mb-2 font-20">33%</h4>
                             <p class="mb-3">Stay Over</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <button class="btn btn-white btn-rounded text-info">See Rooms</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3">
-                <div class="card bg-success-gradient m-b-30">
+                <div class="card bg-info-gradient m-b-30">
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
-                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            
                             <h4 class="mb-2 font-20">6%</h4>
                             <p class="mb-3">Out of order</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <button class="btn btn-white btn-rounded text-info">See Rooms</button>
                         </div>
                     </div>
                 </div>
@@ -130,49 +130,22 @@ Neon - Home
                                             Average Cleaning Time Per Room</p>
                                         <p class="mb-0"><span class="f-w-7">+10.68%</span> <span class="font-12">vs in last 7 days</span></p>   
                                     </div>
-                                    <div class="col-md-6 col-lg-7">
-                                        <div id="xp-chartist-widget-bar" class="ct-chart ct-golden-section xp-chartist-label-placement xp-chartist-widget-color"></div>
-                                    </div>
-                                </div>                                            
+                                    
+                                    <div class="card-body" style="margin-left:-10%;">  
+                                            <div id="xp-chartist-svg-path-animations" class="ct-chart ct-golden-section xp-chartist-svg-path-animations"></div>
+                                    </div>                                       
+                                    
+                                    </div>                                            
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End XP Col -->
                 <!-- Start XP Col -->                       
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-success-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                                <h4 class="mb-2 font-20">Congratulations, Alex!</h4>
-                                <p class="mb-3">Welcome aboard, Thank you for joining our Team.</p>
-                                <button class="btn btn-white btn-rounded text-success">Ok, got it!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- End XP Col -->
                 <!-- Start XP Col -->
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-danger-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box xp-widget-newsletter text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-paper-plane"></i></p>
-                                <h4 class="mb-2 font-20">Subscribe to Newsletter</h4>
-                                <p class="mb-3">Please, provide your email address to get latest updates.</p>
-                                <form>
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Enter Email" aria-label="Search" aria-describedby="button-addon-news">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit" id="button-addon-news">GO</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- End XP Col -->
             </div>
             <!-- End XP Row -->
@@ -214,22 +187,22 @@ Neon - Home
         <div class="col-md-12 col-lg-12 col-xl-4">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Project Resources</h5>
+                    <h5 class="card-title text-black mb-0">Rooms</h5>
                 </div>
                 <div class="card-body">                                    
                     <div id="xp-chartist-donut-fill-rather-chart" class="ct-chart ct-golden-section xp-chartist-donut-fill-rather-chart"></div>
                     <div class="xp-chart-label mt-3">                                        
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-primary"></i>Direct</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-primary"></i>Aviable</p>
                                 <span class="badge badge-primary badge-pill">45%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-success"></i>Marketing</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-success"></i>Checkouts</p>
                                 <span class="badge badge-success badge-pill">35%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <p class="mb-0"><i class="mdi mdi-circle-outline text-danger"></i>Others</p>
+                                <p class="mb-0"><i class="mdi mdi-circle-outline text-danger"></i>Stay Over</p>
                                 <span class="badge badge-danger badge-pill">20%</span>
                             </li>
                         </ul>
@@ -246,34 +219,33 @@ Neon - Home
                 </div>
                 <div class="card-body">
                     <div class="xp-actions-history">
-                        <div class="xp-actions-history-list">
+
+
+                        <div id="square" class="xp-actions-history-list animated bounceInLeft delay-1s">
                             <div class="xp-actions-history-item">                                            
-                                <h6 class="mb-1 text-black">Start Web Designing</h6>
+                                <h6 class="mb-1 text-black">Room #12</h6>
                                 <p class="text-muted font-12">5 mins ago</p>
-                                <p class="m-b-30">We are start working on USA Project</p>
+                                <p class="m-b-30">Start Cleaning</p>
                             </div>
                         </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Completed Theme Development</h6>
+
+                        <div id="square2" class="xp-actions-history-list animated bounceInLeft delay-2s">
+                            <div class="xp-actions-history-item">                                            
+                                <h6 class="mb-1 text-black">Room #22</h6>
                                 <p class="text-muted font-12">15 mins ago</p>
-                                <p class="m-b-30">We are completed a theme development into 5 days</p>
+                                <p class="m-b-30">Start Cleaning</p>
                             </div>
                         </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Project Submitted</h6>
-                                <p class="text-muted font-12">30 mins ago</p>
-                                <p class="m-b-30">We are done process of submitted project</p>
-                            </div>
-                        </div>
-                        <div class="xp-actions-history-list">
-                            <div class="xp-actions-history-item">
-                                <h6 class="mb-1 text-black">Received a Payment</h6>
+                        
+                        <div id="square3" class="xp-actions-history-list animated bounceInLeft delay-3s">
+                            <div class="xp-actions-history-item">                                            
+                                <h6 class="mb-1 text-black">Room #33</h6>
                                 <p class="text-muted font-12">45 mins ago</p>
-                                <p class="m-b-30">We got monthy payment from clients</p>
+                                <p class="m-b-30">Cleaning Finished</p>
                             </div>
                         </div>
+                    
+
                     </div>
                 </div>
             </div>
@@ -283,22 +255,12 @@ Neon - Home
         <div class="col-lg-6 col-xl-4">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Social Profile</h5>
+                    <h5 class="card-title text-black mb-0">Employee of the Month</h5>
                 </div>
                 <div class="card-body">
                     <div class="xp-social-profile">
                         <div class="xp-social-profile-img">
-                            <div class="row">
-                                <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-circle.jpg" class="rounded img-fluid" alt="img">
-                                </div>
-                                <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-rounded.jpg" class="rounded img-fluid" alt="img">
-                                </div>
-                                <div class="col-4 px-1">
-                                    <img src="assets/images/ui-images/image-thumbnail.jpg" class="rounded img-fluid" alt="img">
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="xp-social-profile-top">
                             <div class="row">
@@ -309,7 +271,7 @@ Neon - Home
                                 </div>
                                 <div class="col-6">
                                     <div class="xp-social-profile-avatar text-center">
-                                        <img src="assets/images/ui-media/media-image-8.jpg" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
+                                        <img src="https://www.greycoatlumleys.co.uk/ugc/images/roles/housekeeper.jpg" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -323,13 +285,10 @@ Neon - Home
                             <div class="row">
                                 <div class="col-12">
                                     <div class="xp-social-profile-title">
-                                        <h5 class="my-1 text-black">karina_simons</h5>
+                                        <h5 class="my-1 text-black">karina Simons</h5>
                                     </div>
                                     <div class="xp-social-profile-subtitle">
-                                        <p class="mb-3 text-muted">Karina Simons</p>
-                                    </div>
-                                    <div class="xp-social-profile-desc">
-                                        <p class="text-muted mb-1">Lifestyle coach and photographer <br />delivering best images only...</p>
+                                        <p class="mb-3 text-muted">Housekeeper</p>
                                     </div>
                                 </div>
                             </div>
@@ -338,20 +297,20 @@ Neon - Home
                             <div class="row">
                                 <div class="col-4">
                                     <div class="xp-social-profile-media pt-3">
-                                        <h5 class="text-black my-1">45</h5>
-                                        <p class="mb-0 text-muted">Posts</p>
+                                        <h5 class="text-black my-1">4</h5>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Rooms Today</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-followers pt-3">
-                                        <h5 class="text-black my-1">278k</h5>
-                                        <p class="mb-0 text-muted">Fans</p>
+                                        <h5 class="text-black my-1">275</h5>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Total Rooms</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-following pt-3">
-                                        <h5 class="text-black my-1">552</h5>
-                                        <p class="mb-0 text-muted">Likes</p>
+                                        <h5 class="text-black my-1">15:45</h5>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Average Time</p>
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +333,7 @@ Neon - Home
                             <div class="input-group mt-3">
                                 <input type="text" class="form-control" id="todo-list-item" placeholder="What do you need to do today?" aria-label="What do you need to do today?" aria-describedby="button-addon-to-do-list">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary add" id="button-addon-to-do-list" type="submit">Add to List</button>
+                                    <button class="btn btn-primary add" onclick="displayDate()" id="button-addon-to-do-list" type="submit">Add to List</button>
                                 </div>
                             </div>
                         </form>
@@ -388,140 +347,127 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row">
         <!-- Start XP Col -->
-        <div class="col-md-12 col-lg-8 col-xl-8 align-self-center">
+        <div class="col-md-6 col-lg-6 col-xl-6 align-self-center">
             <div class="card bg-white m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Our Projects</h5>
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Current Tickets</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
-                                <tr>
-                                    <th class="border-top-0">Index</th>
-                                    <th class="border-top-0">Project Name</th>
-                                    <th class="border-top-0">Earnings</th>
-                                    <th class="border-top-0">Start Date</th>
-                                    <th class="border-top-0">Due Date</th>
-                                    <th class="border-top-0">Reviews</th>
+                                <tr style="text-align:center;">
+                                    <th class="border-top-0">Room</th>
                                     <th class="border-top-0">Status</th>
+                                    <th class="border-top-0">Date</th>
+                                    <th class="border-top-0">Total(Days)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
+                                <tr style="text-align:center;">
+                                    <td>503</td>
                                     <td>
-                                        <a href="javascript:void(0);">Web Designing</a>
+                                        <a href="javascript:void(0);">rady to check</a>
                                     </td>
-                                    <td>$100</td>                                 
-                                    <td>01/05/2018</td>
-                                    <td>30/07/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-success btn-shadow">Completed</span>
-                                    </td>
+                                                                    
+                                    <td>01/12/2019</td>
+                                    <td>5 Days</td>
+                                  
                                 </tr>
-                                <tr>
-                                    <td>2</td>
+                                <tr style="text-align:center;">
+                                    <td>102</td>
                                     <td>
-                                        <a href="javascript:void(0);">Website Development</a>
+                                        <a href="javascript:void(0);">In process</a>
                                     </td>
-                                    <td>$300</td>                                 
-                                    <td>10/08/2018</td>
-                                    <td>15/09/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-primary btn-shadow">Running</span>
-                                    </td>
+                                                                   
+                                    <td>01/12/2019</td>
+                                    <td>3 Days</td>
+                                   
                                 </tr>
-                                <tr>
-                                    <td>3</td>
+                                <tr style="text-align:center;">
+                                    <td>105</td>
                                     <td>
-                                        <a href="javascript:void(0);">UI App Kit</a>
+                                        <a href="javascript:void(0);">In process</a>
                                     </td>
-                                    <td>$250</td>                                 
-                                    <td>05/05/2018</td>
-                                    <td>20/07/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-danger btn-shadow">Cancelled</span>
-                                    </td>
+                                                                   
+                                    <td>05/12/2019</td>
+                                    <td>1 Days</td>
                                 </tr>
-                                <tr>
-                                    <td>4</td>
+                                <tr style="text-align:center;">
+                                    <td>119</td>
                                     <td>
-                                        <a href="javascript:void(0);">Social Marketing</a>
+                                        <a href="javascript:void(0);">rady to check</a>
                                     </td>
-                                    <td>$550</td>                                 
-                                    <td>01/06/2018</td>
-                                    <td>30/08/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-info btn-shadow">Pending</span>
-                                    </td>
+                                                                   
+                                    <td>03/12/2019</td>
+                                    <td>3 Days</td>
+                                 
                                 </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>
-                                        <a href="javascript:void(0);">App Development</a>
-                                    </td>
-                                    <td>$270</td>                                 
-                                    <td>11/04/2018</td>
-                                    <td>25/05/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-half text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-secondary btn-shadow">Processing</span>
-                                    </td>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6 col-xl-6 align-self-center">
+            <div class="card bg-white m-b-30">
+                <div class="card-header bg-white">
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Currently Working</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr style="text-align:center;">
+                                    <th class="border-top-0">Name</th>
+                                    <th class="border-top-0">Current Room</th>
+                                    <th class="border-top-0">Rooms</th>
+                                    <th class="border-top-0">Total Time</th>
                                 </tr>
-                                <tr>
-                                    <td>6</td>
+                            </thead>
+                            <tbody>
+                                <tr style="text-align:center;">
+                                    <td> <a href="javascript:void(0);">Ada Lima</a></td>
                                     <td>
-                                        <a href="javascript:void(0);">Logo Designing</a>
+                                       4
                                     </td>
-                                    <td>$150</td>                                 
-                                    <td>10/04/2018</td>
-                                    <td>21/05/2018</td>
-                                    <td>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star text-warning"></i>
-                                        <i class="mdi mdi-star-outline text-warning"></i>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-pill badge-success btn-shadow">Completed</span>
-                                    </td>
+                                                                    
+                                    <td>4/16</td>
+                                    <td>34min</td>
                                 </tr>
+                                <tr style="text-align:center;">
+                                    <td><a href="javascript:void(0);">Ana Aparicio</a></td>
+                                    <td>
+                                        1
+                                    </td>
+                                                                   
+                                    <td>1/16</td>
+                                    <td>50min</td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td> <a href="javascript:void(0);">Rogelio Martinez</a></td>
+                                    <td>
+                                       3
+                                    </td>
+                                                                   
+                                    <td>3/16</td>
+                                    <td>40min</td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td><a href="javascript:void(0);">Alan Diaz</a></td>
+                                    <td>
+                                        3
+                                    </td>
+                                                                   
+                                    <td>3/16</td>
+                                    <td>43min</td>
+
+                                 
+                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -530,23 +476,132 @@ Neon - Home
         </div>
         <!-- End XP Col -->
         <!-- Start XP Col -->
-        <div class="col-md-12 col-lg-4 col-xl-4">
-            <div class="card m-b-30">
-                <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Calender</h5>
-                </div>
-                <div class="card-body">
-                    <div data-language="en" class="datepicker-here"></div>
-                </div>
-            </div>
-        </div>
+       
         <!-- End XP Col -->
-    </div>   
+    </div> 
+    <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                    <div class="card m-b-30">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title text-black mb-0">Calender</h5>
+                        </div>
+                        <div class="card-body">
+                            <div data-language="en" class="datepicker-here" ></div>
+                            {{-- <calendar-component></calendar-component> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <callendar-component></callendar-component>
     <!-- End XP Row -->
 </div>
 <!-- End XP Contentbar -->
 @endsection 
 @section('script')
+<script>
+$(document).ready(function(){
+
+setTimeout(function(){   
+     $('#square3').addClass('bounceOutRight')
+},2000);
+
+setTimeout(function(){
+     $('#square3').addClass('highlight');
+},6000);
+
+setTimeout(function(){
+     $('#square2').addClass('bounceOutRight')
+},6000);
+setTimeout(function(){
+     $('#square2').addClass('highlight');
+},10000);
+setTimeout(function(){
+     $('#square').addClass('bounceOutRight')
+},8000);
+setTimeout(function(){
+     $('#square').addClass('highlight');
+},12000);
+
+setTimeout(function(){
+    $('#square').removeClass('bounceOutRight highlight')
+     $('#square').addClass('highlight-back')         
+},13000);
+
+setTimeout(function(){
+    $('#square2').removeClass('bounceOutRight highlight')
+     $('#square2').addClass('highlight-back')
+},14000);
+setTimeout(function(){
+    $('#square3').removeClass('bounceOutRight highlight')
+     $('#square3').addClass('highlight-back')
+},15000);
+
+setTimeout(function(){
+  
+    displayDate()
+},15000);
+setTimeout(function(){
+   
+    displayDate()
+},25000);
+setTimeout(function(){
+    
+    displayDate()
+},50000);
+setTimeout(function(){
+    
+    displayDate()
+},100000);
+setTimeout(function(){
+    
+    displayDate()
+},200000);
+
+
+
+
+});
+</script>
+<script>
+function displayDate() {
+ 
+setTimeout(function(){   
+     $('#square3').addClass('bounceOutRight')
+},2000);
+
+setTimeout(function(){
+     $('#square3').addClass('highlight');
+},6000);
+
+setTimeout(function(){
+     $('#square2').addClass('bounceOutRight')
+},6000);
+setTimeout(function(){
+     $('#square2').addClass('highlight');
+},10000);
+setTimeout(function(){
+     $('#square').addClass('bounceOutRight')
+},8000);
+setTimeout(function(){
+     $('#square').addClass('highlight');
+},12000);
+
+setTimeout(function(){
+    $('#square').removeClass('bounceOutRight highlight')
+     $('#square').addClass('highlight-back')         
+},13000);
+
+setTimeout(function(){
+    $('#square2').removeClass('bounceOutRight highlight')
+     $('#square2').addClass('highlight-back')
+},14000);
+setTimeout(function(){
+    $('#square3').removeClass('bounceOutRight highlight')
+     $('#square3').addClass('highlight-back')
+},15000);
+
+}
+</script>
 <!-- Chartist Chart JS -->
 <script src="{{ asset('assets/plugins/chartist-js/chartist.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/chartist-js/chartist-plugin-tooltip.min.js') }}"></script>
