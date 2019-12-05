@@ -16,9 +16,27 @@ class ControlController extends Controller
         return view('control.rooms_control');
     }
 
+    public function schedules(){
+        return view('control.schedules');
+    }
+
+    public function rooms_pending_review(){
+        $data = Auth::user()->hotel->rooms->toArray();
+        $rooms = array_filter($data, function($var){
+            return $var['status'] == 'Pending Review';
+        });
+
+        return view('control.pending_review', compact('rooms'));
+    }
+
     public function get_floors(){
         $floors = Floor::with('rooms_floor')->orderBy('id', 'ASC')->where('hotel_id', Auth::user()->hotel->id)->get();
         return $floors;
+    }
+
+    public function get_users(){
+        $users = User::orderBy('id', 'ASC')->where('hotel_id', Auth::user()->hotel->id)->get();
+        return $users;
     }
 
     public function rooms_update_status(Request $request, $id){

@@ -344,8 +344,13 @@ Neon - Home
         <!-- End XP Col -->
     </div>
     <!-- End XP Row -->
-    <!-- Start XP Row -->
     <div class="row">
+        <div class="col-md-12">
+            <calendar-component></calendar-component>
+        </div>
+    </div>
+    <!-- Start XP Row -->
+    <div class="row mt-4">
         <!-- Start XP Col -->
         <div class="col-md-6 col-lg-6 col-xl-6 align-self-center">
             <div class="card bg-white m-b-30">

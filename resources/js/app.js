@@ -10,7 +10,6 @@ window.Vue = require('vue');
 
 import BootstrapVue from 'bootstrap-vue'
 
-
 Vue.use(BootstrapVue)
 
 
@@ -28,12 +27,18 @@ Vue.use(BootstrapVue)
 Vue.component('add-products-component', require('./components/AddProductsComponent.vue').default);
 Vue.component('rooms-control-component', require('./components/RoomsControlComponent.vue').default);
 Vue.component('assign-rooms-control-component', require('./components/AssignRoomsControlComponent.vue').default);
+Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
+
+//Chat
 Vue.component('contact-component', require('./components/chat/ContactComponent.vue').default);
 Vue.component('contact-list-component', require('./components/chat/ContactListComponent.vue').default);
 Vue.component('active-conversation-component', require('./components/chat/ActiveConversationComponent.vue').default);
 Vue.component('message-conversation-component', require('./components/chat/MessageConversationComponent.vue').default);
 Vue.component('messenger-component', require('./components/chat/MessengerComponent.vue').default);
 Vue.component('calendar-component', require('./components/FullCallendarComponent.vue').default);
+
+//Schedules
+Vue.component('schedules-control-component', require('./components/SchedulesControlComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
