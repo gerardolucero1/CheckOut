@@ -31,6 +31,59 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row"> 
         <!-- Start XP Col -->   
+<<<<<<< Updated upstream
+=======
+        <div class="col-md-12 row">
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">22%</h4>
+                            <p class="mb-3">Available rooms</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-danger-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">18%</h4>
+                            <p class="mb-3">Check out</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-warning-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">30%</h4>
+                            <p class="mb-3">Stay Over</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <div class="card bg-success-gradient m-b-30">
+                    <div class="card-body">
+                        <div class="xp-widget-box text-white text-center pt-3">
+                            <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                            <h4 class="mb-2 font-20">03%</h4>
+                            <p class="mb-3">Out of order</p>
+                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+>>>>>>> Stashed changes
         <div class="col-md-12 col-lg-12 col-xl-7">
             <!-- Start XP Row -->
             <div class="row">                             
