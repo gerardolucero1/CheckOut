@@ -37,7 +37,7 @@ z-index: 10;
     text-align: center; 
     background: #576066; 
     border-radius: 80px; 
-    position: absolute; 
+    position: fixed; 
     right: 120px; 
     top: 75px;
     z-index: 12;

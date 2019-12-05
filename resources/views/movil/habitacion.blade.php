@@ -35,7 +35,7 @@ z-index: 10;
 .num-cuarto{
     padding:8px; 
     text-align: center; 
-    background: #576066; 
+    background: #ED2024; 
     border-radius: 80px; 
     position: absolute; 
     right: 120px; 
@@ -80,6 +80,23 @@ z-index: 10;
         <p style="color: blue; font-size: 40px; text-align: center"><i class="fa fa-camera"></i></p>
         <button onclick="continuarMuySucia()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">Guardar</button>
         <button onclick="cerrarEvidenciaMuySucia()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="noSePuedeLimpiar" style="width: 100%; height: 100%; position: absolute; z-index: 20; background:rgba(0,0,0,.2); display:none">
+        <div style="margin-top: 20vh; width: 90%; margin-left: 5%; background: white; border-radius: 15px; padding:20px; color:gray">
+            <div style="border-top:solid; border-bottom:solid; width: 40%; margin-left: 30%; border-collapse: grey; height: 10px; border-width: 1px; margin-bottom: 15px;">
+            
+            </div>
+        <p style="text-align: center; color:blue">Selecciona por qué no se puede limpiar</p>
+        <label for=""><input type="checkbox"> DND</label><br>
+        <label for=""><input type="checkbox"> No requiere servicio</label><br>
+        <label for=""><input type="checkbox"> Volver más tarde</label><br>
+        <label for=""><input type="checkbox"> Cliente en el cuarto</label><br>
+        <label for=""><input type="checkbox"> Mascota en la habitación</label><br>
+        <label for=""><input type="checkbox"> Otro</label><br>
+        <button onclick="continuarNosepuedelimpiar()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">Guardar</button>
+        <button onclick="cerrarNosepuedelimpiar()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">Cancelar</button>
         </div>
     </div>
 
@@ -132,12 +149,12 @@ z-index: 10;
             <img onclick="MuySucia()" src="{{asset('assets/images/icono-muy-sucia.png')}}" alt="" style="width: 100%;">
             <p style="text-align: center; font-size: 13px; width: 100%">Muy Sucia</p>
         </div>
-        <button onclick="noSePuede()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">No se puede limpiar</button>
+        <button onclick="noSePuedeLimpiar()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">No se puede limpiar</button>
         </div>
 
     <div id="Iniciar" class="row" style="padding-top: 35px; width: 100%; height: 65vh; overflow: scroll; margin-left: 0; margin-right: 0; display: none">
             <img onclick="Inicio()" style="width: 60%; margin-left: 20%; margin-top:50px" src="{{asset('assets/images/boton-iniciar.png')}}">
-            <button onclick="noSePuede()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">No se puede limpiar</button>
+            <button onclick="noSePuedeLimpiar()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center">No se puede limpiar</button>
             <button onclick="Cambiar()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: white; border: none; color: grey; text-align: center">Cambiar</button>
             </div>
 
@@ -216,6 +233,9 @@ function cerrarExtras(){
 function noSePuede(){
     document.getElementById('evidenciaMuySucia').style.display="block";
 }
+function noSePuedeLimpiar(){
+    document.getElementById('noSePuedeLimpiar').style.display="block";
+}
 function MuySucia(){
     document.getElementById('evidenciaMuySucia').style.display="block";
 }
@@ -225,6 +245,13 @@ function cerrarEvidenciaMuySucia(){
 function continuarMuySucia(){
     document.getElementById('evidenciaMuySucia').style.display="none";
     BtnMuySucio();
+}
+
+function continuarNosepuedelimpiar(){
+    window.location.href='habitaciones';
+}
+function cerrarNosepuedelimpiar(){
+    document.getElementById('noSePuedeLimpiar').style.display="none";
 }
 
 function carga()

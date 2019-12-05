@@ -21,7 +21,7 @@ Hotels
     -webkit-box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
 -moz-box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
 box-shadow: 0px 0px 5px 0px rgba(166,166,166,1);
-position: absolute; 
+position: fixed; 
 bottom: 0; 
 width: 100vw; 
 padding: 0; 
@@ -29,6 +29,7 @@ padding:0px 25px 0px 25px;
 border-top:solid; 
 border-top-width: 1px; 
 padding-top: 8px;
+background: white;
 }
 </style>
 @endsection 
@@ -61,7 +62,10 @@ padding-top: 8px;
     
     <div class="row" style="padding-top: 35px; width: 80%; margin-left:10%">
     <p style="text-align: center; width: 100%; font-size: 18px; padding-bottom: 25px;">Ada Lima</p>
-    <div class="col-4">
+    <div class="col-4" style="position: relative">
+        <div style="background: #FF2100; border-radius: 40px; color: white; text-align: center; padding: 6px; position: absolute; right: 10px; top:-10px; width: 35px">
+            16
+        </div>
         <a href="{{ route('habitaciones.index') }}"><img src="{{asset('assets/images/icono-limpieza.png')}}" alt="" style="width: 90%; margin-left: 5%"></a>
     </div>
     <div class="col-4">
