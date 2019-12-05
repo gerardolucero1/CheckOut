@@ -64,7 +64,6 @@ export default {
         },
 
         addMessage(message){
-            Push.create('Hello World!')
             let conversation = this.conversations.find((element) => {
                 return element.contact_id == message.from_id || element.contact_id == message.to_id;
             })
