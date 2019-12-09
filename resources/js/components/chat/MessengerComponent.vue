@@ -12,7 +12,8 @@
                 :contact-id="selectedConversation.contact_id"
                 :contact-name="selectedConversation.contact_name"
                 :messages="messages"
-                @messageCreated="addMessage($event)">
+                @messageCreated="addMessage($event)"
+                @updateMessages="getMessages()">
 
             </active-conversation-component>
         </div>

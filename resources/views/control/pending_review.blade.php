@@ -1,5 +1,5 @@
 @section('title') 
-Employees
+Pending Review
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -32,17 +32,6 @@ Employees
             </button>
         </div>
     @endif
-
-    <div class="row">
-        <div class="col-md-6 col-lg-6">
-            <h4 class="xp-page-title">Employee</h4>
-        </div>
-        <div class="col-md-6 col-lg-6">
-            <div class="xp-breadcrumb">
-                    <a href="{{ route('users.create', Auth::user()->hotel->id) }}" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add user</a>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- End XP Breadcrumbbar -->
 <!-- Start XP Contentbar -->    
@@ -53,8 +42,7 @@ Employees
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-header bg-white">
-                    <h5 class="card-title text-black">List of Employees</h5>
-                    <h6 class="card-subtitle">This are all the employees registered</h6>
+                    <h5 class="card-title text-black">List of rooms pending review</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -63,48 +51,21 @@ Employees
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Status</th>
                                     <th>Type</th>
-                                    <th>User Name</th>
-                                    <th>State</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Auth::user()->hotel->users as $user)
+                                
+                                @foreach ($rooms as $room)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>Housekeeper</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>active</td>
+                                        <td>{{ $room['id'] }}</td>
+                                        <td>{{ $room['name'] }}</td>
+                                        <td>{{ $room['status'] }}</td>
+                                        <td>{{ $room['type'] }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
-                                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
-                                            <button onclick="event.preventDefault();
-                                                        Swal.fire({
-                                                            title: '¿Are you sure?',
-                                                            text: 'This will be permanent',
-                                                            type: 'warning',
-                                                            showCancelButton: true,
-                                                            confirmButtonColor: '#3085d6',
-                                                            cancelButtonColor: '#d33',
-                                                            confirmButtonText: 'Delete'
-                                                            }).then((result) => {
-                                                            if (result.value) {
-                                                                document.getElementById('delete-hotel-{{ $user->id }}').submit();
-                                                                Swal.fire(
-                                                                'Deleted!',
-                                                                'The hotel has been deleted',
-                                                                'success'
-                                                                )
-                                                            }
-                                                        });
-                                                    "
-                                                    type="submit" class="btn btn-round btn-danger"><i class="mdi mdi-delete-sweep"></i></button>
-                                            <form id="delete-hotel-{{ $user->id }}" action="{{ route('hotels.destroy', $user->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                            </form>
+                                            <a href="{{ route('control.show.verification_room', $room['id']) }}" class="btn btn-rounded btn-primary"><i class="mdi mdi-send mr-2"></i> Watch</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -113,10 +74,9 @@ Employees
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Type</th>
-                                    <th>User Name</th>
-                                    <th>State</th>
-                                    <th>Options</th>
+                                    <th>location</th>
+                                    <th>CP</th>
+                                    <th>State</th>  
                                 </tr>
                             </tfoot>
                         </table>
