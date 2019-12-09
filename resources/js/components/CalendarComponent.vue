@@ -1,9 +1,9 @@
 <template>
     <div class="row card">
-      <div class="col-md-12 pd-2">
+      <div class="col-md-12 pd-2"> 
         <form @submit.prevent>
           <div class="form-group">
-            <label for="event_name">Event Name</label>
+            <label for="event_name" style="margin-top:5%;">Event Name</label>
             <input type="text" id="event_name" class="form-control" v-model="newEvent.event_name">
           </div>
           <div class="row">

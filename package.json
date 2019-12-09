@@ -29,6 +29,7 @@
         "@fullcalendar/interaction": "^4.3.0",
         "@fullcalendar/vue": "^4.3.1",
         "bootstrap-vue": "^2.1.0",
+        "easytimer.js": "^4.0.2",
         "interactjs": "^1.8.0-alpha.6",
         "laravel-echo": "^1.6.1",
         "push.js": "^1.0.12",
