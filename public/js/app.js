@@ -107250,8 +107250,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
