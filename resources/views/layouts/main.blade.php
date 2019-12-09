@@ -47,6 +47,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="https://kit.fontawesome.com/7b00c31d1c.js" crossorigin="anonymous"></script>
+        <link href="http://127.0.0.1:8000/assets/plugins/chartist-js/chartist.min.css" rel="stylesheet" type="text/css" />
         <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
@@ -61,6 +62,9 @@
         
         
         
+        
+        
+
         @yield('script')
         <!-- Main JS -->
       

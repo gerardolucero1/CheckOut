@@ -158,7 +158,8 @@ Neon - Home
                                     </div>
                                     
                                     <div class="card-body" style="margin-left:-10%;">  
-                                            <div id="xp-chartist-svg-path-animations" class="ct-chart ct-golden-section xp-chartist-svg-path-animations"></div>
+                                        <div id="xp-chartist-svg-path-animations" class="ct-chart ct-golden-section xp-chartist-svg-path-animations"><div class="chartist-tooltip" style="top: -26px; left: 240.5px;"></div><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="50" x2="50" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line x1="130.1" x2="130.1" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line x1="210.2" x2="210.2" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line x1="290.29999999999995" x2="290.29999999999995" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line x1="370.4" x2="370.4" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line x1="450.5" x2="450.5" y1="15" y2="285" class="ct-grid ct-horizontal"></line><line y1="285" y2="285" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="251.25" y2="251.25" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="217.5" y2="217.5" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="183.75" y2="183.75" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="150" y2="150" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="116.25" y2="116.25" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="82.5" y2="82.5" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="48.75" y2="48.75" x1="50" x2="450.5" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="450.5" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 50 285 L 50 251.25 C 76.7 206.25 103.4 116.25 130.1 116.25 C 156.8 116.25 183.5 217.5 210.2 217.5 C 236.9 217.5 263.6 116.25 290.3 116.25 C 317 116.25 343.7 138.75 370.4 150 C 397.1 161.25 423.8 172.5 450.5 183.75 L 450.5 285 Z" class="ct-area"></path><path d="M 50 251.25 C 76.7 206.25 103.4 116.25 130.1 116.25 C 156.8 116.25 183.5 217.5 210.2 217.5 C 236.9 217.5 263.6 116.25 290.3 116.25 C 317 116.25 343.7 138.75 370.4 150 C 397.1 161.25 423.8 172.5 450.5 183.75" class="ct-line"></path></g><g class="ct-series ct-series-b"><path d="M 50 285 L 50 217.5 C 76.7 206.25 103.4 195 130.1 183.75 C 156.8 172.5 183.5 168 210.2 150 C 236.9 132 263.6 15 290.3 15 C 317 15 343.7 251.25 370.4 251.25 C 397.1 251.25 423.8 228.75 450.5 217.5 L 450.5 285 Z" class="ct-area"></path><path d="M 50 217.5 C 76.7 206.25 103.4 195 130.1 183.75 C 156.8 172.5 183.5 168 210.2 150 C 236.9 132 263.6 15 290.3 15 C 317 15 343.7 251.25 370.4 251.25 C 397.1 251.25 423.8 228.75 450.5 217.5" class="ct-line"></path></g><g class="ct-series ct-series-c"><path d="M 50 285 L 50 116.25 C 76.7 127.5 103.4 138.75 130.1 150 C 156.8 161.25 183.5 172.5 210.2 183.75 C 236.9 195 263.6 206.25 290.3 217.5 C 317 228.75 343.7 243.75 370.4 251.25 C 397.1 258.75 423.8 262.5 450.5 268.125 L 450.5 285 Z" class="ct-area"></path><path d="M 50 116.25 C 76.7 127.5 103.4 138.75 130.1 150 C 156.8 161.25 183.5 172.5 210.2 183.75 C 236.9 195 263.6 206.25 290.3 217.5 C 317 228.75 343.7 243.75 370.4 251.25 C 397.1 258.75 423.8 262.5 450.5 268.125" class="ct-line"></path></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="290" width="80.1" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 80px; height: 20px;">Mon</span></foreignObject><foreignObject style="overflow: visible;" x="130.1" y="290" width="80.1" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 80px; height: 20px;">Tue</span></foreignObject><foreignObject style="overflow: visible;" x="210.2" y="290" width="80.1" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 80px; height: 20px;">Wed</span></foreignObject><foreignObject style="overflow: visible;" x="290.29999999999995" y="290" width="80.1" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 80px; height: 20px;">Thu</span></foreignObject><foreignObject style="overflow: visible;" x="370.4" y="290" width="80.10000000000002" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 80px; height: 20px;">Fri</span></foreignObject><foreignObject style="overflow: visible;" x="450.5" y="290" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">Sat</span></foreignObject><foreignObject style="overflow: visible;" y="251.25" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="217.5" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">1</span></foreignObject><foreignObject style="overflow: visible;" y="183.75" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">2</span></foreignObject><foreignObject style="overflow: visible;" y="150" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">3</span></foreignObject><foreignObject style="overflow: visible;" y="116.25" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">4</span></foreignObject><foreignObject style="overflow: visible;" y="82.5" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">5</span></foreignObject><foreignObject style="overflow: visible;" y="48.75" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">6</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="33.75" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 34px; width: 30px;">7</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">8</span></foreignObject></g></svg></div>
+                                  
                                     </div>                                       
                                     
                                     </div>                                            
@@ -562,72 +563,159 @@ Neon - Home
                 </div>
             </div>
         </div>
+            <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-12 align-self-center">
+                <div class="card bg-white m-b-30">
+                    <div class="card-header bg-white">
+                        <h5 style="text-align:center;" class="card-title text-black mb-0">Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="text-align:center;">
+                                        <th class="border-top-0">No. Employee</th>
+                                        <th class="border-top-0">Name</th>
+                                        <th class="border-top-0">Previous Room Number</th>
+                                        <th class="border-top-0">Current room number</th>
+                                        <th class="border-top-0">Time</th>
+                                        <th class="border-top-0">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align:center;">
+                                        <td>1</td>
+                                        <td>
+                                            <a >Ada Lima</a>
+                                        </td>
+                                                                        
+                                        <td>18</td>
+                                        <td>30</td>
+                                        <td style="color:red;">
+                                                <h6 id="h1-3"><time>00:00:00</time></h6>
+                                        </td>
+                                        <td><span class="badge badge-info">Cleaning</span></td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>1</td>
+                                        <td>
+                                            <a >Ana Aparicio</a>
+                                        </td>
+                                                                        
+                                        <td>18</td>
+                                        <td>30</td>
+                                        <td style="color:red;">
+                                                <h6 id="h1-2"><time>00:00:00</time></h6>                      
+                                        </td>
+                                        <td><span class="badge badge-warning">Transition</span></td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>1</td>
+                                        <td>
+                                            <a >Dora Ortiz</a>
+                                        </td>
+                                                                        
+                                        <td>18</td>
+                                        <td>30</td>
+                                        <td style="color:red;">
+                                                <h6 id="h1-1"><time>00:00:00</time></h6>
+                                        </td>
+                                        <td><span class="badge badge-success">Complete</span></td>
+                                    </tr>
+                                   
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- End XP Row -->
+    
 </div>
 <!-- End XP Contentbar -->
 @endsection 
 @section('script')
+
+<script>
+    var h11 = document.getElementById('h1-1');
+    var h12 = document.getElementById('h1-2');
+    var h13 = document.getElementById('h1-3');
+    var seconds = 0, minutes = 40, hours = 0,
+    t;
+    var seconds2 = 0, minutes2 = 10, hours2 = 1,
+    t;
+    var seconds3 = 0, minutes3 = 5, hours3 = 2,
+    t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        minutes2++;
+        minutes3++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+        if (minutes2 >= 60) {
+            minutes3 = 0;
+            hours2++;
+        }
+        if (minutes3 >= 60) {
+            minutes3 = 0;
+            hours3++;
+        }
+    }
+    
+    h11.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    h12.textContent = (hours2 ? (hours2 > 9 ? hours2 : "0" + hours2) : "00") + ":" + (minutes2 ? (minutes2 > 9 ? minutes2 : "0" + minutes2) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    h13.textContent = (hours3 ? (hours3 > 9 ? hours3 : "0" + hours3) : "00") + ":" + (minutes3 ? (minutes3 > 9 ? minutes3 : "0" + minutes3) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+
+start.onclick = timer;
+
+
+</script>
+
 <script>
 $(document).ready(function(){
-
-setTimeout(function(){   
-     $('#square3').addClass('bounceOutRight')
-},2000);
-
 setTimeout(function(){
-     $('#square3').addClass('highlight');
-},6000);
-
-setTimeout(function(){
-     $('#square2').addClass('bounceOutRight')
-},6000);
-setTimeout(function(){
-     $('#square2').addClass('highlight');
-},10000);
-setTimeout(function(){
-     $('#square').addClass('bounceOutRight')
-},8000);
-setTimeout(function(){
-     $('#square').addClass('highlight');
-},12000);
-
-setTimeout(function(){
-    $('#square').removeClass('bounceOutRight highlight')
-     $('#square').addClass('highlight-back')         
-},13000);
-
-setTimeout(function(){
-    $('#square2').removeClass('bounceOutRight highlight')
-     $('#square2').addClass('highlight-back')
-},14000);
-setTimeout(function(){
-    $('#square3').removeClass('bounceOutRight highlight')
-     $('#square3').addClass('highlight-back')
-},15000);
-
+  
+    displayDate()
+},1000);
 setTimeout(function(){
   
     displayDate()
 },15000);
+
 setTimeout(function(){
    
     displayDate()
 },25000);
+
 setTimeout(function(){
     
     displayDate()
 },50000);
+
 setTimeout(function(){
     
     displayDate()
 },100000);
+
 setTimeout(function(){
     
     displayDate()
 },200000);
-
-
-
 
 });
 </script>
@@ -674,6 +762,7 @@ setTimeout(function(){
 <!-- Chartist Chart JS -->
 <script src="{{ asset('assets/plugins/chartist-js/chartist.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/chartist-js/chartist-plugin-tooltip.min.js') }}"></script>
+
 <!-- To Do List JS -->
 <script src="{{ asset('assets/js/init/to-do-list-init.js') }}"></script>
 <!-- Datepicker JS -->

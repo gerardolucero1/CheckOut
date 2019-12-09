@@ -42,6 +42,11 @@
                   </a>
                 </li>
                 <li>
+                    <a href="{{url('/maintenance/index')}}">
+                        <i class="fab fa-searchengin"></i><span>Maintenance</span>
+                  </a>
+                </li>
+                <li>
                     <a href="javaScript:void();">
                         <i class="fa fa-desktop"></i><span>Control</span><i class="icon-arrow-right pull-right"></i>
                     </a>

@@ -121,7 +121,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('app/checklist', 'AppController@checklist')->name('checklist.index');
 
     //Rutas conversaciones
-    Route::get('api/conversations', 'ConversationController@conversations');
+    Route::get('api/conversations', 'ConversationController@conversations');    
     Route::get('api/messages', 'MessageController@messages');
     Route::post('api/messages', 'MessageController@store');
 
