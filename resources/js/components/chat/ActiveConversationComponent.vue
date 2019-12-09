@@ -136,7 +136,13 @@ export default {
             }
 
             axios.post(URL, params).then((response) => {
-               this.$emit('updateMessages')
+               this.$emit('updateMessages');
+               Swal.fire(
+  'Success',
+  'You created a ticket',
+  'success'
+);
+$('#ticketOptions').modal('hide');
             })
         },
 
@@ -148,7 +154,13 @@ export default {
             }
 
             axios.post(URL, params).then((response) => {
-               this.$emit('updateMessages')
+               this.$emit('updateMessages');
+               Swal.fire(
+  'Success',
+  'You created a new requeriment',
+  'success'
+);
+$('#ticketOptions').modal('hide');
             })
         },
         

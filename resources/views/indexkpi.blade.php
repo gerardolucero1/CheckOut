@@ -37,9 +37,9 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-door-closed"></i></p>
-                            <h4 class="mb-2 font-20">22%</h4>
-                            <p class="mb-3">Available rooms</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <h4 class="mb-2 font-20">2.5</h4>
+                            <p class="mb-3">Rooms per minute</p>
+                            <button class="btn btn-white btn-rounded text-success">Download Report</button>
                         </div>
                     </div>
                 </div>
@@ -49,9 +49,9 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-calendar-check"></i></i></p>
-                            <h4 class="mb-2 font-20">18%</h4>
-                            <p class="mb-3">Check out</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <h4 class="mb-2 font-20">$11</h4>
+                            <p class="mb-3">Cost per room</p>
+                            <button class="btn btn-white btn-rounded text-success">Download Report</button>
                         </div>
                     </div>
                 </div>
@@ -61,9 +61,9 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-bed"></i></p>
-                            <h4 class="mb-2 font-20">30%</h4>
-                            <p class="mb-3">Stay Over</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <h4 class="mb-2 font-20">19</h4>
+                            <p class="mb-3">Maintenance Tickets</p>
+                            <button class="btn btn-white btn-rounded text-success">Download Report</button>
                         </div>
                     </div>
                 </div>
@@ -73,9 +73,9 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-exclamation-circle"></i></p>
-                            <h4 class="mb-2 font-20">03%</h4>
-                            <p class="mb-3">Out of order</p>
-                            <button class="btn btn-white btn-rounded text-success">See Rooms</button>
+                            <h4 class="mb-2 font-20">250</h4>
+                            <p class="mb-3">Tickets Resolved</p>
+                            <button class="btn btn-white btn-rounded text-success">Download Report</button>
                         </div>
                     </div>
                 </div>
@@ -116,17 +116,17 @@ Neon - Home
                 <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="card m-b-30">
                         <div class="card-header bg-white">
-                            <h5 class="card-title text-black mb-0">Weekly OOO</h5>
+                            <h5 class="card-title text-black mb-0">Monthly OOO</h5>
                         </div>
                         <div class="card-body">
                             <div class="xp-chart-label">
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <p class="text-black">Current Week</p>
+                                        <p class="text-black">Current month</p>
                                         <h4 class="text-primary-gradient mb-3"><i class="icon-wallet mr-2"></i>23</h4>
                                     </li>
                                     <li class="list-inline-item">
-                                        <p class="text-black">Previous Week</p>
+                                        <p class="text-black">Previous month</p>
                                         <h4 class="text-success-gradient mb-3"><i class="icon-wallet mr-2"></i>28</h4>
                                     </li>
                                 </ul>
@@ -145,6 +145,39 @@ Neon - Home
             <!-- Start XP Row -->
             <div class="row">
                 <!-- Start XP Col -->
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                        <div class="card bg-success-gradient m-b-30">
+                            <div class="card-body">
+                                <div class="xp-widget-box text-white text-center pt-3">
+                                    <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
+                                    <h4 class="mb-2 font-20">2354</h4>
+                                    <p class="mb-3">Room with more maintenance tickets</p>
+                                    <button class="btn btn-white btn-rounded text-success">See all tickets</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End XP Col -->
+                    <!-- Start XP Col -->
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                        <div class="card bg-danger-gradient m-b-30">
+                            <div class="card-body">
+                                <div class="xp-widget-box xp-widget-newsletter text-white text-center pt-3">
+                                    <p class="xp-icon-timer mb-4"><i class="icon-paper-plane"></i></p>
+                                    <h4 class="mb-2 font-20">Low Product</h4>
+                                    <p class="mb-3"><span style="font-weight: bold">Toilet Paper </span><br>Please,  Stock product.</p>
+                                    <form>
+                                        <div class="input-group">
+                                            <input type="search" class="form-control" placeholder="Qty" aria-label="Search" aria-describedby="button-addon-news">
+                                            <div class="input-group-append">
+                                                <button class="btn" type="submit" id="button-addon-news">Supply</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="card bg-primary-gradient m-b-30">
                         <div class="card-body">                                            
@@ -168,39 +201,7 @@ Neon - Home
                 </div>
                 <!-- End XP Col -->
                 <!-- Start XP Col -->                       
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-success-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                                <h4 class="mb-2 font-20">Congratulations, Alex!</h4>
-                                <p class="mb-3">Welcome aboard, Thank you for joining our Team.</p>
-                                <button class="btn btn-white btn-rounded text-success">Ok, got it!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End XP Col -->
-                <!-- Start XP Col -->
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-danger-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box xp-widget-newsletter text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-paper-plane"></i></p>
-                                <h4 class="mb-2 font-20">Subscribe to Newsletter</h4>
-                                <p class="mb-3">Please, provide your email address to get latest updates.</p>
-                                <form>
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Enter Email" aria-label="Search" aria-describedby="button-addon-news">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit" id="button-addon-news">GO</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- End XP Col -->
             </div>
             <!-- End XP Row -->

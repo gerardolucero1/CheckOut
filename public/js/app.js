@@ -16023,6 +16023,9 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(URL, params).then(function (response) {
         _this2.$emit('updateMessages');
+
+        Swal.fire('Success', 'You created a ticket', 'success');
+        $('#ticketOptions').modal('hide');
       });
     },
     crearRequeriment: function crearRequeriment(message_id) {
@@ -16034,6 +16037,9 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(URL, params).then(function (response) {
         _this3.$emit('updateMessages');
+
+        Swal.fire('Success', 'You created a new requeriment', 'success');
+        $('#ticketOptions').modal('hide');
       });
     }
   }
