@@ -73,7 +73,7 @@
                 </div>
                 <div class="modal-footer text-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" :disabled="value != 100" class="btn btn-primary" :class="{ 'btn-success': value == 100 }">Save changes</button>
                 </div>
                 </div>
             </div>
@@ -176,9 +176,7 @@ export default {
                 }
                 return newArray
             }
-
-            
-        }
+        },
     },
     methods: {
         async getFloors(){
@@ -241,7 +239,7 @@ export default {
                 } else {
                     this.value++
                 }
-            }, 100);
+            }, 80);
         },
 
         async updateStatus(room, status){
@@ -297,19 +295,13 @@ export default {
         font-size: 7px;
     }
 
-    .vacancy{
-        background-color: green;
-    }
-
-    .check-out{
-        background-color: red;
-    }
-
-    .stay-over{
-        background-color: orange;
-    }
-
-    .pending-review{
-        background-color: blue;
+    .count{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25%;
+        height: auto;
+        margin-left: 5%;
+        color: white;
     }
 </style>

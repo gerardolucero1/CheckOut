@@ -35,7 +35,6 @@ Vue.component('contact-list-component', require('./components/chat/ContactListCo
 Vue.component('active-conversation-component', require('./components/chat/ActiveConversationComponent.vue').default);
 Vue.component('message-conversation-component', require('./components/chat/MessageConversationComponent.vue').default);
 Vue.component('messenger-component', require('./components/chat/MessengerComponent.vue').default);
-Vue.component('calendar-component', require('./components/FullCallendarComponent.vue').default);
 
 //Schedules
 Vue.component('schedules-control-component', require('./components/SchedulesControlComponent.vue').default);

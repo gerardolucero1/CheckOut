@@ -30,7 +30,7 @@
                                             </div>
                                         </li>  
                                         <li class="media xp-msg">
-                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.menon.no/wp-content/uploads/thumb-71-personae-big.jpeg"width="40px" alt="Generic placeholder image">
+                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.menon.no/wp-content/uploads/thumb-71-personae-big.jpeg" width="40px" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <a href="#">  
                                                     <h5 class="mt-0 mb-1 font-14">Ariel Blue<span class="font-12 f-w-4 float-right">3 min ago</span></h5>
@@ -39,7 +39,7 @@
                                             </div>
                                         </li>
                                         <li class="media xp-msg">
-                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.greycoatlumleys.co.uk/ugc/images/roles/housekeeper.jpg" width="40px"alt="Generic placeholder image">
+                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.menon.no/wp-content/uploads/thumb-71-personae-big.jpeg" width="40px" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <a href="#">
                                                     <h5 class="mt-0 mb-1 font-14">Jammy Moon<span class="font-12 f-w-4 float-right">5 min ago</span></h5>
@@ -91,7 +91,7 @@
                                             </div>
                                         </li>
                                         <li class="media xp-noti">
-                                            <div class="mr-3 xp-noti-icon success-rgba"><i class="icon-basket-loaded text-success"></i></div>
+                                            <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
                                                 <a href="#">
                                                     <h5 class="mt-0 mb-1 font-14">New room requirement</h5>
