@@ -133,6 +133,7 @@ export default {
 
             const params = {
                 message_id: message_id,
+                num_room: this.numRoom,
             }
 
             axios.post(URL, params).then((response) => {
@@ -145,6 +146,7 @@ export default {
 
             const params = {
                 message_id: message_id,
+                num_room: this.numRoom,
             }
 
             axios.post(URL, params).then((response) => {

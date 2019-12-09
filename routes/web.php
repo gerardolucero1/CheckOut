@@ -81,6 +81,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('control/assign-rooms', 'ControlController@assign_rooms_control')->name('control.assign_rooms_control');
     Route::get('control/schedules', 'ControlController@schedules')->name('control.schedules');
     Route::get('control/pending-review', 'ControlController@rooms_pending_review')->name('control.rooms_pending_review');
+    Route::get('control/tickets-list', 'ControlController@tickets_list')->name('control.tickets_list');
+    Route::get('control/tickets-list/ticket/{id}', 'ControlController@verification_ticket_room')->name('control.show.verification_ticket_room');
+    Route::get('control/tickets-list/ticket/update/{id}', 'ControlController@verification_ticket_room')->name('control.update.attend_ticket_room');
         //Obtener usuarios
         Route::get('control/get-users', 'ControlController@get_users');
         //Obtener pisos

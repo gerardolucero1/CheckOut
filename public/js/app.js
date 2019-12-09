@@ -15502,6 +15502,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -15617,6 +15623,39 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    changeRandomStatus: function changeRandomStatus() {
+      var _this3 = this;
+
+      var timerInterval;
+      Swal.fire({
+        title: 'Getting status from PMS!',
+        html: 'Getting <b></b> bytes of data.',
+        timer: 2000,
+        timerProgressBar: true,
+        onBeforeOpen: function onBeforeOpen() {
+          Swal.showLoading();
+          timerInterval = setInterval(function () {
+            Swal.getContent().querySelector('b').textContent = Swal.getTimerLeft();
+          }, 100);
+        },
+        onClose: function onClose() {
+          clearInterval(timerInterval);
+        }
+      }).then(function (result) {
+        if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.timer) {
+          var status = ['Stay Over', 'Vacancy', 'Check Out', 'Pending Review'];
+
+          _this3.floors.forEach(function (element) {
+            element.rooms_floor.forEach(function (item) {
+              var state = status[Math.floor(Math.random() * status.length)];
+              item.status = state;
+            });
+          });
+        }
+      });
+    },
     getFloors: function getFloors() {
       var URL, response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getFloors$(_context) {
@@ -15713,13 +15752,13 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     releaseRooms: function releaseRooms() {
-      var _this3 = this;
+      var _this4 = this;
 
       var id = setInterval(function () {
-        if (_this3.value == 100) {
+        if (_this4.value == 100) {
           clearInterval(id);
         } else {
-          _this3.value++;
+          _this4.value++;
         }
       }, 80);
     },
@@ -16019,7 +16058,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var URL = '/api/ticket';
       var params = {
-        message_id: message_id
+        message_id: message_id,
+        num_room: this.numRoom
       };
       axios.post(URL, params).then(function (response) {
         _this2.$emit('updateMessages');
@@ -16030,7 +16070,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var URL = '/api/requeriment';
       var params = {
-        message_id: message_id
+        message_id: message_id,
+        num_room: this.numRoom
       };
       axios.post(URL, params).then(function (response) {
         _this3.$emit('updateMessages');
@@ -93286,6 +93327,23 @@ var render = function() {
               },
               [_vm._v("Matrimonial")]
             )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "list-group", staticStyle: { "margin-top": "20px" } },
+          [
+            _c("li", { staticClass: "list-group-item text-center" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: { click: _vm.changeRandomStatus }
+                },
+                [_vm._v("Get current data")]
+              )
+            ])
           ]
         )
       ]),

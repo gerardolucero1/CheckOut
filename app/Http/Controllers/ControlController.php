@@ -7,6 +7,7 @@ use App\User;
 use App\Floor;
 use App\Revision;
 use App\AssignedRoom;
+use App\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -146,5 +147,15 @@ class ControlController extends Controller
 
         return redirect()->route('control.show.verification_room', $revision->room->id)
             ->with('info', 'Usuario created succesfully');
+    }
+
+    public function tickets_list(){
+        $tickets = Ticket::orderBy('id', 'DESC')->where('ticket', true)->where('attended', false)->get();
+        return view('control.tickets_list', compact('tickets'));
+    }
+
+    public function verification_ticket_room($id){
+        $ticket = Ticket::findOrFail($id);
+        return view('control.verification_ticket_room', compact('ticket'));
     }
 }

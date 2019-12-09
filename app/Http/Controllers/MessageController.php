@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Ticket;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -125,7 +126,15 @@ class MessageController extends Controller
         $message->to_id = $mensajeCopiar->to_id;
         $message->content = $mensajeCopiar->content;
         $message->tipo = 1;
-       $message->save();
+        $message->save();
+
+        $ticket = new Ticket();
+        $ticket->hotel_id = Auth::user()->hotel->id;
+        $ticket->numRoom = $data['num_room'];
+        $ticket->message = $mensajeCopiar->content;
+        $ticket->ticket = true;
+        $ticket->attended = false;
+        $ticket->save();
 
 
     }
@@ -141,8 +150,15 @@ class MessageController extends Controller
         $message->to_id = $mensajeCopiar->to_id;
         $message->content = $mensajeCopiar->content;
         $message->tipo = 2;
-       $message->save();
+        $message->save();
 
+        $ticket = new Ticket();
+        $ticket->hotel_id = Auth::user()->hotel->id;
+        $ticket->numRoom = $data['num_room'];
+        $ticket->message = $mensajeCopiar->content;
+        $ticket->ticket = false;
+        $ticket->attended = false;
+        $ticket->save();
 
     }
 }

@@ -1,5 +1,5 @@
 @section('title') 
-Rooms assigned - {{ $revision->room->name }}
+Ticket review
 @endsection
 @extends('layouts.main')
 @section('style')
@@ -85,7 +85,7 @@ Rooms assigned - {{ $revision->room->name }}
     <div class="row mt-3">
         <!-- End XP Col -->
         <div class="col-lg-12">
-            @if ($revision->reviewed)
+            @if ($ticket->attended)
             <div class="card m-b-30">
                 <div class="card-body">
                     <img src="http://coreanizada.com/wp-content/uploads/2016/10/imagen-portada-1.jpg" width="100%" alt="">
@@ -93,21 +93,20 @@ Rooms assigned - {{ $revision->room->name }}
             </div>
             @else
             <div class="card m-b-30">
-                <form id="freeRoom" action="{{ route('control.update.verification_room', $revision->id) }}" method="POST">
+                <form id="freeRoom" action="{{ route('control.update.attend_ticket_room', $ticket->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4 info-room">
-                                <p>Room: {{ $revision->room->name }}</p>
-                                <p>Type: {{ $revision->room->type }}</p>
+                                <p>Room: {{ $ticket->numRoom }}</p>
                             </div>
                             <div class="col-md-4 text-center">
                                 <img class="img-profile" src="https://ae01.alicdn.com/kf/HTB1K.DYLFXXXXc.XpXXq6xXFXXXp/Hotel-uniforme-de-verano-femenino-del-Hotel-limpieza-ropa-trabajo-de-camarero-de-limpieza-personal-con.jpg" width="30%" alt="">
                             </div>
                             <div class="col-md-4 info-user">
-                                <p>Name: {{ $revision->user->name }}</p>
-                                <p>Email: {{ $revision->user->email }}</p>
+                                <p>Name: {{ Auth::user()->name }}</p>
+                                <p>Email: {{ Auth::user()->email }}</p>
                                 <p>Nacionalidad: Korean</p>
                             </div>
                         </div>
@@ -118,7 +117,7 @@ Rooms assigned - {{ $revision->room->name }}
                                         @php
                                             $flag = true;
                                         @endphp
-                                        @foreach ($revision->photos as $photo)
+                                        @foreach ($ticket->photos as $photo)
                                             <div class="carousel-item box-item @if($flag) active @endif">
                                                 <img src="{{ $photo->photo }}" class="" alt="...">
                                             </div>
@@ -138,7 +137,8 @@ Rooms assigned - {{ $revision->room->name }}
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h6>Room Status Before Cleaning: {{ $revision->statusRoom }}</h6>
+                                <h6>Ticket descripcion:</h6>
+                                <p>{{ $ticket->message }}</p>
                                 <section class="d-flex">
                                     <h6>Rate Cleaning:</h6>
                             
@@ -156,7 +156,7 @@ Rooms assigned - {{ $revision->room->name }}
                                     </div>
                                 </section>
     
-                                <section class="mt-5">
+                                {{-- <section class="mt-5">
                                     <h5>Extras</h5>
                                     <table class="table table-hover">
                                         <thead>
@@ -178,7 +178,7 @@ Rooms assigned - {{ $revision->room->name }}
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </section>
+                                </section> --}}
                             </div>
                         </div>
                         <div class="row mt-4">

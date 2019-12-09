@@ -26,6 +26,12 @@
                     <li class="list-group-item" :class="{ 'active':typeRoom == 'doble'  }" @click="typeRoom = 'doble'">Doble</li>
                     <li class="list-group-item" :class="{ 'active':typeRoom == 'matrimonial'  }" @click="typeRoom = 'matrimonial'">Matrimonial</li>
                 </ul>
+
+                <ul class="list-group" style="margin-top: 20px;">
+                    <li class="list-group-item text-center">
+                        <button class="btn btn-primary" @click="changeRandomStatus">Get current data</button>
+                    </li>
+                </ul>
             </div>
             <div class="col-md-9">
                 <h4>All rooms</h4>
@@ -179,6 +185,40 @@ export default {
         },
     },
     methods: {
+        changeRandomStatus(){
+            let timerInterval
+            Swal.fire({
+            title: 'Getting status from PMS!',
+            html: 'Getting <b></b> bytes of data.',
+            timer: 2000,
+            timerProgressBar: true,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+                Swal.getContent().querySelector('b')
+                    .textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+            }).then((result) => {
+            if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.timer
+                
+            ) {
+                let status = ['Stay Over', 'Vacancy', 'Check Out', 'Pending Review']
+                this.floors.forEach((element) => {
+                    element.rooms_floor.forEach((item) => {
+                        let state = status[Math.floor(Math.random() * status.length)]
+                        item.status = state
+                    })
+                })
+            }
+            })
+        },
+
         async getFloors(){
             try {
                 let URL = '/control/get-floors'

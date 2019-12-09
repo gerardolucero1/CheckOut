@@ -55,6 +55,9 @@
                         <li><a href="{{ route('control.rooms_pending_review') }}">Pending Review</a></li>
                     </ul>
                     <ul class="xp-vertical-submenu">
+                        <li><a href="{{ route('control.tickets_list') }}">Tickets List</a></li>
+                    </ul>
+                    <ul class="xp-vertical-submenu">
                         <li><a href="{{ route('control.schedules') }}">Schedules</a></li>
                     </ul>
                 </li>
