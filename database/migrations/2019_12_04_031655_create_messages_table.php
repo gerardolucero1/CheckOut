@@ -24,6 +24,9 @@ class CreateMessagesTable extends Migration
             //Content
             $table->text('content');
 
+            //Type message
+            $table->integer('tipo');
+
             //Relations
             $table->foreign('from_id')->references('id')->on('users')
                 ->onDelete('cascade')

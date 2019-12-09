@@ -43,7 +43,7 @@
 export default {
     props: {
         writtenByMe: Boolean,
-        tipo: Boolean,
+        tipo: Number,
     },
     data(){
         return{

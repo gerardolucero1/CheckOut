@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="card m-b-30">
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th>Requested Shifts</th>
+                            <th scope="row">Requested Shifts</th>
                             <td>11-08-2019</td>
                             <td>11-09-2019</td>
                             <td>11-10-2019</td>
@@ -42,9 +42,10 @@
                         <tr v-for="(user, index) in users" :key="index">
                             <th scope="row">{{ user.name }}</th>
                             <td v-for="(item, index) in 7" :key="index">
-                                <select name="" id="">
+                                <select name="" id="" width="100%">
                                     <option value="">Housekeeper</option>
                                     <option value="">Laundry</option>
+                                    <option value="">R-OFF</option>
                                 </select>
                             </td>
                         </tr>
