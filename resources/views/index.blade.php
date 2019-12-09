@@ -471,7 +471,69 @@ Neon - Home
                     </div>
                 </div>
             </div>  
-            <callendar-component></callendar-component>
+            <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-12 align-self-center">
+                <div class="card bg-white m-b-30">
+                    <div class="card-header bg-white">
+                        <h5 style="text-align:center;" class="card-title text-black mb-0">Supply</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="text-align:center;">
+                                        <th class="border-top-0">Product ID</th>
+                                        <th class="border-top-0">Product Name</th>
+                                        <th class="border-top-0">Amount in Inventory</th>
+                                        <th class="border-top-0">Amount Needed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align:center;">
+                                        <td>1</td>
+                                        <td>
+                                            <a >Pens</a>
+                                        </td>
+                                                                        
+                                        <td style="color:red;">18</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>12</td>
+                                        <td>
+                                            <a >Laundry Soap</a>
+                                        </td>
+                                                                       
+                                        <td style="color:red;">4</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>10</td>
+                                        <td>
+                                            <a >Towels</a>
+                                        </td>
+                                                                       
+                                        <td style="color:red;">11</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr style="text-align:center;">
+                                        <td>11</td>
+                                        <td>
+                                            <a >Toilet Paper</a>
+                                        </td>
+                                                                       
+                                        <td style="color:red;">5</td>
+                                        <td>55</td>
+                                     
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- End XP Row -->
 </div>
 <!-- End XP Contentbar -->
