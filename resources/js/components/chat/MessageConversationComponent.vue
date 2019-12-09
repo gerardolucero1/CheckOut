@@ -17,7 +17,7 @@
                 <b-list-group-item class="actions">Action 2</b-list-group-item>
                 <b-list-group-item class="actions">Action 2</b-list-group-item>
             </b-list-group>
-        </p>
+        </p> 
       </b-media>
     </b-media> -->
     <b-media :right-align="writtenByMe" vertical-align="center" class="mb-4">

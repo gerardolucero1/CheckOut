@@ -30,7 +30,7 @@
                                             </div>
                                         </li>  
                                         <li class="media xp-msg">
-                                            <img class="mr-3 align-self-center rounded-circle" src="assets/images/topbar/user-message-1.jpg" alt="Generic placeholder image">
+                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.menon.no/wp-content/uploads/thumb-71-personae-big.jpeg"width="40px" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <a href="#">  
                                                     <h5 class="mt-0 mb-1 font-14">Ariel Blue<span class="font-12 f-w-4 float-right">3 min ago</span></h5>
@@ -39,7 +39,7 @@
                                             </div>
                                         </li>
                                         <li class="media xp-msg">
-                                            <img class="mr-3 align-self-center rounded-circle" src="assets/images/topbar/user-message-2.jpg" alt="Generic placeholder image">
+                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.greycoatlumleys.co.uk/ugc/images/roles/housekeeper.jpg" width="40px"alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <a href="#">
                                                     <h5 class="mt-0 mb-1 font-14">Jammy Moon<span class="font-12 f-w-4 float-right">5 min ago</span></h5>
@@ -48,11 +48,11 @@
                                             </div>
                                         </li>
                                         <li class="media xp-msg">
-                                            <img class="mr-3 align-self-center rounded-circle" src="assets/images/topbar/user-message-3.jpg" alt="Generic placeholder image">
+                                            <img class="mr-3 align-self-center rounded-circle" src="https://www.menon.no/wp-content/uploads/thumb-71-personae-big.jpeg" width="40px" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <a href="#">
                                                     <h5 class="mt-0 mb-1 font-14">Lisa Ross<span class="font-12 f-w-4 float-right">5:25 PM</span></h5>
-                                                    <p class="mb-0 font-13">Remedies for colic? i don't...<span class="badge badge-pill badge-success float-right">5</span></p>
+                                                    <p class="mb-0 font-13">We can do it better? i don't...<span class="badge badge-pill badge-success float-right">5</span></p>
                                                 </a>
                                             </div>
                                         </li>
@@ -81,11 +81,12 @@
                                             </div>
                                         </li>  
                                         <li class="media xp-noti">                                                
-                                            <div class="mr-3 xp-noti-icon primary-rgba"><i class="icon-user-follow text-primary"></i></div>
+                                            <div class="mr-3 xp-noti-icon success-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
-                                                <a href="#">  
-                                                    <h5 class="mt-0 mb-1 font-14">New user registered</h5>
-                                                    <p class="mb-0 font-12 f-w-4">2 min ago</p>
+                                                <a href="#">
+                                                    <h5 class="mt-0 mb-1 font-14">
+                                                        Inventory Finished</h5>
+                                                    <p class="mb-0 font-12 f-w-4">10 min ago</p>
                                                 </a>
                                             </div>
                                         </li>
@@ -93,16 +94,17 @@
                                             <div class="mr-3 xp-noti-icon success-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
                                                 <a href="#">
-                                                    <h5 class="mt-0 mb-1 font-14">New order placed</h5>
-                                                    <p class="mb-0 font-12 f-w-4">8:45 PM</p>
+                                                    <h5 class="mt-0 mb-1 font-14">New room requirement</h5>
+                                                    <p class="mb-0 font-12 f-w-4">8:45 AM</p>
                                                 </a>
                                             </div>
                                         </li>
                                         <li class="media xp-noti">
-                                            <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-like text-danger"></i></div>
+                                            <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
                                                 <a href="#">
-                                                    <h5 class="mt-0 mb-1 font-14">John like your photo.</h5>
+                                                    <h5 class="mt-0 mb-1 font-14">
+                                                        Inventory Required</h5>
                                                     <p class="mb-0 font-12 f-w-4">Yesterday</p>
                                                 </a>
                                             </div>
