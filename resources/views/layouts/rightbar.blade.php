@@ -52,7 +52,7 @@
                                             <div class="media-body">
                                                 <a href="#">
                                                     <h5 class="mt-0 mb-1 font-14">Lisa Ross<span class="font-12 f-w-4 float-right">5:25 PM</span></h5>
-                                                    <p class="mb-0 font-13">Remedies for colic? i don't...<span class="badge badge-pill badge-success float-right">5</span></p>
+                                                    <p class="mb-0 font-13">We can do it better? i don't...<span class="badge badge-pill badge-success float-right">5</span></p>
                                                 </a>
                                             </div>
                                         </li>
@@ -80,12 +80,22 @@
                                                 <h5 class="mt-0 mb-0 py-3 text-white text-center font-16">3 New Notifications</h5>
                                             </div>
                                         </li>  
-                                        <li class="media xp-noti">                                                
-                                            <div class="mr-3 xp-noti-icon success-rgba"><i class="icon-user-follow text-primary"></i></div>
+                                        <li class="media xp-noti" data-toggle="modal" data-target="#exampleModal">                                                
+                                            <div class="mr-3 xp-noti-icon success-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
-                                                <a href="#">  
-                                                    <h5 class="mt-0 mb-1 font-14">Inventory finished</h5>
-                                                    <p class="mb-0 font-12 f-w-4">2 min ago</p>
+                                                <a>
+                                                    <h5 class="mt-0 mb-1 font-14">
+                                                        New Requeriment</h5>
+                                                    <p class="mb-0 font-12 f-w-4">5 min ago</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="media xp-noti" data-toggle="modal" data-target="#exampleModal2">
+                                            <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-basket-loaded text-success"></i></div>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <h5 class="mt-0 mb-1 font-14">New ticket</h5>
+                                                    <p class="mb-0 font-12 f-w-4">8:45 AM</p>
                                                 </a>
                                             </div>
                                         </li>
@@ -93,17 +103,9 @@
                                             <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-basket-loaded text-success"></i></div>
                                             <div class="media-body">
                                                 <a href="#">
-                                                    <h5 class="mt-0 mb-1 font-14">Inventory required</h5>
-                                                    <p class="mb-0 font-12 f-w-4">8:45 PM</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li class="media xp-noti">
-                                            <div class="mr-3 xp-noti-icon danger-rgba"><i class="icon-like text-danger"></i></div>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <h5 class="mt-0 mb-1 font-14">New rush.</h5>
-                                                    <p class="mb-0 font-12 f-w-4">Now</p>
+                                                    <h5 class="mt-0 mb-1 font-14">
+                                                        Low Product</h5>
+                                                    <p class="mb-0 font-12 f-w-4">Yesterday</p>
                                                 </a>
                                             </div>
                                         </li>
@@ -144,6 +146,115 @@
         </div> 
         <!-- End XP Row -->
     </div>
+
+    <!--Modales-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pending Requirements</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table style="text-align: center; width: 100%">
+                  <tr>
+                  <th># Room</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                </tr>
+                <tr style="border-bottom: dotted gray 1px;">
+                    <td>103</td>
+                    <td style="padding-top: 10px">2 Toallas Extra<br>
+                        <span style="font-style:italic; font-size: 9px">5 Minutes ago</span>
+                    </td>
+                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                </tr>
+                <tr style="border-bottom: dotted gray 1px;">
+                    <td>206</td>
+                    <td style="padding-top: 10px">Dejar aguas extra<br>
+                        <span style="font-style:italic; font-size: 9px">3 Hours ago</span>
+                    </td>
+                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                </tr>
+                <tr style="border-bottom: dotted gray 1px;">
+                    <td>153</td>
+                    <td style="padding-top: 10px">Solicitan papel de baño<br>
+                        <span style="font-style:italic; font-size: 9px">5 Hours ago</span>
+                    </td>
+                    <td><p class="badge badge-pill badge-success">Atendido</p></td>
+                </tr>
+                <tr style="border-bottom: dotted gray 1px;">
+                    <td>163</td>
+                    <td style="padding-top: 10px">2 Toallas Extra<br>
+                        <span style="font-style:italic; font-size: 9px">Yesterday at 09:35PM</span>
+                    </td>
+                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Pending Tickets</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table style="text-align: center; width: 100%">
+                      <tr>
+                      <th># Room</th>
+                      <th>Description</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr style="border-bottom: dotted gray 1px;">
+                        <td>103</td>
+                        <td style="padding-top: 10px">Foco fundido<br>
+                            <span style="font-style:italic; font-size: 9px">10 Minutes ago</span>
+                        </td>
+                        <td><p class="badge badge-pill badge-success">Pendiente revisión</p></td>
+                    </tr>
+                    <tr style="border-bottom: dotted gray 1px;">
+                        <td>206</td>
+                        <td style="padding-top: 10px">Puerta dañada<br>
+                            <span style="font-style:italic; font-size: 9px">1 Hour ago</span>
+                        </td>
+                        <td><p class="badge badge-pill badge-warning">Pendiente revisión</p></td>
+                    </tr>
+                    <tr style="border-bottom: dotted gray 1px;">
+                        <td>153</td>
+                        <td style="padding-top: 10px">Reparación de baño<br>
+                            <span style="font-style:italic; font-size: 9px">10 Hours ago</span>
+                        </td>
+                        <td><p class="badge badge-pill badge-success">Atendido</p></td>
+                    </tr>
+                    <tr style="border-bottom: dotted gray 1px;">
+                        <td>163</td>
+                        <td style="padding-top: 10px">Colchon dañado<br>
+                            <span style="font-style:italic; font-size: 9px">Yesterday at 08:22AM</span>
+                        </td>
+                        <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
     <!-- End XP Topbar -->
     @yield('rightbar-content')
     <!-- Start XP Footerbar -->

@@ -20,6 +20,13 @@ Route::group(['middleware' => ['auth']], function () {
         return view('index');
     });
 
+    
+    Route::get('/kpi', function () {
+            return view('indexkpi');
+        });
+
+    
+
     //Rutas Hoteles
     Route::get('hotels', 'HotelController@index')->name('hotels.index');
     Route::get('hotels/create', 'HotelController@create')->name('hotels.create');
