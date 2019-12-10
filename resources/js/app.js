@@ -36,6 +36,9 @@ Vue.component('active-conversation-component', require('./components/chat/Active
 Vue.component('message-conversation-component', require('./components/chat/MessageConversationComponent.vue').default);
 Vue.component('messenger-component', require('./components/chat/MessengerComponent.vue').default);
 
+//Notificaciones
+Vue.component('notifications-component', require('./components/NotificationsComponent.vue').default);
+
 //Schedules
 Vue.component('schedules-control-component', require('./components/SchedulesControlComponent.vue').default);
 

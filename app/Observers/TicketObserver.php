@@ -2,7 +2,12 @@
 
 namespace App\Observers;
 
+use App\User;
 use App\Ticket;
+use App\Events\NewTicket;
+use App\Notifications\TicketCreated;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class TicketObserver
 {
@@ -14,7 +19,8 @@ class TicketObserver
      */
     public function created(Ticket $ticket)
     {
-        //
+        $users = User::orderBy('id', 'DESC')->where('hotel_id', Auth::user()->hotel->id)->get();
+        Notification::send($users, new TicketCreated($ticket));
     }
 
     /**

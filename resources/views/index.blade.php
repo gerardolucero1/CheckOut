@@ -29,6 +29,11 @@ Neon - Home
 <!-- Start XP Contentbar -->    
 <div class="xp-contentbar">
     <!-- Start XP Row -->
+    <div class="row">
+        <div class="col-md-12">
+            
+        </div>
+    </div>
     <div class="row"> 
         <!-- Start XP Col -->   
         <div class="col-md-12 row">

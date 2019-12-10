@@ -132,7 +132,7 @@ class MessageController extends Controller
         $ticket->hotel_id = Auth::user()->hotel->id;
         $ticket->numRoom = $data['num_room'];
         $ticket->message = $mensajeCopiar->content;
-        $ticket->ticket = true;
+        $ticket->type = 1;
         $ticket->attended = false;
         $ticket->save();
 
@@ -180,7 +180,7 @@ class MessageController extends Controller
         $ticket->hotel_id = Auth::user()->hotel->id;
         $ticket->numRoom = $data['num_room'];
         $ticket->message = $mensajeCopiar->content;
-        $ticket->ticket = false;
+        $ticket->type = 2;
         $ticket->attended = false;
         $ticket->save();
 

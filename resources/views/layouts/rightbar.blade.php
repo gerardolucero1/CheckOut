@@ -1,3 +1,5 @@
+<notifications-component :user-id="{{ Auth::user()->id }}"></notifications-component>
+
 <div class="xp-rightbar">  
     <!-- Start XP Topbar -->
     <div class="xp-topbar">
@@ -201,6 +203,10 @@
         </div>
       </div>
 
+      @php
+          $tickets = App\Ticket::orderBy('id', 'DESC')->where('type', 1)->get();
+      @endphp
+
       <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -212,39 +218,35 @@
                 </div>
                 <div class="modal-body">
                   <table style="text-align: center; width: 100%">
-                      <tr>
-                      <th># Room</th>
-                      <th>Description</th>
-                      <th>Status</th>
-                    </tr>
-                    <tr style="border-bottom: dotted gray 1px;">
-                        <td>103</td>
-                        <td style="padding-top: 10px">Foco fundido<br>
-                            <span style="font-style:italic; font-size: 9px">10 Minutes ago</span>
-                        </td>
-                        <td><p class="badge badge-pill badge-success">Pendiente revisión</p></td>
-                    </tr>
-                    <tr style="border-bottom: dotted gray 1px;">
-                        <td>206</td>
-                        <td style="padding-top: 10px">Puerta dañada<br>
-                            <span style="font-style:italic; font-size: 9px">1 Hour ago</span>
-                        </td>
-                        <td><p class="badge badge-pill badge-warning">Pendiente revisión</p></td>
-                    </tr>
-                    <tr style="border-bottom: dotted gray 1px;">
-                        <td>153</td>
-                        <td style="padding-top: 10px">Reparación de baño<br>
-                            <span style="font-style:italic; font-size: 9px">10 Hours ago</span>
-                        </td>
-                        <td><p class="badge badge-pill badge-success">Atendido</p></td>
-                    </tr>
-                    <tr style="border-bottom: dotted gray 1px;">
-                        <td>163</td>
-                        <td style="padding-top: 10px">Colchon dañado<br>
-                            <span style="font-style:italic; font-size: 9px">Yesterday at 08:22AM</span>
-                        </td>
-                        <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th># Room</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($tickets as $ticket)
+                            <tr style="border-bottom: dotted gray 1px;">
+                                <td>{{ $ticket->numRoom }}</td>
+                                <td style="padding-top: 10px">{{ $ticket->message }}<br>
+                                    <span style="font-style:italic; font-size: 9px">{{ \Carbon\Carbon::parse($ticket->created_at)->toFormattedDateString() }}</span>
+                                </td>
+                                <td>
+                                    @if ($ticket->attended)
+                                        <p class="badge badge-pill badge-success">Pending Review</p>
+                                    @else
+                                        <p class="badge badge-pill badge-success">Pending attend</p>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('control.show.verification_ticket_room', $ticket->id) }}" class="btn btn-round btn-outline-primary"><i class="mdi mdi-send"></i> </a>
+                                </td>
+                                
+                            </tr>  
+                        @endforeach
+                    </tbody>
                   </table>
                 </div>
                 <div class="modal-footer">

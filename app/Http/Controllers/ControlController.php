@@ -150,7 +150,7 @@ class ControlController extends Controller
     }
 
     public function tickets_list(){
-        $tickets = Ticket::orderBy('id', 'DESC')->where('ticket', true)->where('attended', false)->get();
+        $tickets = Ticket::orderBy('id', 'DESC')->where('type', 1)->where('attended', false)->get();
         return view('control.tickets_list', compact('tickets'));
     }
 

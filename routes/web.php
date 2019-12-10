@@ -132,7 +132,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('api/task', 'MessageController@task');
     Route::post('/api/requeriment', 'MessageController@requirement');
 
-    
+    //Rutas mantenimiento
+    Route::get('maintenance/index', 'MaintenanceController@index');
 });
 
 
