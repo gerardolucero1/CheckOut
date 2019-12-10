@@ -88,6 +88,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Rutas Control
     Route::get('control/rooms', 'ControlController@rooms_control')->name('control.rooms_control');
+    Route::get('control/assing_room_to_new_user', 'ControlController@assing_room_to_new_user')->name('control.assing_room_to_new_user');
     Route::get('control/assign-rooms', 'ControlController@assign_rooms_control')->name('control.assign_rooms_control');
     Route::get('control/schedules', 'ControlController@schedules')->name('control.schedules');
     Route::get('control/pending-review', 'ControlController@rooms_pending_review')->name('control.rooms_pending_review');
