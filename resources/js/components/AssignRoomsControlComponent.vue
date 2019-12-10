@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-6 text-right">
                 <div class="xp-breadcrumb">
-                    <button type="button" class="btn btn-primary" @click="assignRooms()">
+                    <button type="button" class="btn btn-primary item" @click="assignRooms()">
                         Assign rooms
                     </button>
                 </div>
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import interact from 'interactjs';
 export default {
     data(){
         return{
@@ -63,6 +64,15 @@ export default {
     created(){
         this.getEmployees()
         this.getFloors()
+        interact('.item')
+            .on('click', (event) => {             
+
+             Swal.fire(
+                 'Success!',
+                 'This room has been rushed.',
+                 'success'
+             )
+         })  
     },
     computed: {
         numberRooms(){

@@ -33,20 +33,23 @@
                     <div class="col-md-12" style="margin-top: 10px;">
                         <h6>{{ floor.name }}</h6>
                     </div>
-                    <div class="col-md-3 item" v-for="(room, index) in floor.rooms_floor" :key="index" @click="changeStatus(room)" :data-id="room.id" :data-floorid="room.floor_id">
-                        <div class="card m-b-30 room" :class="{ 'bg-success-gradient': room.status == isVacancy, 'bg-danger-gradient': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview, 'bg-secondary-gradient': room.status == isRush }">
-                            <div class="card-body">
+                    <div class="col-md-3 "  v-for="(room, index) in floor.rooms_floor" :key="index" :data-id="room.id" :data-floorid="room.floor_id">
+                        
+                        <div @click="changeStatus(room)" class="card m-b-30 room item" :class="{ 'bg-success-gradient': room.status == isVacancy, 'fondorojo': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview, 'bg-danger-gradient': room.status == isRush }">
+                         <i class="far fa-address-card" @click="openmodal(room.id)" style='font-size:20px; color:white; float:left; z-index:10; padding-top:10%; padding-left:10%;'></i>
+                            <div class="card-body"  style="margin-top:-20%;">
+                                <i class="fas fa-exclamation-triangle" style='font-size:18px; color:white; float:right;' v-if="room.status == isRush"></i>
                                 <div class="xp-widget-box text-white text-center pt-3">
                                     <p class="xp-icon-timer mb-4">{{ room.id }}</p>
                                     <h4 class="mb-2 font-20">{{ room.type }}</h4>
-                                    <p class="mb-3 small">
+                                    <span class="mb-3 small">
                                         {{ room.status}}
                                         <span v-if="room.status == 'Vacancy'"> (VC)</span>
                                         <span v-if="room.status == 'Check Out'"> (CO)</span>
                                         <span v-if="room.status == 'Rush'"> (RR)</span>
                                         <span v-if="room.status == 'Stay Over'"> (SO)</span>
                                         <span v-if="room.status == 'Pending Review'"> (PR)</span>
-                                    </p>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -54,6 +57,35 @@
                 </div>
             </div>
         </div>
+        <!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Assignate User  </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <li v-for="(user, index) in users" :key="index" class="list-group-item">
+            <div class="row">   
+                <div class="col" style="text-align: center;">{{ user.name }}</div>
+                <div class="col"><button type="button" class="btn btn-block btn-info item2">Asignar</button>  </div>
+            </div>                   
+         </li>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
         <!-- Modal -->
         <div class="modal fade" id="rooms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -105,7 +137,16 @@ export default {
     created(){
         this.getFloors()
         this.getUsers()
-
+        interact('.item2')
+            .on('click', (event) => {          
+                  
+                            Swal.fire(
+                                'Success!',
+                                'This room has been reasiggned.',
+                                'success'
+                            )
+                            $('#myModal').modal('hide');
+                        })   
         interact('.item')
             .on('hold', (event) => {
                 Swal.fire({
@@ -179,6 +220,10 @@ export default {
         },
     },
     methods: {
+        openmodal(room_id){
+            $('#myModal').modal('show');
+        },  
+         
         async getFloors(){
             try {
                 let URL = '/control/get-floors'
@@ -257,6 +302,9 @@ export default {
             
             }
         },
+        alert(room_id){
+            alert('Hola'+room_id)
+        }
     },
 }
 </script>
@@ -303,5 +351,8 @@ export default {
         height: auto;
         margin-left: 5%;
         color: white;
+    }
+    .fondorojo{
+        background: #ff6666;
     }
 </style>

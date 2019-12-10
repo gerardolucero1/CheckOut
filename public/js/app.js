@@ -15027,6 +15027,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_1__);
 
 //
 //
@@ -15081,6 +15083,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -15092,6 +15095,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.getEmployees();
     this.getFloors();
+    interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item').on('click', function (event) {
+      Swal.fire('Success!', 'This room has been rushed.', 'success');
+    });
   },
   computed: {
     numberRooms: function numberRooms() {
@@ -15502,6 +15508,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -15526,6 +15564,10 @@ __webpack_require__.r(__webpack_exports__);
 
     this.getFloors();
     this.getUsers();
+    interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item2').on('click', function (event) {
+      Swal.fire('Success!', 'This room has been reasiggned.', 'success');
+      $('#myModal').modal('hide');
+    });
     interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item').on('hold', function (event) {
       Swal.fire({
         title: 'Are you sure?',
@@ -15617,6 +15659,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    openmodal: function openmodal(room_id) {
+      $('#myModal').modal('show');
+    },
     getFloors: function getFloors() {
       var URL, response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getFloors$(_context) {
@@ -15763,7 +15808,20 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }, null, this, [[0, 8]]);
-    }
+    },
+    alert: function (_alert) {
+      function alert(_x) {
+        return _alert.apply(this, arguments);
+      }
+
+      alert.toString = function () {
+        return _alert.toString();
+      };
+
+      return alert;
+    }(function (room_id) {
+      alert('Hola' + room_id);
+    })
   }
 });
 
@@ -51480,7 +51538,7 @@ exports.i(__webpack_require__(/*! -!../../../node_modules/css-loader??ref--6-1!.
 exports.i(__webpack_require__(/*! -!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!@fullcalendar/daygrid/main.css */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@fullcalendar/daygrid/main.css"), "");
 
 // module
-exports.push([module.i, "\n.fc-title {\n  color: #fff;\n}\n.fc-title:hover {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.fc-title {\r\n  color: #fff;\n}\n.fc-title:hover {\r\n  cursor: pointer;\n}\r\n", ""]);
 
 // exports
 
@@ -51499,7 +51557,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.room{\n    position: relative;\n    cursor: pointer;\n}\n.room:before {\n    content:'';\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(0,0,0,0.2);\n    border-radius: 15px;\n}\n.room p{\n    line-height: 5px;\n    position: relative;\n}\n.room h4{\n    position: relative;\n}\nul li{\n    cursor: pointer;\n}\n.status{\n    font-size: 7px;\n}\n.count{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 25%;\n    height: auto;\n    margin-left: 5%;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.room{\n    position: relative;\n    cursor: pointer;\n}\n.room:before {\n    content:'';\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(0,0,0,0.2);\n    border-radius: 15px;\n}\n.room p{\n    line-height: 5px;\n    position: relative;\n}\n.room h4{\n    position: relative;\n}\nul li{\n    cursor: pointer;\n}\n.status{\n    font-size: 7px;\n}\n.count{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 25%;\n    height: auto;\n    margin-left: 5%;\n    color: white;\n}\n.fondorojo{\n    background: #ff6666;\n}\n", ""]);
 
 // exports
 
@@ -92738,7 +92796,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-primary",
+              staticClass: "btn btn-primary item",
               attrs: { type: "button" },
               on: {
                 click: function($event) {
@@ -92930,9 +92988,14 @@ var render = function() {
         },
         [
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "event_name" } }, [
-              _vm._v("Event Name")
-            ]),
+            _c(
+              "label",
+              {
+                staticStyle: { "margin-top": "5%" },
+                attrs: { for: "event_name" }
+              },
+              [_vm._v("Event Name")]
+            ),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -93126,7 +93189,7 @@ var render = function() {
             },
             on: { click: _vm.releaseRooms }
           },
-          [_vm._v("\n                Releasing rooms\n            ")]
+          [_vm._v("\n                    Releasing rooms\n                ")]
         )
       ])
     ]),
@@ -93315,78 +93378,115 @@ var render = function() {
                     "div",
                     {
                       key: index,
-                      staticClass: "col-md-3 item",
+                      staticClass: "col-md-3 ",
                       attrs: {
                         "data-id": room.id,
                         "data-floorid": room.floor_id
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.changeStatus(room)
-                        }
                       }
                     },
                     [
                       _c(
                         "div",
                         {
-                          staticClass: "card m-b-30 room",
+                          staticClass: "card m-b-30 room item",
                           class: {
                             "bg-success-gradient": room.status == _vm.isVacancy,
-                            "bg-danger-gradient": room.status == _vm.isCheckOut,
+                            fondorojo: room.status == _vm.isCheckOut,
                             "bg-warning-gradient":
                               room.status == _vm.isStayOver,
                             "bg-primary-gradient":
                               room.status == _vm.isPendingReview,
-                            "bg-secondary-gradient": room.status == _vm.isRush
+                            "bg-danger-gradient": room.status == _vm.isRush
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.changeStatus(room)
+                            }
                           }
                         },
                         [
-                          _c("div", { staticClass: "card-body" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "xp-widget-box text-white text-center pt-3"
-                              },
-                              [
-                                _c("p", { staticClass: "xp-icon-timer mb-4" }, [
-                                  _vm._v(_vm._s(room.id))
-                                ]),
-                                _vm._v(" "),
-                                _c("h4", { staticClass: "mb-2 font-20" }, [
-                                  _vm._v(_vm._s(room.type))
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "mb-3 small" }, [
-                                  _vm._v(
-                                    "\n                                    " +
-                                      _vm._s(room.status) +
-                                      "\n                                    "
+                          _c("i", {
+                            staticClass: "far fa-address-card",
+                            staticStyle: {
+                              "font-size": "20px",
+                              color: "white",
+                              float: "left",
+                              "z-index": "10",
+                              "padding-top": "10%",
+                              "padding-left": "10%"
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.openmodal(room.id)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "card-body",
+                              staticStyle: { "margin-top": "-20%" }
+                            },
+                            [
+                              room.status == _vm.isRush
+                                ? _c("i", {
+                                    staticClass: "fas fa-exclamation-triangle",
+                                    staticStyle: {
+                                      "font-size": "18px",
+                                      color: "white",
+                                      float: "right"
+                                    }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "xp-widget-box text-white text-center pt-3"
+                                },
+                                [
+                                  _c(
+                                    "p",
+                                    { staticClass: "xp-icon-timer mb-4" },
+                                    [_vm._v(_vm._s(room.id))]
                                   ),
-                                  room.status == "Vacancy"
-                                    ? _c("span", [_vm._v(" (VC)")])
-                                    : _vm._e(),
                                   _vm._v(" "),
-                                  room.status == "Check Out"
-                                    ? _c("span", [_vm._v(" (CO)")])
-                                    : _vm._e(),
+                                  _c("h4", { staticClass: "mb-2 font-20" }, [
+                                    _vm._v(_vm._s(room.type))
+                                  ]),
                                   _vm._v(" "),
-                                  room.status == "Rush"
-                                    ? _c("span", [_vm._v(" (RR)")])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  room.status == "Stay Over"
-                                    ? _c("span", [_vm._v(" (SO)")])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  room.status == "Pending Review"
-                                    ? _c("span", [_vm._v(" (PR)")])
-                                    : _vm._e()
-                                ])
-                              ]
-                            )
-                          ])
+                                  _c("span", { staticClass: "mb-3 small" }, [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(room.status) +
+                                        "\n                                        "
+                                    ),
+                                    room.status == "Vacancy"
+                                      ? _c("span", [_vm._v(" (VC)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Check Out"
+                                      ? _c("span", [_vm._v(" (CO)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Rush"
+                                      ? _c("span", [_vm._v(" (RR)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Stay Over"
+                                      ? _c("span", [_vm._v(" (SO)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Pending Review"
+                                      ? _c("span", [_vm._v(" (PR)")])
+                                      : _vm._e()
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
                         ]
                       )
                     ]
@@ -93399,6 +93499,38 @@ var render = function() {
         ],
         2
       )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal", attrs: { id: "myModal" } }, [
+      _c("div", { staticClass: "modal-dialog" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "modal-body" },
+            _vm._l(_vm.users, function(user, index) {
+              return _c("li", { key: index, staticClass: "list-group-item" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { "text-align": "center" }
+                    },
+                    [_vm._v(_vm._s(user.name))]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(1, true)
+                ])
+              ])
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c(
@@ -93419,7 +93551,7 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(0),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c(
@@ -93431,7 +93563,7 @@ var render = function() {
                       { key: index, staticClass: "list-group-item" },
                       [
                         _vm._v(
-                          _vm._s(user.name) + "\n                        "
+                          _vm._s(user.name) + "\n                            "
                         ),
                         _c("b-progress", {
                           attrs: {
@@ -93477,6 +93609,53 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Assignate User  ")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-block btn-info item2",
+          attrs: { type: "button" }
+        },
+        [_vm._v("Asignar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -107186,8 +107365,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gizflores\Desktop\CheckOut\CheckOut\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Gizflores\Desktop\CheckOut\CheckOut\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
