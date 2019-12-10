@@ -15878,6 +15878,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -16045,7 +16049,7 @@ __webpack_require__.r(__webpack_exports__);
       this.room = this.content.match(regex);
       var ant = 0;
       var mayor = 0;
-      this.numRoom = 'No se encontraron # de habitacion en el mensaje';
+      this.numRoom = 'No se encontro numero de habitación';
       this.room.forEach(function (a) {
         if (parseInt(a) > parseInt(ant)) {
           ant = a;
@@ -16068,8 +16072,23 @@ __webpack_require__.r(__webpack_exports__);
         $('#ticketOptions').modal('hide');
       });
     },
-    crearRequeriment: function crearRequeriment(message_id) {
+    crearTask: function crearTask(message_id) {
       var _this3 = this;
+
+      var URL = '/api/task';
+      var params = {
+        message_id: message_id,
+        num_room: this.numRoom
+      };
+      axios.post(URL, params).then(function (response) {
+        _this3.$emit('updateMessages');
+
+        Swal.fire('Success', 'You created a new task', 'success');
+        $('#ticketOptions').modal('hide');
+      });
+    },
+    crearRequeriment: function crearRequeriment(message_id) {
+      var _this4 = this;
 
       var URL = '/api/requeriment';
       var params = {
@@ -16077,7 +16096,7 @@ __webpack_require__.r(__webpack_exports__);
         num_room: this.numRoom
       };
       axios.post(URL, params).then(function (response) {
-        _this3.$emit('updateMessages');
+        _this4.$emit('updateMessages');
 
         Swal.fire('Success', 'You created a new requeriment', 'success');
         $('#ticketOptions').modal('hide');
@@ -16176,6 +16195,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -51584,7 +51604,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.action[data-v-37c13faf]{\n        font-size: 10px;\n        text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n        padding: 5px;\n}\n.ticket[data-v-37c13faf]{\n        background: #FFFDC8;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.requerimento[data-v-37c13faf]{\n        background: #C8E8FF;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n", ""]);
+exports.push([module.i, "\n.action[data-v-37c13faf]{\n        font-size: 10px;\n        text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n        padding: 5px;\n}\n.ticket[data-v-37c13faf]{\n        background: #FFFDC8;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.requerimento[data-v-37c13faf]{\n        background: #C8E8FF;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.tarea[data-v-37c13faf]{\n        background: rgb(200, 255, 212);\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n", ""]);
 
 // exports
 
@@ -93706,13 +93726,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("select", { attrs: { name: "", id: "", width: "100%" } }, [
-      _c("option", { attrs: { value: "" } }, [_vm._v("Housekeeper")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("Laundry")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("R-OFF")])
-    ])
+    return _c(
+      "select",
+      {
+        staticStyle: { "font-size": "12px" },
+        attrs: { name: "", id: "", width: "100%" }
+      },
+      [
+        _c("option", { attrs: { value: "" } }, [_vm._v("--")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Housekeeper")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Laundry")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Houseman")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Dishwasher")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Supervisor")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("R-OFF")])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -93918,7 +93953,20 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(0)
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info",
+                        on: {
+                          click: function($event) {
+                            return _vm.crearTask(_vm.message_id)
+                          }
+                        }
+                      },
+                      [_vm._v("Marcar como tarea")]
+                    )
+                  ])
                 ])
               ])
             ])
@@ -93928,18 +93976,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "list-group-item" }, [
-      _c("button", { staticClass: "btn btn-info" }, [
-        _vm._v("Marcar como tarea")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -94115,7 +94152,11 @@ var render = function() {
             "b-card",
             {
               staticClass: "p-3 small",
-              class: { ticket: _vm.tipo == 1, requerimento: _vm.tipo == 2 },
+              class: {
+                ticket: _vm.tipo == 1,
+                requerimento: _vm.tipo == 2,
+                tarea: _vm.tipo == 3
+              },
               attrs: { "no-body": "" }
             },
             [
@@ -94128,6 +94169,12 @@ var render = function() {
               _vm.tipo == 2
                 ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
                     _vm._v("*Requirement:")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipo == 3
+                ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
+                    _vm._v("*Task:")
                   ])
                 : _vm._e(),
               _vm._v(" "),

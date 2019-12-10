@@ -42,6 +42,9 @@ Floors
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addfloor">
                     Add floor
                 </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addfloorxls">
+                        <i class="fa fa-upload"></i> Upload XLS
+                    </button>
             </div>
         </div>
     </div>
@@ -81,8 +84,8 @@ Floors
                                         <td>{{ $floor->subInventory->name }}</td>
                                         <td>{{ $floor->rooms }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('floors.edit', $floor->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-upload"></i></a>
-                                            <a href="{{ route('floors.show', $floor->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-send"></i> </a>
+                                            <a href="{{ route('floors.edit', $floor->id) }}" class="btn btn-round btn-warning"><i class="mdi mdi-update"></i></a>
+                                            <a href="{{ route('floors.show', $floor->id) }}" class="btn btn-round btn-primary"><i class="mdi mdi-eye"></i> </a>
                                             <button onclick="event.preventDefault();
                                                         Swal.fire({
                                                             title: '¿Are you sure?',
@@ -179,6 +182,20 @@ Floors
     </div>
 </div>
 <!-- End XP Contentbar -->
+<!-- Modal add floor-->
+<div class="modal fade" id="addfloorxls" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add new from xls document</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 @endsection
 @section('script')
 <!-- Required Datatable JS -->

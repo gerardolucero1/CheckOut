@@ -40,6 +40,7 @@ Employees
         <div class="col-md-6 col-lg-6">
             <div class="xp-breadcrumb">
                     <a href="{{ route('users.create', Auth::user()->hotel->id) }}" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add user</a>
+                    <a class="btn btn-rounded btn-warning" style="color: white"><i class="mdi mdi-upload mr-2"></i> Upload XLS</a>
             </div>
         </div>
     </div>

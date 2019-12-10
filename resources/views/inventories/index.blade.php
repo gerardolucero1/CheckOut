@@ -20,6 +20,10 @@ General Inventory
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct">
                     Add product
                 </button>
+
+                <button type="file" class="btn btn-warning">
+                        <i class="fa fa-upload"></i> XLS
+                    </button>
             </div>
         </div>
     </div>

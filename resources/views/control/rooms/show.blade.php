@@ -88,7 +88,7 @@ Rooms assigned - {{ $revision->room->name }}
             @if ($revision->reviewed)
             <div class="card m-b-30">
                 <div class="card-body">
-                    <img src="http://coreanizada.com/wp-content/uploads/2016/10/imagen-portada-1.jpg" width="100%" alt="">
+                    <p style="font-size: 30px; text-align: center; padding:40px; color:blue">This room is now available</p>
                 </div>
             </div>
             @else
@@ -108,7 +108,7 @@ Rooms assigned - {{ $revision->room->name }}
                             <div class="col-md-4 info-user">
                                 <p>Name: {{ $revision->user->name }}</p>
                                 <p>Email: {{ $revision->user->email }}</p>
-                                <p>Nacionalidad: Korean</p>
+                                <p></p>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -220,6 +220,29 @@ Rooms assigned - {{ $revision->room->name }}
                                         });
                                     "
                                 type="button" class="btn btn-danger btn-lg btn-block">Cancel Release</button>
+
+                                <button onclick="event.preventDefault();
+                                        Swal.fire({
+                                            title: 'Create a new maintenance ticket',
+                                            text: 'You wont be able to change this!',
+                                            type: 'warning',
+                                            html:'<p>Describe the problem</p><br><textarea></textarea>',
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Finish',
+                                            cancelButtonText: 'Cancel'
+                                            }).then((result) => {
+                                            if (result.value) {
+                                                Swal.fire(
+                                                    'New Ticket!',
+                                                    'The ticket was sent to maintenance',
+                                                    'success'
+                                                )
+                                            }
+                                        });
+                                    "
+                                type="button" class="btn btn-warning btn-lg btn-block"><i class="fa fa-warning"></i> New Ticket <i class="fa fa-warning"></i></button>
                             </div>
                         </div>
                     </div>

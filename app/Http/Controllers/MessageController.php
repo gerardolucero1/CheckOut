@@ -139,6 +139,30 @@ class MessageController extends Controller
 
     }
 
+    public function task(Request $request){
+        $data = json_decode(file_get_contents('php://input'), true);
+        $data['message_id'];
+        $mensajeCopiar = Message::where('id', $data['message_id'])->first();
+       
+        
+        $message = new Message();
+        $message->from_id = $mensajeCopiar->from_id;
+        $message->to_id = $mensajeCopiar->to_id;
+        $message->content = $mensajeCopiar->content;
+        $message->tipo = 3;
+        $message->save();
+
+        $ticket = new Ticket();
+        $ticket->hotel_id = Auth::user()->hotel->id;
+        $ticket->numRoom = $data['num_room'];
+        $ticket->message = $mensajeCopiar->content;
+        $ticket->type = 3;
+        $ticket->attended = false;
+        $ticket->save();
+
+
+    }
+
     public function requirement(Request $request){
         $data = json_decode(file_get_contents('php://input'), true);
         $data['message_id'];

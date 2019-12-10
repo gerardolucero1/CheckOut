@@ -49,7 +49,7 @@
                         <ul class="list-group text-center">
                             <li class="list-group-item"><button class="btn btn-info" @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</button></li>
                             <li class="list-group-item"><button class="btn btn-info" @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</button></li>
-                            <li class="list-group-item"><button class="btn btn-info">Marcar como tarea</button></li>
+                            <li class="list-group-item"><button class="btn btn-info" @click="crearTask(message_id)">Marcar como tarea</button></li>
                         </ul>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ export default {
             this.room=this.content.match(regex);
             var ant=0;
             var mayor=0;
-            this.numRoom='No se encontraron # de habitacion en el mensaje';
+            this.numRoom='No se encontro numero de habitación';
 
             this.room.forEach( function(a){
                
@@ -141,6 +141,25 @@ export default {
                Swal.fire(
   'Success',
   'You created a ticket',
+  'success'
+);
+$('#ticketOptions').modal('hide');
+            })
+        },
+
+        crearTask(message_id){
+            let URL = '/api/task'
+
+            const params = {
+                message_id: message_id,
+                num_room: this.numRoom,
+            }
+
+            axios.post(URL, params).then((response) => {
+               this.$emit('updateMessages');
+               Swal.fire(
+  'Success',
+  'You created a new task',
   'success'
 );
 $('#ticketOptions').modal('hide');

@@ -42,9 +42,13 @@
                         <tr v-for="(user, index) in users" :key="index">
                             <th scope="row">{{ user.name }}</th>
                             <td v-for="(item, index) in 7" :key="index">
-                                <select name="" id="" width="100%">
+                                <select name="" id="" width="100%" style="font-size:12px">
+                                    <option value="">--</option>
                                     <option value="">Housekeeper</option>
                                     <option value="">Laundry</option>
+                                    <option value="">Houseman</option>
+                                    <option value="">Dishwasher</option>
+                                    <option value="">Supervisor</option>
                                     <option value="">R-OFF</option>
                                 </select>
                             </td>

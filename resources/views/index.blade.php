@@ -37,7 +37,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-door-closed"></i></p>
-                            <h4 class="mb-2 font-20">22%</h4>
+                            <h4 class="mb-2 font-20">50</h4>
                             <p class="mb-3">Available rooms</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -49,7 +49,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-calendar-check"></i></i></p>
-                            <h4 class="mb-2 font-20">18%</h4>
+                            <h4 class="mb-2 font-20">32</h4>
                             <p class="mb-3">Check out</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -61,7 +61,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-bed"></i></p>
-                            <h4 class="mb-2 font-20">30%</h4>
+                            <h4 class="mb-2 font-20">50</h4>
                             <p class="mb-3">Stay Over</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -73,7 +73,7 @@ Neon - Home
                     <div class="card-body">
                         <div class="xp-widget-box text-white text-center pt-3">
                             <p class="xp-icon-timer mb-4"><i class="fas fa-exclamation-circle"></i></p>
-                            <h4 class="mb-2 font-20">03%</h4>
+                            <h4 class="mb-2 font-20">18</h4>
                             <p class="mb-3">Out of order</p>
                             <button class="btn btn-white btn-rounded text-success">See Rooms</button>
                         </div>
@@ -169,39 +169,10 @@ Neon - Home
                 </div>
                 <!-- End XP Col -->
                 <!-- Start XP Col -->                       
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-success-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-trophy"></i></p>
-                                <h4 class="mb-2 font-20">Congratulations, Alex!</h4>
-                                <p class="mb-3">Welcome aboard, Thank you for joining our Team.</p>
-                                <button class="btn btn-white btn-rounded text-success">Ok, got it!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- End XP Col -->
                 <!-- Start XP Col -->
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card bg-danger-gradient m-b-30">
-                        <div class="card-body">
-                            <div class="xp-widget-box xp-widget-newsletter text-white text-center pt-3">
-                                <p class="xp-icon-timer mb-4"><i class="icon-paper-plane"></i></p>
-                                <h4 class="mb-2 font-20">Subscribe to Newsletter</h4>
-                                <p class="mb-3">Please, provide your email address to get latest updates.</p>
-                                <form>
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Enter Email" aria-label="Search" aria-describedby="button-addon-news">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit" id="button-addon-news">GO</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- End XP Col -->
             </div>
             <!-- End XP Row -->
@@ -318,13 +289,13 @@ Neon - Home
                         <div class="xp-social-profile-img">
                             <div class="row">
                                 <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
+                                    <img src="https://a9p9n2x2.stackpathcdn.com/wp-content/blogs.dir/1/files/2015/11/successful-black-woman_Black-Enterprise.jpg" class="rounded img-fluid" alt="img">
                                 </div>
                                 <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
+                                    <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fvickyvalet%2Ffiles%2F2018%2F11%2FMary-Barra-e1543440901933-1200x903.jpg" class="rounded img-fluid" alt="img">
                                 </div>
                                 <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
+                                    <img src="https://www.washingtonpost.com/resizer/9AZ3SC12P_fZTDN2gp5YL4LygJU=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MV45RLJ4TMZWXEUG2HUIQPL4P4.jpg" class="rounded img-fluid" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -337,7 +308,7 @@ Neon - Home
                                 </div>
                                 <div class="col-6">
                                     <div class="xp-social-profile-avatar text-center">
-                                        <img src="https://www.thispersondoesnotexist.com/image" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
+                                        <img src="https://media.aweita.larepublica.pe/678x508/aweita/imagen/2018/02/08/noticia-persona-positiva.png" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -351,13 +322,13 @@ Neon - Home
                             <div class="row">
                                 <div class="col-12">
                                     <div class="xp-social-profile-title">
-                                        <h5 class="my-1 text-black">karina_simons</h5>
+                                        <h5 class="my-1 text-black">Ada Lima</h5>
                                     </div>
                                     <div class="xp-social-profile-subtitle">
-                                        <p class="mb-3 text-muted">Karina Simons</p>
+                                        <p class="mb-3 text-muted">Ada Lima</p>
                                     </div>
                                     <div class="xp-social-profile-desc">
-                                        <p class="text-muted mb-1">Lifestyle coach and photographer <br />delivering best images only...</p>
+                                        <p class="text-muted mb-1">Best Average time per room</p>
                                     </div>
                                 </div>
                             </div>
@@ -372,14 +343,14 @@ Neon - Home
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-followers pt-3">
-                                        <h5 class="text-black my-1">27</h5>
+                                        <h5 class="text-black my-1">25:52</h5>
                                         <p style="font-size:10px;" class="mb-0 text-muted">Average</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="xp-social-profile-following pt-3">
                                         <h5 class="text-black my-1">552</h5>
-                                        <p style="font-size:10px;" class="mb-0 text-muted">Total</p>
+                                        <p style="font-size:10px;" class="mb-0 text-muted">Total Rooms</p>
                                     </div>
                                 </div>
                             </div>
@@ -419,7 +390,7 @@ Neon - Home
         <div class="col-md-12 col-lg-12 col-xl-12 align-self-center">
             <div class="card bg-white m-b-30">
                 <div class="card-header bg-white">
-                    <h5 style="text-align:center;" class="card-title text-black mb-0">Our Projects</h5>
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Tickets</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -435,17 +406,17 @@ Neon - Home
                             </thead>
                             <tbody>
                                 <tr style="text-align:center;">
-                                    <td>1</td>
+                                    <td>001</td>
                                     <td>
                                         <a href="javascript:void(0);">Diego</a>
                                     </td>
                                                                     
                                     <td>01/05/2018</td>
-                                    <td>30</td>
+                                    <td>10</td>
                                     <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
                                 <tr style="text-align:center;">
-                                    <td>12</td>
+                                    <td>212</td>
                                     <td>
                                         <a href="javascript:void(0);">Samuel</a>
                                     </td>
@@ -455,7 +426,7 @@ Neon - Home
                                     <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
                                 <tr style="text-align:center;">
-                                    <td>10</td>
+                                    <td>107</td>
                                     <td>
                                         <a href="javascript:void(0);">Gerardo</a>
                                     </td>
@@ -465,7 +436,7 @@ Neon - Home
                                     <td><button type="button" class="btn btn-success">Info</button></td>
                                 </tr>
                                 <tr style="text-align:center;">
-                                    <td>11</td>
+                                    <td>110</td>
                                     <td>
                                         <a href="javascript:void(0);">Talita</a>
                                     </td>
@@ -487,82 +458,8 @@ Neon - Home
        
         <!-- End XP Col -->
     </div> 
-    <div class="row">
-            <div class="col-md-12 col-lg-12 col-xl-12">
-                    <div class="card m-b-30">
-                        <div class="card-header bg-white">
-                            <h5 class="card-title text-black mb-0">Calender</h5>
-                        </div>
-                        <div class="card-body">
-                            <div data-language="en" class="datepicker-here" ></div>
-                            {{-- <calendar-component></calendar-component> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-12 align-self-center">
-                <div class="card bg-white m-b-30">
-                    <div class="card-header bg-white">
-                        <h5 style="text-align:center;" class="card-title text-black mb-0">Supply</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr style="text-align:center;">
-                                        <th class="border-top-0">Product ID</th>
-                                        <th class="border-top-0">Product Name</th>
-                                        <th class="border-top-0">Amount in Inventory</th>
-                                        <th class="border-top-0">Amount Needed</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="text-align:center;">
-                                        <td>1</td>
-                                        <td>
-                                            <a >Pens</a>
-                                        </td>
-                                                                        
-                                        <td style="color:red;">18</td>
-                                        <td>30</td>
-                                    </tr>
-                                    <tr style="text-align:center;">
-                                        <td>12</td>
-                                        <td>
-                                            <a >Laundry Soap</a>
-                                        </td>
-                                                                       
-                                        <td style="color:red;">4</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr style="text-align:center;">
-                                        <td>10</td>
-                                        <td>
-                                            <a >Towels</a>
-                                        </td>
-                                                                       
-                                        <td style="color:red;">11</td>
-                                        <td>12</td>
-                                    </tr>
-                                    <tr style="text-align:center;">
-                                        <td>11</td>
-                                        <td>
-                                            <a >Toilet Paper</a>
-                                        </td>
-                                                                       
-                                        <td style="color:red;">5</td>
-                                        <td>55</td>
-                                     
-                                    </tr>
-                                   
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  
+           
             <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-12 align-self-center">
                 <div class="card bg-white m-b-30">
@@ -589,8 +486,8 @@ Neon - Home
                                             <a >Ada Lima</a>
                                         </td>
                                                                         
-                                        <td>18</td>
-                                        <td>30</td>
+                                        <td>022</td>
+                                        <td>030</td>
                                         <td style="color:red;">
                                                 <h6 id="h1-3"><time>00:00:00</time></h6>
                                         </td>
@@ -602,12 +499,12 @@ Neon - Home
                                             <a >Ana Aparicio</a>
                                         </td>
                                                                         
-                                        <td>18</td>
-                                        <td>30</td>
+                                        <td>212</td>
+                                        <td>218</td>
                                         <td style="color:red;">
                                                 <h6 id="h1-2"><time>00:00:00</time></h6>                      
                                         </td>
-                                        <td><span class="badge badge-warning">Transition</span></td>
+                                        <td><span class="badge badge-info">Cleaning</span></td>
                                     </tr>
                                     <tr style="text-align:center;">
                                         <td>1</td>
@@ -615,12 +512,12 @@ Neon - Home
                                             <a >Dora Ortiz</a>
                                         </td>
                                                                         
-                                        <td>18</td>
-                                        <td>30</td>
+                                        <td>305</td>
+                                        <td>306</td>
                                         <td style="color:red;">
                                                 <h6 id="h1-1"><time>00:00:00</time></h6>
                                         </td>
-                                        <td><span class="badge badge-success">Complete</span></td>
+                                        <td><span class="badge badge-info">Cleaning</span></td>
                                     </tr>
                                    
                                    
@@ -642,15 +539,17 @@ Neon - Home
     var h11 = document.getElementById('h1-1');
     var h12 = document.getElementById('h1-2');
     var h13 = document.getElementById('h1-3');
-    var seconds = 0, minutes = 40, hours = 0,
+    var seconds = 3, minutes = 23, hours = 0,
     t;
-    var seconds2 = 0, minutes2 = 10, hours2 = 1,
+    var seconds2 = 10, minutes2 = 12, hours2 = 0,
     t;
-    var seconds3 = 0, minutes3 = 5, hours3 = 2,
+    var seconds3 = 25, minutes3 = 5, hours3 = 0,
     t;
 
 function add() {
     seconds++;
+    seconds2++;
+    seconds3++;
     if (seconds >= 60) {
         seconds = 0;
         minutes++;
@@ -670,9 +569,27 @@ function add() {
         }
     }
     
+    if (seconds2 >= 60) {
+        seconds2 = 0;
+        minutes2++;
+        if (minutes2 >= 60) {
+            minutes2 = 0;
+            hours2++;
+        }
+    }
+
+    if (seconds3 >= 60) {
+        seconds3 = 0;
+        minutes3++;
+        if (minutes3 >= 60) {
+            minutes3 = 0;
+            hours3++;
+        }
+    }
+    
     h11.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    h12.textContent = (hours2 ? (hours2 > 9 ? hours2 : "0" + hours2) : "00") + ":" + (minutes2 ? (minutes2 > 9 ? minutes2 : "0" + minutes2) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    h13.textContent = (hours3 ? (hours3 > 9 ? hours3 : "0" + hours3) : "00") + ":" + (minutes3 ? (minutes3 > 9 ? minutes3 : "0" + minutes3) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    h12.textContent = (hours2 ? (hours2 > 9 ? hours2 : "0" + hours2) : "00") + ":" + (minutes2 ? (minutes2 > 9 ? minutes2 : "0" + minutes2) : "00") + ":" + (seconds2 > 9 ? seconds2 : "0" + seconds2);
+    h13.textContent = (hours3 ? (hours3 > 9 ? hours3 : "0" + hours3) : "00") + ":" + (minutes3 ? (minutes3 > 9 ? minutes3 : "0" + minutes3) : "00") + ":" + (seconds3 > 9 ? seconds3 : "0" + seconds3);
 
     timer();
 }
