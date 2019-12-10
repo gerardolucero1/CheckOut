@@ -18,7 +18,7 @@ class CreateTicketsTable extends Migration
             $table->integer('hotel_id')->unsigned();
             $table->string('numRoom');
             $table->text('message');
-            $table->boolean('ticket');
+            $table->integer('type');
             $table->boolean('attended');
             $table->timestamps();
 

@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
-use App\Observers\MessageObserver;
+use App\Ticket;
 use App\Message;
-use Illuminate\Support\ServiceProvider;
+use App\Observers\TicketObserver;
+use App\Observers\MessageObserver;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Message::observe(MessageObserver::class);
+        Ticket::observe(TicketObserver::class);
     }
 }
