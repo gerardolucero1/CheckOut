@@ -185,9 +185,9 @@ Floor - {{ $floor->name }}
                             <div class="form-group col-md-6">
                                 {{ Form::label('rooms', 'Type of room') }}
                                 {{ Form::select('type', [
-                                    'sencilla' => 'Sencilla', 
-                                    'doble' => 'Doble',
-                                    'matrimonial' => 'Matrimonial',
+                                    'Single' => 'Single', 
+                                    'Double' => 'Double',
+                                    'King Size' => 'King Size',
                                     ],null, ['class' => 'form-control', 'id' => 'rooms']) }}
                             </div>
                         </div>

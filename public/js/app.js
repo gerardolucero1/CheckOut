@@ -15917,6 +15917,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -93259,7 +93260,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-3" }, [
-        _c("h4", [_vm._v("Requeriment of room")]),
+        _c("h4", [_vm._v("Room requeriment")]),
         _vm._v(" "),
         _c(
           "ul",
@@ -93375,24 +93376,24 @@ var render = function() {
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "sencilla" },
+                class: { active: _vm.typeRoom == "Single" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "sencilla"
+                    _vm.typeRoom = "Single"
                   }
                 }
               },
-              [_vm._v("Sencilla")]
+              [_vm._v("Single")]
             ),
             _vm._v(" "),
             _c(
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "doble" },
+                class: { active: _vm.typeRoom == "Double" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "doble"
+                    _vm.typeRoom = "Double"
                   }
                 }
               },
@@ -93403,14 +93404,14 @@ var render = function() {
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "matrimonial" },
+                class: { active: _vm.typeRoom == "King Size" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "matrimonial"
+                    _vm.typeRoom = "King Size"
                   }
                 }
               },
-              [_vm._v("Matrimonial")]
+              [_vm._v("King Size")]
             )
           ]
         ),
@@ -93727,7 +93728,19 @@ var staticRenderFns = [
               },
               [
                 _c("i", { staticClass: "fa fa-calendar mr-2" }),
-                _vm._v(" Make schedule")
+                _vm._v(" New schedule")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-rounded btn-success",
+                attrs: { type: "button" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-print mr-2" }),
+                _vm._v(" Print schedule")
               ]
             )
           ])

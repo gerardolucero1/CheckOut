@@ -309,84 +309,7 @@ Neon - Home
         <!-- End XP Col -->
         <!-- Start XP Col -->                       
         <div class="col-lg-6 col-xl-4">
-            <div class="card m-b-30">
-                <div class="card-header bg-white">
-                    <h5 class="card-title text-black mb-0">Employee of the Month</h5>
-                </div>
-                <div class="card-body">
-                    <div class="xp-social-profile">
-                        <div class="xp-social-profile-img">
-                            <div class="row">
-                                <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
-                                </div>
-                                <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
-                                </div>
-                                <div class="col-4 px-1">
-                                    <img src="https://www.thispersondoesnotexist.com/image" class="rounded img-fluid" alt="img">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="xp-social-profile-top">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div class="xp-social-profile-star py-3">
-                                        <i class="icon-star font-20"></i>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="xp-social-profile-avatar text-center">
-                                        <img src="https://www.thispersondoesnotexist.com/image" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-social-profile-live"></span>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="xp-social-profile-menu text-right py-3">
-                                        <i class="icon-options font-20"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="xp-social-profile-middle text-center">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="xp-social-profile-title">
-                                        <h5 class="my-1 text-black">karina_simons</h5>
-                                    </div>
-                                    <div class="xp-social-profile-subtitle">
-                                        <p class="mb-3 text-muted">Karina Simons</p>
-                                    </div>
-                                    <div class="xp-social-profile-desc">
-                                        <p class="text-muted mb-1">Lifestyle coach and photographer <br />delivering best images only...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="xp-social-profile-bottom text-center">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="xp-social-profile-media pt-3">
-                                        <h5 class="text-black my-1">45</h5>
-                                        <p style="font-size:10px;" class="mb-0 text-muted">Wipers today</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="xp-social-profile-followers pt-3">
-                                        <h5 class="text-black my-1">27</h5>
-                                        <p style="font-size:10px;" class="mb-0 text-muted">Average</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="xp-social-profile-following pt-3">
-                                        <h5 class="text-black my-1">552</h5>
-                                        <p style="font-size:10px;" class="mb-0 text-muted">Total</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <!-- End XP Col -->
         <!-- Start XP Col -->                       
@@ -416,72 +339,7 @@ Neon - Home
     <!-- Start XP Row -->
     <div class="row">
         <!-- Start XP Col -->
-        <div class="col-md-12 col-lg-12 col-xl-12 align-self-center">
-            <div class="card bg-white m-b-30">
-                <div class="card-header bg-white">
-                    <h5 style="text-align:center;" class="card-title text-black mb-0">Our Projects</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr style="text-align:center;">
-                                    <th class="border-top-0">Room number</th>
-                                    <th class="border-top-0">Who deposit</th>
-                                    <th class="border-top-0">When</th>
-                                    <th class="border-top-0">Total(Days)</th>
-                                    <th class="border-top-0">Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="text-align:center;">
-                                    <td>1</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Diego</a>
-                                    </td>
-                                                                    
-                                    <td>01/05/2018</td>
-                                    <td>30</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>12</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Samuel</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>8</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>10</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Gerardo</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>12</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>11</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Talita</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>55</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
-                                 
-                                </tr>
-                               
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- End XP Col -->
         <!-- Start XP Col -->
        
@@ -513,8 +371,8 @@ Neon - Home
                                     <tr style="text-align:center;">
                                         <th class="border-top-0">Product ID</th>
                                         <th class="border-top-0">Product Name</th>
-                                        <th class="border-top-0">Amount in Inventory</th>
-                                        <th class="border-top-0">Amount Needed</th>
+                                        <th class="border-top-0">Qty. in Inventory</th>
+                                        <th class="border-top-0">Qty. Needed</th>
                                     </tr>
                                 </thead>
                                 <tbody>

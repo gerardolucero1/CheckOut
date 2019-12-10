@@ -8,7 +8,8 @@
                         <p>10-28-2019 to 11-03-2019</p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> Make schedule</button>
+                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> New schedule</button>
+                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-print mr-2"></i> Print schedule</button>
                     </div>
                 </div>
             </div>

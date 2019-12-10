@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h4>Requeriment of room</h4>
+                <h4>Room requeriment</h4>
                 <ul class="list-group" style="margin-top: 20px;">
                     <li class="list-group-item" :class="{ 'active': requerimentRoom == 'all'  }" @click="requerimentRoom = 'all'">All</li>
                     <li class="list-group-item" :class="{ 'active': requerimentRoom == 'Vacancy'  }" @click="requerimentRoom = 'Vacancy'">Vacancy (VC)</li>
@@ -22,9 +22,9 @@
                 <h4 class="mt-4">Type of room</h4>
                 <ul class="list-group" style="margin-top: 20px;">
                     <li class="list-group-item" :class="{ 'active':typeRoom == 'all'  }" @click="typeRoom = 'all'">All</li>
-                    <li class="list-group-item" :class="{ 'active':typeRoom == 'sencilla'  }" @click="typeRoom = 'sencilla'">Sencilla</li>
-                    <li class="list-group-item" :class="{ 'active':typeRoom == 'doble'  }" @click="typeRoom = 'doble'">Doble</li>
-                    <li class="list-group-item" :class="{ 'active':typeRoom == 'matrimonial'  }" @click="typeRoom = 'matrimonial'">Matrimonial</li>
+                    <li class="list-group-item" :class="{ 'active':typeRoom == 'Single'  }" @click="typeRoom = 'Single'">Single</li>
+                    <li class="list-group-item" :class="{ 'active':typeRoom == 'Double'  }" @click="typeRoom = 'Double'">Doble</li>
+                    <li class="list-group-item" :class="{ 'active':typeRoom == 'King Size'  }" @click="typeRoom = 'King Size'">King Size</li>
                 </ul>
 
                 <ul class="list-group" style="margin-top: 20px;">
