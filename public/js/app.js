@@ -13,7 +13,7 @@
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
-/******/ 			exports: {}
+/******/ 			exports: {} 
 /******/ 		};
 /******/
 /******/ 		// Execute the module function
@@ -15976,10 +15976,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      users: []
+      autoSchedule: false,
+      users: [],
+      positions: ['Housekeeper', 'Laundry', 'Houseman', 'Dishwasher', 'Supervisor', 'R-OFF']
     };
   },
   created: function created() {
@@ -16018,6 +16061,24 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }, null, this, [[0, 8]]);
+    },
+    makeAutoschedule: function makeAutoschedule() {
+      var _this = this;
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "This will make an auto schedule!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, I want it!'
+      }).then(function (result) {
+        if (result.value) {
+          _this.autoSchedule = true;
+          Swal.fire('Success!', 'Auto schedule generated', 'success');
+        }
+      });
     }
   }
 });
@@ -93878,38 +93939,137 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _vm._m(0),
+    _c("div", { staticClass: "card m-b-30" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8 text-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-rounded btn-success",
+                attrs: { type: "button" },
+                on: { click: _vm.makeAutoschedule }
+              },
+              [
+                _c("i", { staticClass: "fa fa-calendar mr-2" }),
+                _vm._v(" Auto schedule")
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "card m-b-30" }, [
       _c("div", { staticClass: "card-body table-responsive" }, [
-        _c("table", { staticClass: "table table-hover" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            [
-              _vm._m(2),
+        _vm.autoSchedule
+          ? _c("table", { staticClass: "table table-hover" }, [
+              _vm._m(3),
               _vm._v(" "),
-              _vm._l(_vm.users, function(user, index) {
-                return _c(
-                  "tr",
-                  { key: index },
-                  [
-                    _c("th", { attrs: { scope: "row" } }, [
-                      _vm._v(_vm._s(user.name))
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(7, function(item, index) {
-                      return _c("td", { key: index }, [_vm._m(3, true)])
-                    })
-                  ],
-                  2
-                )
-              })
-            ],
-            2
-          )
-        ])
+              _c(
+                "tbody",
+                [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm._l(_vm.users, function(user, index) {
+                    return _c(
+                      "tr",
+                      { key: index },
+                      [
+                        _c("th", { attrs: { scope: "row" } }, [
+                          _vm._v(_vm._s(user.name))
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(7, function(item, index) {
+                          return _c("td", { key: index }, [
+                            _c(
+                              "select",
+                              {
+                                staticStyle: { "font-size": "12px" },
+                                attrs: { name: "", id: "", width: "100%" }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.positions[
+                                        Math.floor(
+                                          Math.random() * _vm.positions.length
+                                        )
+                                      ]
+                                    )
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Housekeeper")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Laundry")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Houseman")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Dishwasher")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("Supervisor")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v("R-OFF")
+                                ])
+                              ]
+                            )
+                          ])
+                        })
+                      ],
+                      2
+                    )
+                  })
+                ],
+                2
+              )
+            ])
+          : _c("table", { staticClass: "table table-hover" }, [
+              _vm._m(5),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _vm._l(_vm.users, function(user, index) {
+                    return _c(
+                      "tr",
+                      { key: index },
+                      [
+                        _c("th", { attrs: { scope: "row" } }, [
+                          _vm._v(_vm._s(user.name))
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(7, function(item, index) {
+                          return _c("td", { key: index }, [_vm._m(7, true)])
+                        })
+                      ],
+                      2
+                    )
+                  })
+                ],
+                2
+              )
+            ])
       ])
     ])
   ])
@@ -93919,42 +94079,79 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card m-b-30" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Period:")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("10-28-2019 to 11-03-2019")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 text-right" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-rounded btn-success",
-                attrs: { type: "button" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-calendar mr-2" }),
-                _vm._v(" New schedule")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-rounded btn-success",
-                attrs: { download: "", href: "../assets/Schedule.pdf" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-print mr-2" }),
-                _vm._v(" Print schedule")
-              ]
-            )
-          ])
-        ])
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Period:")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("10-28-2019 to 11-03-2019")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-rounded btn-success", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fa fa-calendar mr-2" }), _vm._v(" New schedule")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-rounded btn-success",
+        attrs: { download: "", href: "../assets/Schedule.pdf" }
+      },
+      [_c("i", { staticClass: "fa fa-print mr-2" }), _vm._v(" Print schedule")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Sunday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Monday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Tuesday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Wednesday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Thursday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Friday")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Saturday")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("Requested Shifts")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-08-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-09-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-10-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-11-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-12-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-13-2019")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("11-12-2019")])
     ])
   },
   function() {
