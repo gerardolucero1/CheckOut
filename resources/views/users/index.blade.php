@@ -40,6 +40,7 @@ Employees
         <div class="col-md-6 col-lg-6">
             <div class="xp-breadcrumb">
                     <a href="{{ route('users.create', Auth::user()->hotel->id) }}" class="btn btn-rounded btn-success"><i class="mdi mdi-plus mr-2"></i> Add user</a>
+                    <a class="btn btn-rounded btn-warning" style="color: white"><i class="mdi mdi-upload mr-2"></i> Upload XLS</a>
             </div>
         </div>
     </div>
@@ -54,7 +55,7 @@ Employees
             <div class="card m-b-30">
                 <div class="card-header bg-white">
                     <h5 class="card-title text-black">List of Employees</h5>
-                    <h6 class="card-subtitle">This are all the employees registered</h6>
+                    <h6 class="card-subtitle">These are all the registered employees</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -65,7 +66,7 @@ Employees
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>User Name</th>
-                                    <th>State</th>
+                                    <th>Status</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>

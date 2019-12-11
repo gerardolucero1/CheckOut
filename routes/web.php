@@ -24,9 +24,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/kpi', function () {
             return view('indexkpi');
         });
+    Route::get('/maintenance/index', function () {
+            return view('indexmaintenance');
+        });
 
     
-
+    
     //Rutas Hoteles
     Route::get('hotels', 'HotelController@index')->name('hotels.index');
     Route::get('hotels/create', 'HotelController@create')->name('hotels.create');
@@ -85,6 +88,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Rutas Control
     Route::get('control/rooms', 'ControlController@rooms_control')->name('control.rooms_control');
+    Route::get('control/assing_room_to_new_user', 'ControlController@assing_room_to_new_user')->name('control.assing_room_to_new_user');
     Route::get('control/assign-rooms', 'ControlController@assign_rooms_control')->name('control.assign_rooms_control');
     Route::get('control/schedules', 'ControlController@schedules')->name('control.schedules');
     Route::get('control/pending-review', 'ControlController@rooms_pending_review')->name('control.rooms_pending_review');
@@ -126,10 +130,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('api/messages', 'MessageController@store');
 
     Route::post('api/ticket', 'MessageController@ticket');
+    Route::post('api/task', 'MessageController@task');
     Route::post('/api/requeriment', 'MessageController@requirement');
 
-    //Rutas mantenimiento
-    Route::get('maintenance/index', 'MaintenanceController@index');
+   
 });
 
 

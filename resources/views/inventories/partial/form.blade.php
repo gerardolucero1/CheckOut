@@ -32,7 +32,7 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                {{ Form::label('quantityAlert', 'Quantity alert') }}
+                {{ Form::label('quantityAlert', 'Notify when quantity is') }}
                 {{ Form::text('quantityAlert', null, ['class' => 'form-control', 'id' => 'quantityAlert']) }}
             </div>
             <div class="form-group col-md-6">

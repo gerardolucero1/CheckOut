@@ -20,6 +20,13 @@ General Inventory
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct">
                     Add product
                 </button>
+
+                <button type="file" class="btn btn-warning">
+                        <i class="fa fa-upload"></i> XLS
+                    </button>
+                    <button type="file" class="btn btn-success">
+                            <i class="fa fa-download"></i> Download PDF
+                        </button>
             </div>
         </div>
     </div>
@@ -56,7 +63,7 @@ General Inventory
             <div class="card m-b-30">
                 <div class="card-header bg-white">
                     <h5 class="card-title text-black">List of Products</h5>
-                    <h6 class="card-subtitle">This are all the products registered</h6>
+                    <h6 class="card-subtitle">These are all the registered products</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -66,7 +73,7 @@ General Inventory
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th>Quantity per Room</th>
+                                    <th>Qty. per Room</th>
                                     <th>Created By</th>
                                     <th>Options</th>
                                 </tr>
@@ -111,14 +118,7 @@ General Inventory
                                 @endforeach
                             </tbody>
                             <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>location</th>
-                                    <th>CP</th>
-                                    <th>State</th>
-                                    <th>Options</th>
-                                </tr>
+                               
                             </tfoot>
                         </table>
                     </div>
@@ -178,7 +178,7 @@ General Inventory
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            {{ Form::label('quantityAlert', 'Quantity alert') }}
+                            {{ Form::label('quantityAlert', 'Notify when quantity is') }}
                             {{ Form::text('quantityAlert', null, ['class' => 'form-control', 'id' => 'quantityAlert']) }}
                         </div>
                         <div class="form-group col-md-6">

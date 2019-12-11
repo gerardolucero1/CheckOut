@@ -15027,6 +15027,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_1__);
 
 //
 //
@@ -15081,6 +15083,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -15092,6 +15095,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.getEmployees();
     this.getFloors();
+    interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item').on('click', function (event) {
+      Swal.fire('Success!', 'This room has been rushed.', 'success');
+    });
   },
   computed: {
     numberRooms: function numberRooms() {
@@ -15543,6 +15549,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -15567,6 +15605,10 @@ __webpack_require__.r(__webpack_exports__);
 
     this.getFloors();
     this.getUsers();
+    interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item2').on('click', function (event) {
+      Swal.fire('Success!', 'This room has been reasiggned.', 'success');
+      $('#myModal').modal('hide');
+    });
     interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item').on('hold', function (event) {
       Swal.fire({
         title: 'Are you sure?',
@@ -15690,6 +15732,9 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
       });
+    },
+    openmodal: function openmodal(room_id) {
+      $('#myModal').modal('show');
     },
     getFloors: function getFloors() {
       var URL, response;
@@ -15837,7 +15882,20 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }, null, this, [[0, 8]]);
-    }
+    },
+    alert: function (_alert) {
+      function alert(_x) {
+        return _alert.apply(this, arguments);
+      }
+
+      alert.toString = function () {
+        return _alert.toString();
+      };
+
+      return alert;
+    }(function (room_id) {
+      alert('Hola' + room_id);
+    })
   }
 });
 
@@ -15855,6 +15913,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16080,7 +16143,7 @@ __webpack_require__.r(__webpack_exports__);
       this.room = this.content.match(regex);
       var ant = 0;
       var mayor = 0;
-      this.numRoom = 'No se encontraron # de habitacion en el mensaje';
+      this.numRoom = 'No se encontro numero de habitación';
       this.room.forEach(function (a) {
         if (parseInt(a) > parseInt(ant)) {
           ant = a;
@@ -16103,8 +16166,23 @@ __webpack_require__.r(__webpack_exports__);
         $('#ticketOptions').modal('hide');
       });
     },
-    crearRequeriment: function crearRequeriment(message_id) {
+    crearTask: function crearTask(message_id) {
       var _this3 = this;
+
+      var URL = '/api/task';
+      var params = {
+        message_id: message_id,
+        num_room: this.numRoom
+      };
+      axios.post(URL, params).then(function (response) {
+        _this3.$emit('updateMessages');
+
+        Swal.fire('Success', 'You created a new task', 'success');
+        $('#ticketOptions').modal('hide');
+      });
+    },
+    crearRequeriment: function crearRequeriment(message_id) {
+      var _this4 = this;
 
       var URL = '/api/requeriment';
       var params = {
@@ -16112,7 +16190,7 @@ __webpack_require__.r(__webpack_exports__);
         num_room: this.numRoom
       };
       axios.post(URL, params).then(function (response) {
-        _this3.$emit('updateMessages');
+        _this4.$emit('updateMessages');
 
         Swal.fire('Success', 'You created a new requeriment', 'success');
         $('#ticketOptions').modal('hide');
@@ -16211,6 +16289,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -51581,7 +51660,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.room{\n    position: relative;\n    cursor: pointer;\n}\n.room:before {\n    content:'';\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(0,0,0,0.2);\n    border-radius: 15px;\n}\n.room p{\n    line-height: 5px;\n    position: relative;\n}\n.room h4{\n    position: relative;\n}\nul li{\n    cursor: pointer;\n}\n.status{\n    font-size: 7px;\n}\n.count{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 25%;\n    height: auto;\n    margin-left: 5%;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.room{\n    position: relative;\n    cursor: pointer;\n}\n.room:before {\n    content:'';\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(0,0,0,0.2);\n    border-radius: 15px;\n}\n.room p{\n    line-height: 5px;\n    position: relative;\n}\n.room h4{\n    position: relative;\n}\nul li{\n    cursor: pointer;\n}\n.status{\n    font-size: 7px;\n}\n.count{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 25%;\n    height: auto;\n    margin-left: 5%;\n    color: white;\n}\n.fondorojo{\n    background: #ff6666;\n}\n", ""]);
 
 // exports
 
@@ -51619,7 +51698,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.action[data-v-37c13faf]{\n        font-size: 10px;\n        text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n        padding: 5px;\n}\n.ticket[data-v-37c13faf]{\n        background: #FFFDC8;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.requerimento[data-v-37c13faf]{\n        background: #C8E8FF;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n", ""]);
+exports.push([module.i, "\n.action[data-v-37c13faf]{\n        font-size: 10px;\n        text-align: center;\n}\n.action .actions[data-v-37c13faf]{\n        padding: 5px;\n}\n.ticket[data-v-37c13faf]{\n        background: #FFFDC8;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.requerimento[data-v-37c13faf]{\n        background: #C8E8FF;\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n.tarea[data-v-37c13faf]{\n        background: rgb(200, 255, 212);\n        border-radius: 0;\nbox-shadow: 3px 4px 5px 0px rgba(199,199,199,1);\n}\n", ""]);
 
 // exports
 
@@ -92820,7 +92899,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-primary",
+              staticClass: "btn btn-primary item",
               attrs: { type: "button" },
               on: {
                 click: function($event) {
@@ -93232,14 +93311,14 @@ var render = function() {
             },
             on: { click: _vm.releaseRooms }
           },
-          [_vm._v("\n                Releasing rooms\n            ")]
+          [_vm._v("\n                    Releasing rooms\n                ")]
         )
       ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-3" }, [
-        _c("h4", [_vm._v("Requeriment of room")]),
+        _c("h4", [_vm._v("Room requeriment")]),
         _vm._v(" "),
         _c(
           "ul",
@@ -93355,24 +93434,24 @@ var render = function() {
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "sencilla" },
+                class: { active: _vm.typeRoom == "Single" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "sencilla"
+                    _vm.typeRoom = "Single"
                   }
                 }
               },
-              [_vm._v("Sencilla")]
+              [_vm._v("Single")]
             ),
             _vm._v(" "),
             _c(
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "doble" },
+                class: { active: _vm.typeRoom == "Double" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "doble"
+                    _vm.typeRoom = "Double"
                   }
                 }
               },
@@ -93383,14 +93462,14 @@ var render = function() {
               "li",
               {
                 staticClass: "list-group-item",
-                class: { active: _vm.typeRoom == "matrimonial" },
+                class: { active: _vm.typeRoom == "King Size" },
                 on: {
                   click: function($event) {
-                    _vm.typeRoom = "matrimonial"
+                    _vm.typeRoom = "King Size"
                   }
                 }
               },
-              [_vm._v("Matrimonial")]
+              [_vm._v("King Size")]
             )
           ]
         ),
@@ -93438,78 +93517,115 @@ var render = function() {
                     "div",
                     {
                       key: index,
-                      staticClass: "col-md-3 item",
+                      staticClass: "col-md-3 ",
                       attrs: {
                         "data-id": room.id,
                         "data-floorid": room.floor_id
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.changeStatus(room)
-                        }
                       }
                     },
                     [
                       _c(
                         "div",
                         {
-                          staticClass: "card m-b-30 room",
+                          staticClass: "card m-b-30 room item",
                           class: {
                             "bg-success-gradient": room.status == _vm.isVacancy,
-                            "bg-danger-gradient": room.status == _vm.isCheckOut,
+                            fondorojo: room.status == _vm.isCheckOut,
                             "bg-warning-gradient":
                               room.status == _vm.isStayOver,
                             "bg-primary-gradient":
                               room.status == _vm.isPendingReview,
-                            "bg-secondary-gradient": room.status == _vm.isRush
+                            "bg-danger-gradient": room.status == _vm.isRush
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.changeStatus(room)
+                            }
                           }
                         },
                         [
-                          _c("div", { staticClass: "card-body" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "xp-widget-box text-white text-center pt-3"
-                              },
-                              [
-                                _c("p", { staticClass: "xp-icon-timer mb-4" }, [
-                                  _vm._v(_vm._s(room.id))
-                                ]),
-                                _vm._v(" "),
-                                _c("h4", { staticClass: "mb-2 font-20" }, [
-                                  _vm._v(_vm._s(room.type))
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "mb-3 small" }, [
-                                  _vm._v(
-                                    "\n                                    " +
-                                      _vm._s(room.status) +
-                                      "\n                                    "
+                          _c("i", {
+                            staticClass: "far fa-address-card",
+                            staticStyle: {
+                              "font-size": "20px",
+                              color: "white",
+                              float: "left",
+                              "z-index": "10",
+                              "padding-top": "10%",
+                              "padding-left": "10%"
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.openmodal(room.id)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "card-body",
+                              staticStyle: { "margin-top": "-20%" }
+                            },
+                            [
+                              room.status == _vm.isRush
+                                ? _c("i", {
+                                    staticClass: "fas fa-exclamation-triangle",
+                                    staticStyle: {
+                                      "font-size": "18px",
+                                      color: "white",
+                                      float: "right"
+                                    }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "xp-widget-box text-white text-center pt-3"
+                                },
+                                [
+                                  _c(
+                                    "p",
+                                    { staticClass: "xp-icon-timer mb-4" },
+                                    [_vm._v(_vm._s(room.id))]
                                   ),
-                                  room.status == "Vacancy"
-                                    ? _c("span", [_vm._v(" (VC)")])
-                                    : _vm._e(),
                                   _vm._v(" "),
-                                  room.status == "Check Out"
-                                    ? _c("span", [_vm._v(" (CO)")])
-                                    : _vm._e(),
+                                  _c("h4", { staticClass: "mb-2 font-20" }, [
+                                    _vm._v(_vm._s(room.type))
+                                  ]),
                                   _vm._v(" "),
-                                  room.status == "Rush"
-                                    ? _c("span", [_vm._v(" (RR)")])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  room.status == "Stay Over"
-                                    ? _c("span", [_vm._v(" (SO)")])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  room.status == "Pending Review"
-                                    ? _c("span", [_vm._v(" (PR)")])
-                                    : _vm._e()
-                                ])
-                              ]
-                            )
-                          ])
+                                  _c("span", { staticClass: "mb-3 small" }, [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(room.status) +
+                                        "\n                                        "
+                                    ),
+                                    room.status == "Vacancy"
+                                      ? _c("span", [_vm._v(" (VC)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Check Out"
+                                      ? _c("span", [_vm._v(" (CO)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Rush"
+                                      ? _c("span", [_vm._v(" (RR)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Stay Over"
+                                      ? _c("span", [_vm._v(" (SO)")])
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    room.status == "Pending Review"
+                                      ? _c("span", [_vm._v(" (PR)")])
+                                      : _vm._e()
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
                         ]
                       )
                     ]
@@ -93522,6 +93638,38 @@ var render = function() {
         ],
         2
       )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal", attrs: { id: "myModal" } }, [
+      _c("div", { staticClass: "modal-dialog" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "modal-body" },
+            _vm._l(_vm.users, function(user, index) {
+              return _c("li", { key: index, staticClass: "list-group-item" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col",
+                      staticStyle: { "text-align": "center" }
+                    },
+                    [_vm._v(_vm._s(user.name))]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(1, true)
+                ])
+              ])
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c(
@@ -93542,7 +93690,7 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(0),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c(
@@ -93554,7 +93702,7 @@ var render = function() {
                       { key: index, staticClass: "list-group-item" },
                       [
                         _vm._v(
-                          _vm._s(user.name) + "\n                        "
+                          _vm._s(user.name) + "\n                            "
                         ),
                         _c("b-progress", {
                           attrs: {
@@ -93600,6 +93748,53 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [_vm._v("Assignate User  ")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("×")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-block btn-info item2",
+          attrs: { type: "button" }
+        },
+        [_vm._v("Asignar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -93707,7 +93902,19 @@ var staticRenderFns = [
               },
               [
                 _c("i", { staticClass: "fa fa-calendar mr-2" }),
-                _vm._v(" Make schedule")
+                _vm._v(" New schedule")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-rounded btn-success",
+                attrs: { type: "button" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-print mr-2" }),
+                _vm._v(" Print schedule")
               ]
             )
           ])
@@ -93765,13 +93972,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("select", { attrs: { name: "", id: "", width: "100%" } }, [
-      _c("option", { attrs: { value: "" } }, [_vm._v("Housekeeper")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("Laundry")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("R-OFF")])
-    ])
+    return _c(
+      "select",
+      {
+        staticStyle: { "font-size": "12px" },
+        attrs: { name: "", id: "", width: "100%" }
+      },
+      [
+        _c("option", { attrs: { value: "" } }, [_vm._v("--")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Housekeeper")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Laundry")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Houseman")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Dishwasher")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("Supervisor")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "" } }, [_vm._v("R-OFF")])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -93977,7 +94199,20 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(0)
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info",
+                        on: {
+                          click: function($event) {
+                            return _vm.crearTask(_vm.message_id)
+                          }
+                        }
+                      },
+                      [_vm._v("Marcar como tarea")]
+                    )
+                  ])
                 ])
               ])
             ])
@@ -93987,18 +94222,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "list-group-item" }, [
-      _c("button", { staticClass: "btn btn-info" }, [
-        _vm._v("Marcar como tarea")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -94174,7 +94398,11 @@ var render = function() {
             "b-card",
             {
               staticClass: "p-3 small",
-              class: { ticket: _vm.tipo == 1, requerimento: _vm.tipo == 2 },
+              class: {
+                ticket: _vm.tipo == 1,
+                requerimento: _vm.tipo == 2,
+                tarea: _vm.tipo == 3
+              },
               attrs: { "no-body": "" }
             },
             [
@@ -94187,6 +94415,12 @@ var render = function() {
               _vm.tipo == 2
                 ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
                     _vm._v("*Requirement:")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tipo == 3
+                ? _c("p", { staticStyle: { "font-weight": "bold" } }, [
+                    _vm._v("*Task:")
                   ])
                 : _vm._e(),
               _vm._v(" "),
@@ -107369,7 +107603,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n@import '~toastr/toastr';\n       ^\n      Can't find stylesheet to import.\n  ╷\n9 │ @import '~toastr/toastr';\n  │         ^^^^^^^^^^^^^^^^\n  ╵\n  stdin 9:9  root stylesheet\n      in /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss (line 9, column 9)\n    at runLoaders (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:54416:16)\n    at _render_closure1.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:33511:12)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:10539:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:12240:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)");
 
 /***/ }),
 
@@ -107380,8 +107614,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

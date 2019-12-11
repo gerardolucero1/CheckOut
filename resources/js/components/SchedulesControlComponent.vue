@@ -8,7 +8,8 @@
                         <p>10-28-2019 to 11-03-2019</p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> Make schedule</button>
+                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> New schedule</button>
+                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-print mr-2"></i> Print schedule</button>
                     </div>
                 </div>
             </div>
@@ -42,9 +43,13 @@
                         <tr v-for="(user, index) in users" :key="index">
                             <th scope="row">{{ user.name }}</th>
                             <td v-for="(item, index) in 7" :key="index">
-                                <select name="" id="" width="100%">
+                                <select name="" id="" width="100%" style="font-size:12px">
+                                    <option value="">--</option>
                                     <option value="">Housekeeper</option>
                                     <option value="">Laundry</option>
+                                    <option value="">Houseman</option>
+                                    <option value="">Dishwasher</option>
+                                    <option value="">Supervisor</option>
                                     <option value="">R-OFF</option>
                                 </select>
                             </td>

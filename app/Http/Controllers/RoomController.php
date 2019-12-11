@@ -41,8 +41,8 @@ class RoomController extends Controller
             while ($a <= $request->number) {
                 $room = new Room();
                 $room->floor_id = $request->floor_id;
-                $room->name = 'gidle' . $a;
-                $room->type = 'sencilla';
+                $room->name = '0' . $a;
+                $room->type = 'Single';
                 $room->save();
 
                 $a++;

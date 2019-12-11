@@ -185,8 +185,8 @@ Ticket review
                             <div class="col-md-6 offset-md-3">
                                 <button onclick="event.preventDefault();
                                         Swal.fire({
-                                            title: 'Can you release this room?',
-                                            text: 'You wont be able to change this!',
+                                            title: 'Do you release this room?',
+                                            text: 'Ticket done',
                                             type: 'warning',
                                             showCancelButton: true,
                                             confirmButtonColor: '#3085d6',
@@ -198,10 +198,10 @@ Ticket review
                                             }
                                         });
                                     " 
-                                type="submit" class="btn btn-success btn-lg btn-block">Free Room</button>
+                                type="submit" class="btn btn-success btn-lg btn-block">Close Ticket</button>
                                 <button onclick="event.preventDefault();
                                         Swal.fire({
-                                            title: 'Can you cancel this room?',
+                                            title: 'Do you cancel this ticket room?',
                                             text: 'You wont be able to change this!',
                                             type: 'warning',
                                             showCancelButton: true,
