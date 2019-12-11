@@ -202,7 +202,7 @@ Neon - Home
                                                                     
                                     <td>01/05/2018</td>
                                     <td>30</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td>012</td>
@@ -212,7 +212,7 @@ Neon - Home
                                                                    
                                     <td>01/05/2018</td>
                                     <td>8</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td>150</td>
@@ -222,7 +222,7 @@ Neon - Home
                                                                    
                                     <td>01/05/2018</td>
                                     <td>12</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td>11</td>
@@ -232,7 +232,7 @@ Neon - Home
                                                                    
                                     <td>01/05/2018</td>
                                     <td>55</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
                                  
                                 </tr>
                                

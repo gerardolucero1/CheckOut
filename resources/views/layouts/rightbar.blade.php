@@ -171,28 +171,28 @@
                     <td style="padding-top: 10px">2 Toallas Extra<br>
                         <span style="font-style:italic; font-size: 9px">5 Minutes ago</span>
                     </td>
-                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                    <td><p class="badge badge-pill badge-warning">Pending</p></td>
                 </tr>
                 <tr style="border-bottom: dotted gray 1px;">
                     <td>206</td>
                     <td style="padding-top: 10px">Dejar aguas extra<br>
                         <span style="font-style:italic; font-size: 9px">3 Hours ago</span>
                     </td>
-                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                    <td><p class="badge badge-pill badge-warning">Pending</p></td>
                 </tr>
                 <tr style="border-bottom: dotted gray 1px;">
                     <td>153</td>
                     <td style="padding-top: 10px">Solicitan papel de baño<br>
                         <span style="font-style:italic; font-size: 9px">5 Hours ago</span>
                     </td>
-                    <td><p class="badge badge-pill badge-success">Atendido</p></td>
+                    <td><p class="badge badge-pill badge-success">Done</p></td>
                 </tr>
                 <tr style="border-bottom: dotted gray 1px;">
                     <td>163</td>
                     <td style="padding-top: 10px">2 Toallas Extra<br>
                         <span style="font-style:italic; font-size: 9px">Yesterday at 09:35PM</span>
                     </td>
-                    <td><p class="badge badge-pill badge-warning">Pendiente</p></td>
+                    <td><p class="badge badge-pill badge-warning">Pending</p></td>
                 </tr>
               </table>
             </div>
@@ -237,7 +237,7 @@
                                     @if ($ticket->attended)
                                         <p class="badge badge-pill badge-success">Pending Review</p>
                                     @else
-                                        <p class="badge badge-pill badge-success">Pending attend</p>
+                                        <p class="badge badge-pill badge-success">Pending</p>
                                     @endif
                                 </td>
                                 <td>

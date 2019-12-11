@@ -16143,7 +16143,7 @@ __webpack_require__.r(__webpack_exports__);
       this.room = this.content.match(regex);
       var ant = 0;
       var mayor = 0;
-      this.numRoom = 'No se encontro numero de habitación';
+      this.numRoom = 'Room number not found';
       this.room.forEach(function (a) {
         if (parseInt(a) > parseInt(ant)) {
           ant = a;
@@ -94210,7 +94210,7 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("Marcar como tarea")]
+                      [_vm._v("Mark as a task")]
                     )
                   ])
                 ])

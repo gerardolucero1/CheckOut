@@ -113,7 +113,7 @@ Rooms assigned - {{ $revision->room->name }}
                         </div>
                         <div class="row mt-4">
                             <div class="col-md-6">
-                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="height: 300px">
                                     <div class="carousel-inner">
                                         @php
                                             $flag = true;
@@ -198,7 +198,7 @@ Rooms assigned - {{ $revision->room->name }}
                                             }
                                         });
                                     " 
-                                type="submit" class="btn btn-success btn-lg btn-block">Free Room</button>
+                                type="submit" class="btn btn-success btn-lg btn-block">Release Room</button>
                                 <button onclick="event.preventDefault();
                                         Swal.fire({
                                             title: 'Can you cancel this room?',
@@ -219,7 +219,7 @@ Rooms assigned - {{ $revision->room->name }}
                                             }
                                         });
                                     "
-                                type="button" class="btn btn-danger btn-lg btn-block">Cancel Release</button>
+                                type="button" class="btn btn-danger btn-lg btn-block">Cancel this room</button>
 
                                 <button onclick="event.preventDefault();
                                         Swal.fire({

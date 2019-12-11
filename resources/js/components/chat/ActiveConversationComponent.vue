@@ -49,7 +49,7 @@
                         <ul class="list-group text-center">
                             <li class="list-group-item"><button class="btn btn-info" @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</button></li>
                             <li class="list-group-item"><button class="btn btn-info" @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</button></li>
-                            <li class="list-group-item"><button class="btn btn-info" @click="crearTask(message_id)">Marcar como tarea</button></li>
+                            <li class="list-group-item"><button class="btn btn-info" @click="crearTask(message_id)">Mark as a task</button></li>
                         </ul>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ export default {
             this.room=this.content.match(regex);
             var ant=0;
             var mayor=0;
-            this.numRoom='No se encontro numero de habitación';
+            this.numRoom='Room number not found';
 
             this.room.forEach( function(a){
                
