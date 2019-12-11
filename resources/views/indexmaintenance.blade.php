@@ -239,6 +239,7 @@ Dashboard - Maintenance
                                 <tr style="text-align:center;">
                                     <th class="border-top-0">Task number</th>
                                     <th class="border-top-0">Details</th>
+                                    <th class="border-top-0">Reported by</th>
                                     <th class="border-top-0">When</th>
                                     <th class="border-top-0">Total(Days)</th>
                                     <th class="border-top-0">Details</th>
@@ -253,6 +254,9 @@ Dashboard - Maintenance
                                                 {{ $task->message }}
                                             </p>
                                         </td>
+                                        <td>
+                                                <a href="javascript:void(0);">{{ Auth::user()->name }}</a>
+                                            </td>
                                                                         
                                         <td>{{ \Carbon\Carbon::parse($task->created_at)->toFormattedDateString() }}</td>
                                         @php

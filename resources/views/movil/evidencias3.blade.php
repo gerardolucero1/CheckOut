@@ -78,8 +78,8 @@ z-index: 10;
 
     <p style="width: 100%; text-align: center; font-size: 20px; padding-top: 15px; margin-top: 14vh">Fotografías</p>
 
-    <button onclick="abrirExtras()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center;"><i class="fa fa-camera" style="color:white"></i> Cama</button>
-    <button onclick="abrirExtras()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center"><i class="fa fa-camera" style="color:white"></i> Escritorio</button>
+    <button onclick="abrirExtras()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center;"><i class="fa fa-camera" style="color:white"></i> Cocineta</button>
+    <button onclick="abrirExtras()" style="width: 70%; margin-left: 17.5%; padding:8px; margin-top: 20px;  border-radius: 40px; background: #18304C; border: none; color: white; text-align: center"><i class="fa fa-camera" style="color:white"></i> Ropero</button>
 
     <p style="width: 100%; text-align: center; font-size: 20px; padding-top: 15px">Fotos <br> 3/3</p>
 

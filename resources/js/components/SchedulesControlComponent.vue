@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-md-6 text-right">
                         <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> New schedule</button>
-                        <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-print mr-2"></i> Print schedule</button>
+                        <a download href="../assets/Schedule.pdf" class="btn btn-rounded btn-success"><i class="fa fa-print mr-2"></i> Print schedule</a>
                     </div>
                 </div>
             </div>

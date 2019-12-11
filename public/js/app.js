@@ -93552,7 +93552,7 @@ var render = function() {
                     "div",
                     {
                       key: index,
-                      staticClass: "col-md-3 ",
+                      staticClass: "col-md-3 item",
                       attrs: {
                         "data-id": room.id,
                         "data-floorid": room.floor_id
@@ -93562,7 +93562,7 @@ var render = function() {
                       _c(
                         "div",
                         {
-                          staticClass: "card m-b-30 room item",
+                          staticClass: "card m-b-30 room",
                           class: {
                             "bg-success-gradient": room.status == _vm.isVacancy,
                             fondorojo: room.status == _vm.isCheckOut,
@@ -93942,10 +93942,10 @@ var staticRenderFns = [
             ),
             _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
                 staticClass: "btn btn-rounded btn-success",
-                attrs: { type: "button" }
+                attrs: { download: "", href: "../assets/Schedule.pdf" }
               },
               [
                 _c("i", { staticClass: "fa fa-print mr-2" }),
@@ -94245,7 +94245,7 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("Mark as a task")]
+                      [_vm._v("Marcar como tarea")]
                     )
                   ]),
                   _vm._v(" "),
@@ -107711,7 +107711,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n@import '~toastr/toastr';\n       ^\n      Can't find stylesheet to import.\n  ╷\n9 │ @import '~toastr/toastr';\n  │         ^^^^^^^^^^^^^^^^\n  ╵\n  stdin 9:9  root stylesheet\n      in /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss (line 9, column 9)\n    at runLoaders (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:54416:16)\n    at _render_closure1.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:33511:12)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:10539:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:12240:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)");
 
 /***/ }),
 
@@ -107722,8 +107722,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

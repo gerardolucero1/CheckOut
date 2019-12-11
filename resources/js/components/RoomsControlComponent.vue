@@ -39,9 +39,9 @@
                     <div class="col-md-12" style="margin-top: 10px;">
                         <h6>{{ floor.name }}</h6>
                     </div>
-                    <div class="col-md-3 "  v-for="(room, index) in floor.rooms_floor" :key="index" :data-id="room.id" :data-floorid="room.floor_id">
+                    <div class="col-md-3 item"  v-for="(room, index) in floor.rooms_floor" :key="index" :data-id="room.id" :data-floorid="room.floor_id">
                         
-                        <div @click="changeStatus(room)" class="card m-b-30 room item" :class="{ 'bg-success-gradient': room.status == isVacancy, 'fondorojo': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview, 'bg-danger-gradient': room.status == isRush }">
+                        <div @click="changeStatus(room)" class="card m-b-30 room" :class="{ 'bg-success-gradient': room.status == isVacancy, 'fondorojo': room.status == isCheckOut, 'bg-warning-gradient': room.status == isStayOver, 'bg-primary-gradient': room.status == isPendingReview, 'bg-danger-gradient': room.status == isRush }">
                          <i class="far fa-address-card" @click="openmodal(room.id)" style='font-size:20px; color:white; float:left; z-index:10; padding-top:10%; padding-left:10%;'></i>
                             <div class="card-body"  style="margin-top:-20%;">
                                 <i class="fas fa-exclamation-triangle" style='font-size:18px; color:white; float:right;' v-if="room.status == isRush"></i>
