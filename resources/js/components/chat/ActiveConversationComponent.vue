@@ -49,7 +49,34 @@
                         <ul class="list-group text-center">
                             <li class="list-group-item"><button class="btn btn-info" @click="crearTicket(message_id)">New Ticket Room: #{{numRoom}}</button></li>
                             <li class="list-group-item"><button class="btn btn-info" @click="crearRequeriment(message_id)">New Requirement Room: #{{numRoom}}</button></li>
-                            <li class="list-group-item"><button class="btn btn-info" @click="crearTask(message_id)">Mark as a task</button></li>
+                            <li class="list-group-item"><button class="btn btn-info" @click="crearTask(message_id)">Marcar como tarea</button></li>
+                            <li class="list-group-item" v-if="assign">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span @click="assignMaintenance" class="small badge badge-pill badge-primary">Maintenance</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span @click="assignHousekepper = !assignHousekepper, assign = !assign" class="small badge badge-pill badge-primary">Housekepper</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" v-if="assignHousekepper">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <select name="" id="">
+                                            <option value="1">Ada Lima</option>
+                                            <option value="1">Elsa Escalante</option>
+                                            <option value="1">Brenda Jacinto</option>
+                                            <option value="1">Dora Ortiz</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row text-center mt-3">
+                                    <div class="col-md-12">
+                                        <button @click="assignMaintenance" class="btn btn-sm btn-block btn-primary">Assign Task</button>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -74,6 +101,11 @@ export default {
             room:[],
             numRoom:'',
             message_id:'',
+
+            //Assign
+            assign: false,
+            assignHousekepper: false,
+            idMessage: 0,
         }
     },
     mounted(){
@@ -148,21 +180,26 @@ $('#ticketOptions').modal('hide');
         },
 
         crearTask(message_id){
+            this.assign = !this.assign
+            this.idMessage = message_id
+        },
+
+        assignMaintenance(){
             let URL = '/api/task'
 
             const params = {
-                message_id: message_id,
+                message_id: this.idMessage,
                 num_room: this.numRoom,
             }
 
             axios.post(URL, params).then((response) => {
                this.$emit('updateMessages');
                Swal.fire(
-  'Success',
-  'You created a new task',
-  'success'
-);
-$('#ticketOptions').modal('hide');
+                    'Success',
+                    'You created a new task',
+                    'success'
+                );
+                $('#ticketOptions').modal('hide');
             })
         },
 

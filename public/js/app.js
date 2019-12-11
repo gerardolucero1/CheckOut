@@ -15096,7 +15096,7 @@ __webpack_require__.r(__webpack_exports__);
     this.getEmployees();
     this.getFloors();
     interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.item').on('click', function (event) {
-      Swal.fire('Success!', 'This room has been rushed.', 'success');
+      Swal.fire('Success!', 'The rooms has been assigned', 'success');
     });
   },
   computed: {
@@ -16093,6 +16093,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contactId: Number,
@@ -16106,7 +16133,11 @@ __webpack_require__.r(__webpack_exports__);
       content: '',
       room: [],
       numRoom: '',
-      message_id: ''
+      message_id: '',
+      //Assign
+      assign: false,
+      assignHousekepper: false,
+      idMessage: 0
     };
   },
   mounted: function mounted() {},
@@ -16167,11 +16198,15 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     crearTask: function crearTask(message_id) {
+      this.assign = !this.assign;
+      this.idMessage = message_id;
+    },
+    assignMaintenance: function assignMaintenance() {
       var _this3 = this;
 
       var URL = '/api/task';
       var params = {
-        message_id: message_id,
+        message_id: this.idMessage,
         num_room: this.numRoom
       };
       axios.post(URL, params).then(function (response) {
@@ -93052,7 +93087,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
-        _c("h5", [_vm._v("Assing rooms")])
+        _c("h5", [_vm._v("Assign rooms")])
       ])
     ])
   }
@@ -94212,7 +94247,61 @@ var render = function() {
                       },
                       [_vm._v("Mark as a task")]
                     )
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _vm.assign
+                    ? _c("li", { staticClass: "list-group-item" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "small badge badge-pill badge-primary",
+                                on: { click: _vm.assignMaintenance }
+                              },
+                              [_vm._v("Maintenance")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "small badge badge-pill badge-primary",
+                                on: {
+                                  click: function($event) {
+                                    ;(_vm.assignHousekepper = !_vm.assignHousekepper),
+                                      (_vm.assign = !_vm.assign)
+                                  }
+                                }
+                              },
+                              [_vm._v("Housekepper")]
+                            )
+                          ])
+                        ])
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.assignHousekepper
+                    ? _c("li", { staticClass: "list-group-item" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row text-center mt-3" }, [
+                          _c("div", { staticClass: "col-md-12" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-sm btn-block btn-primary",
+                                on: { click: _vm.assignMaintenance }
+                              },
+                              [_vm._v("Assign Task")]
+                            )
+                          ])
+                        ])
+                      ])
+                    : _vm._e()
                 ])
               ])
             ])
@@ -94222,7 +94311,26 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 text-center" }, [
+        _c("select", { attrs: { name: "", id: "" } }, [
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Ada Lima")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Elsa Escalante")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Brenda Jacinto")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Dora Ortiz")])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -107603,7 +107711,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n@import '~toastr/toastr';\n       ^\n      Can't find stylesheet to import.\n  ╷\n9 │ @import '~toastr/toastr';\n  │         ^^^^^^^^^^^^^^^^\n  ╵\n  stdin 9:9  root stylesheet\n      in /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss (line 9, column 9)\n    at runLoaders (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:54416:16)\n    at _render_closure1.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:33511:12)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:10539:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)\n    at _Future._completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18397:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17796:12)\n    at Object._asyncRethrow (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3242:17)\n    at /Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:12240:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3265:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17817:12)\n    at _awaitOnObject_closure0.call$2 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:17809:25)\n    at _RootZone.runBinary$3$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19804:18)\n    at _RootZone.runBinary$3 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:19808:19)\n    at _FutureListener.handleError$1 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18273:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:18561:40)\n    at Object._Future__propagateToListeners (/Users/samueleduardoacosta/Documents/GitHub/CheckOut/node_modules/sass/sass.dart.js:3486:88)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -107614,8 +107722,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/samueleduardoacosta/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/excel02/Documents/GitHub/CheckOut/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

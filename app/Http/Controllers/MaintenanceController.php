@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\maintenance;
+
+use App\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MaintenanceController extends Controller
 {
@@ -13,7 +15,9 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
-        return view('maintenance.index');
+        $tickets = Ticket::orderBy('id', 'DESC')->where('type', 1)->where('hotel_id', Auth::user()->hotel->id)->get();
+        $tasks = Ticket::orderBy('id', 'DESC')->where('type', 3)->where('hotel_id', Auth::user()->hotel->id)->get();
+        return view('indexmaintenance', compact('tickets', 'tasks'));
     }
 
     /**
@@ -34,10 +38,7 @@ class MaintenanceController extends Controller
      */
     public function store(Request $request)
     {
-        $inventory = Inventory::create($request->all());
-
-        return redirect()->route('inventories.index')
-            ->with('info', 'Product created succesfully');
+        //
     }
 
     /**
@@ -59,9 +60,7 @@ class MaintenanceController extends Controller
      */
     public function edit($id)
     {
-        $product = Inventory::findOrFail($id);
-        $categories = CategoryInventory::orderBy('id', 'DESC')->pluck('name', 'id');
-        return view('inventories.edit', compact('product', 'categories'));
+        //
     }
 
     /**
@@ -73,11 +72,7 @@ class MaintenanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Inventory::findOrFail($id);
-        $product->fill($request->all())->save();
-
-        return redirect()->route('inventories.index')
-            ->with('info', 'Product updated succesfully');
+        //
     }
 
     /**
@@ -88,10 +83,6 @@ class MaintenanceController extends Controller
      */
     public function destroy($id)
     {
-        $product = Inventory::findOrFail($id);
-        $product->delete();
-
-        return redirect()->route('inventories.index')
-            ->with('info', 'Product deleted succesfully');
+        //
     }
 }

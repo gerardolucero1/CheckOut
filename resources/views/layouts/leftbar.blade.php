@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                    <a href="{{url('/maintenance/index')}}">
+                    <a href="{{url('/maintenance')}}">
                         <i class="fab fa-searchengin"></i><span>Maintenance</span>
                   </a>
                 </li>

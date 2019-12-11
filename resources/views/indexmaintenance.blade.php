@@ -1,5 +1,5 @@
 @section('title') 
-Neon - Home
+Dashboard - Maintenance
 @endsection 
 @extends('layouts.main')
 @section('style')
@@ -190,52 +190,89 @@ Neon - Home
                                     <th class="border-top-0">Reported by</th>
                                     <th class="border-top-0">When</th>
                                     <th class="border-top-0">Total(Days)</th>
+                                    <th class="border-top-0">Evidence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($tickets as $ticket)
+                                    <tr style="text-align:center;">
+                                        <td>{{ $ticket->numRoom }}</td>
+                                        <td>
+                                            <a href="javascript:void(0);">{{ Auth::user()->name }}</a>
+                                        </td>
+                                                                        
+                                        <td>{{ \Carbon\Carbon::parse($ticket->created_at)->toFormattedDateString() }}</td>
+                                        @php
+                                            $date = \Carbon\Carbon::parse($ticket->created_at);
+                                            $fechaHoy = \Carbon\Carbon::now();
+                                            $diff = $date->diffInDays($fechaHoy);
+                                            //dd($diff);
+                                        @endphp
+                                        @if (\Carbon\Carbon::parse($ticket->created_at)->toFormattedDateString() == \Carbon\Carbon::now()->toFormattedDateString())
+                                            <td>Today</td>
+                                        @else
+                                            <td>{{ $diff + 1 }}</td>
+                                        @endif
+                                        <td>
+                                            <button type="button" class="btn btn-success">
+                                                <i class="fa fa-camera"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start XP Col -->
+        <div class="col-md-12 col-lg-12 col-xl-12 align-self-center">
+            <div class="card bg-white m-b-30">
+                <div class="card-header bg-white">
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Tasks</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr style="text-align:center;">
+                                    <th class="border-top-0">Task number</th>
+                                    <th class="border-top-0">Details</th>
+                                    <th class="border-top-0">When</th>
+                                    <th class="border-top-0">Total(Days)</th>
                                     <th class="border-top-0">Details</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="text-align:center;">
-                                    <td>001</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Diego</a>
-                                    </td>
-                                                                    
-                                    <td>01/05/2018</td>
-                                    <td>30</td>
-                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>012</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Samuel</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>8</td>
-                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>150</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Gerardo</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>12</td>
-                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
-                                </tr>
-                                <tr style="text-align:center;">
-                                    <td>11</td>
-                                    <td>
-                                        <a href="javascript:void(0);">Talita</a>
-                                    </td>
-                                                                   
-                                    <td>01/05/2018</td>
-                                    <td>55</td>
-                                    <td><button type="button" class="btn btn-success"><i class="fa fa-camera"></i></button></td>
-                                 
-                                </tr>
-                               
+                                @foreach ($tasks as $task)
+                                    <tr style="text-align:center;">
+                                        <td>{{ $task->id }}</td>
+                                        <td>
+                                            <p class="small">
+                                                {{ $task->message }}
+                                            </p>
+                                        </td>
+                                                                        
+                                        <td>{{ \Carbon\Carbon::parse($task->created_at)->toFormattedDateString() }}</td>
+                                        @php
+                                            $date = \Carbon\Carbon::parse($task->created_at);
+                                            $fechaHoy = \Carbon\Carbon::now();
+                                            $diff = $date->diffInDays($fechaHoy);
+                                            //dd($diff);
+                                        @endphp
+                                        @if (\Carbon\Carbon::parse($task->created_at)->toFormattedDateString() == \Carbon\Carbon::now()->toFormattedDateString())
+                                            <td>Today</td>
+                                        @else
+                                            <td>{{ $diff + 1 }}</td>
+                                        @endif
+                                        <td>
+                                            <button type="button" class="btn btn-success">
+                                                <i class="fa fa-camera"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

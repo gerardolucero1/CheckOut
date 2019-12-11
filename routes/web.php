@@ -24,9 +24,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/kpi', function () {
             return view('indexkpi');
         });
-    Route::get('/maintenance/index', function () {
-            return view('indexmaintenance');
-        });
+
+    //Rutas de mantenimiento
+    Route::get('/maintenance', 'MaintenanceController@index')->name('maintenance.index');
 
     
     
