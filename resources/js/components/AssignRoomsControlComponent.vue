@@ -2,7 +2,7 @@
     <section class="">
         <div class="row">
             <div class="col-md-12">
-                <h5>Assing rooms</h5>
+                <h5>Assign rooms</h5>
             </div>
         </div>
         <div class="row">
@@ -69,7 +69,7 @@ export default {
 
              Swal.fire(
                  'Success!',
-                 'This room has been rushed.',
+                 'The rooms has been assigned',
                  'success'
              )
          })  
