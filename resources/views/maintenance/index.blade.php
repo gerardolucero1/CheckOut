@@ -17,7 +17,7 @@ Neon - Home
         <div class="col-md-12 col-lg-12 col-xl-12 align-self-center">
             <div class="card bg-white m-b-30">
                 <div class="card-header bg-white">
-                    <h5 style="text-align:center;" class="card-title text-black mb-0">Our Projects</h5>
+                    <h5 style="text-align:center;" class="card-title text-black mb-0">Tickets</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -28,7 +28,7 @@ Neon - Home
                                     <th class="border-top-0">Who deposit</th>
                                     <th class="border-top-0">When</th>
                                     <th class="border-top-0">Total(Days)</th>
-                                    <th class="border-top-0">Details</th>
+                                    <th class="border-top-0">Evidence</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,7 +40,9 @@ Neon - Home
                                                                     
                                     <td>01/05/2018</td>
                                     <td>30</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success">
+                                            <i class="fa fa-camera"></i>    
+                                    </button></td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td>12</td>
@@ -50,7 +52,9 @@ Neon - Home
                                                                    
                                     <td>01/05/2018</td>
                                     <td>8</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success">
+                                            <i class="fa fa-camera"></i>   
+                                    </button></td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td>10</td>
@@ -60,7 +64,9 @@ Neon - Home
                                                                    
                                     <td>01/05/2018</td>
                                     <td>12</td>
-                                    <td><button type="button" class="btn btn-success">Info</button></td>
+                                    <td><button type="button" class="btn btn-success">
+                                        <i class="fa fa-camera"></i>
+                                    </button></td>
                                 </tr>
                              
                                
