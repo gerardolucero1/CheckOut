@@ -11,6 +11,9 @@
                         <button type="button" @click="makeAutoschedule" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> Auto schedule</button>
                         <button type="button" class="btn btn-rounded btn-success"><i class="fa fa-calendar mr-2"></i> New schedule</button>
                         <a download href="../assets/Schedule.pdf" class="btn btn-rounded btn-success"><i class="fa fa-print mr-2"></i> Print schedule</a>
+                        <button type="button" @click="releaseRooms" class="btn btn-rounded btn-success" style="margin-top:10px" data-toggle="modal" data-target="#rooms">
+                    Releasing rooms
+                </button>
                     </div>
                 </div>
             </div>
@@ -99,6 +102,7 @@
                 </table>
             </div>
         </div>     
+        
     </section> 
 </template>
 
@@ -126,6 +130,13 @@ export default {
             } catch (e) {
                 console.log(e)
             }
+        },
+         releaseRooms(){
+            Swal.fire(
+                                'Success!',
+                                'Schedule released',
+                                'success'
+                            )
         },
 
         makeAutoschedule(){

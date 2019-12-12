@@ -296,11 +296,13 @@ Dashboard - Maintenance
             <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="card m-b-30">
                         <div class="card-header bg-white">
-                            <h5 class="card-title text-black mb-0">Calender</h5>
+                            <h5 class="card-title text-black mb-0">Maintenance Calendar</h5>
                         </div>
                         <div class="card-body">
-                            <div data-language="en" class="datepicker-here" ></div>
-                            {{-- <calendar-component></calendar-component> --}}
+                            
+                     
+                                    <calendar-component></calendar-component>
+                   
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
-/******/ 			exports: {} 
+/******/ 			exports: {}
 /******/ 		};
 /******/
 /******/ 		// Execute the module function
@@ -16017,6 +16017,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -16061,6 +16065,9 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }, null, this, [[0, 8]]);
+    },
+    releaseRooms: function releaseRooms() {
+      Swal.fire('Success!', 'Schedule released', 'success');
     },
     makeAutoschedule: function makeAutoschedule() {
       var _this = this;
@@ -93960,7 +93967,22 @@ var render = function() {
             _vm._v(" "),
             _vm._m(1),
             _vm._v(" "),
-            _vm._m(2)
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-rounded btn-success",
+                staticStyle: { "margin-top": "10px" },
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#rooms"
+                },
+                on: { click: _vm.releaseRooms }
+              },
+              [_vm._v("\n                Releasing rooms\n            ")]
+            )
           ])
         ])
       ])
