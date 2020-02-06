@@ -8,8 +8,10 @@ use App\Floor;
 use App\Revision;
 use App\AssignedRoom;
 use App\Ticket;
+use App\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ControlController extends Controller
 {
@@ -158,4 +160,98 @@ class ControlController extends Controller
         $ticket = Ticket::findOrFail($id);
         return view('control.verification_ticket_room', compact('ticket'));
     }
+
+    public function autoSchedule($id){
+        $hotel = Hotel::findOrFail($id);
+        $employees = User::orderBy('id', 'DESC')->where('hotel_id', $id)->get();
+        $floors = Floor::orderBy('id', 'DESC')->where('hotel_id', $id)->get();
+
+        $arrayRooms = [];
+
+        foreach ($floors as $floor) {
+            $rooms = Room::orderBy('id', 'DESC')->where('floor_id', $floor->id)->get();
+            array_push($arrayRooms, $rooms);
+        }
+
+        //dd(count($hotel->rooms));
+
+        $fechaHoy = Carbon::now();
+        // $fechaHoy = $fechaHoy->format('d-m-Y');
+
+        $arrayShedule = [];   
+
+        $year = $fechaHoy->format('Y');
+        $month = $fechaHoy->format('m');
+        $day = $fechaHoy->format('d');
+
+        # Obtenemos el numero de la semana
+        $semana = date("W", mktime(0, 0, 0, $month, $day, $year));
+
+        # Obtenemos el día de la semana de la fecha dada
+        $diaSemana = date("w", mktime(0, 0, 0, $month, $day, $year));
+
+        # el 0 equivale al domingo...
+        if($diaSemana == 0)
+            $diaSemana = 7;
+
+        # A la fecha recibida, le restamos el dia de la semana y obtendremos el lunes
+        $primerDia = date("d-m-Y", mktime(0, 0, 0, $month, $day - $diaSemana + 1, $year));
+
+        # A la fecha recibida, le sumamos el dia de la semana menos siete y obtendremos el domingo
+        $ultimoDia = date("d-m-Y", mktime(0, 0, 0, $month, $day + (7 - $diaSemana), $year));
+
+        foreach ($employees as $employee) {
+            array_push($arrayShedule, array($employee, 0, 0));
+        }
+
+        for ($i=0; $i < 7; $i++) {
+            //echo ($numeroRooms = rand(30, count($hotel->rooms))) . ' - ';
+            echo ($numeroRooms = 23) . ' - ';
+            $maxRooms = ($numeroRooms / count($employees));
+            return round($maxRooms);
+            
+            
+        }
+
+        //dd($arrayShedule);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
