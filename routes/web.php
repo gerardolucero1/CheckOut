@@ -110,6 +110,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('control/rooms/room/verification/{id}', 'ControlController@verification_room')->name('control.show.verification_room');
         Route::put('control/rooms/room/verification/update/{id}', 'ControlController@update_verification_room')->name('control.update.verification_room');
 
+    //Rutas hacer horario
+    Route::get('control/make/schedule/{id}', 'ControlController@autoSchedule')->name('control.autoShedule');
+
     //Rutas mensajes
     Route::get('messages', 'MessageController@index')->name('messages.index');
 
