@@ -17,13 +17,12 @@ Route::middleware('auth:api')->group(function(){
 	Route::get('/user', 'AuthController@user');
 
 	Route::post('/logout', 'AuthController@logout');
+
+	Route::get('/user/get-rooms', 'AuthController@getRooms');
+	Route::get('/rooms/get-room/{id}', 'AuthController@getRoom');
 });
 
 Route::post('/login', 'AuthController@login');
 Route::post('/register', 'AuthController@register');
-Route::get('/demo', function(){
-	return 'Hola Mundo';
-});
-
 
 Route::apiResource('/calendar', 'CalendarController');

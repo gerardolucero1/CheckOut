@@ -45,7 +45,24 @@ Hotels
     <!-- Start XP Row -->
     <div class="row">
         <!-- End XP Col -->
-        <div class="col-lg-12">
+        <div class="col-md-12">
+            <div class="block-content">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ route('hotels.show', $hotel->id) }}">
+                                    <i class="mdi mdi-arrow-left"></i>
+                                    BACK
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 mt-5">
             <div class="block-content">
                 {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'PUT', 'files' => 'true']) !!}
                     @include('users.partial.form')

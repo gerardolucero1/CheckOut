@@ -17,8 +17,8 @@
                 </li>
                 <li>
                     <a href="{{url('/hotels')}}">
-                      <i class="fa fa-building"></i><span>Hotels</span>
-                  </a>
+                        <i class="fa fa-building"></i><span>Hotels</span>
+                    </a>
                 </li>
                 <li>
                     <a href="javaScript:void();">

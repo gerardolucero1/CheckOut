@@ -7,6 +7,7 @@ use App\Hotel;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUser;
 use App\Http\Requests\UpdateUser;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -28,7 +29,8 @@ class UserController extends Controller
     public function create($id)
     {
         $hotel = Hotel::findOrFail($id);
-        return view('users.create', compact('hotel'));
+        $roles = Role::all()->pluck('name', 'name');
+        return view('users.create', compact('hotel', 'roles'));
     }
 
     /**
@@ -44,7 +46,10 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->hotel_id = $request->hotel_id;
         $user->password = bcrypt($request->password);
-        $user->save();
+
+        if($user->save()){
+            $user->assingRole($request->role);
+        }
         
         return redirect()->route('users.edit', $user->id)
             ->with('info', 'Usuario created succesfully');
@@ -71,8 +76,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
+        $roles = Role::all()->pluck('name', 'name');
         $hotel = $user->hotel;
-        return view('users.edit', compact('user', 'hotel'));
+        return view('users.edit', compact('user', 'hotel', 'roles'));
     }
 
     /**
@@ -93,7 +99,9 @@ class UserController extends Controller
             $user->password = bcrypt($request->password);
         }
 
-        $user->save();
+        if($user->save()){
+            $user->syncRoles($request->role);
+        }
 
         return redirect()->route('users.edit', $user->id)
             ->with('info', 'User updated succesfully');

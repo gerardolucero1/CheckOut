@@ -13,13 +13,8 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', function () {
-        return view('index');
-    });
-
+    Route::get('/', 'HomeController@index')->name('home.index');
     
     Route::get('/kpi', function () {
             return view('indexkpi');
@@ -28,7 +23,9 @@ Route::group(['middleware' => ['auth']], function () {
     //Rutas de mantenimiento
     Route::get('/maintenance', 'MaintenanceController@index')->name('maintenance.index');
 
-    
+    //Ruta control (seleccion de hotel)
+    Route::get('webmaster/hotels', 'WebmasterController@loginSelection')->name('webmaster.loginSelection');
+    Route::put('webmaster/hotels', 'WebmasterController@loginSelectionUpdate')->name('webmaster.loginSelectionUpdate');
     
     //Rutas Hoteles
     Route::get('hotels', 'HotelController@index')->name('hotels.index');

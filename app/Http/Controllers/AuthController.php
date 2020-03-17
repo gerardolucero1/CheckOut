@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\AssignedRoom;
+use App\Room;
 
 class AuthController extends Controller
 {
@@ -60,9 +62,29 @@ class AuthController extends Controller
     	return response()->json('Logged out successfully', 200);
     }
 
+    //Obtener info del usuario
     public function user()
     {
         return auth()->user();
+    }
+
+    //Obtener las abitaciones asignadas al usuario
+    public function getRooms(){
+        $rooms = AssignedRoom::orderBy('id', 'DESC')->where('user_id', auth()->user()->id)->get();
+
+        $arrayRooms = [];
+
+        foreach ($rooms as $room) {
+            $infoRoom = Room::orderBy('id', 'DESC')->where('id', $room->room_id)->first();
+            array_push($arrayRooms, $infoRoom);
+        }
+        return $arrayRooms;
+    }
+
+    //Obtener info de la habitacion
+    public function getRoom($id){
+        $room = Room::orderBy('id', 'DESC')->where('id', $id)->first();
+        return $room;
     }
 }
 

@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 {{ Form::label('email', 'Email') }}
                 {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email']) }}
             </div>

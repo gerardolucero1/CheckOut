@@ -187,9 +187,9 @@ General Inventory
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        {{-- <div class="form-group col-md-6">
                             {{ Form::hidden('hotel_id', Auth::user()->hotel->id) }}
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
